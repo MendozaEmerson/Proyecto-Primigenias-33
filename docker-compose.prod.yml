@@ -32,7 +32,7 @@ services:
     ports:
       - "8085:80"
     volumes:
-
+      - moodle_app_data:/var/www/html
       - moodledata_var:/var/www/moodledata
     networks:
       - crisol-net
@@ -55,5 +55,5 @@ networks:
 
 volumes:
   moodle_db_data:
-
+  moodle_app_data:
   moodledata_var:
