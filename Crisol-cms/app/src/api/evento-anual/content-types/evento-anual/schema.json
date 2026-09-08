@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "evento_anuales",
+  "info": {
+    "singularName": "evento-anual",
+    "pluralName": "evento-anuales",
+    "displayName": "EventoAnual",
+    "description": "Contenedor de eventos por año"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "anio": {
+      "type": "string",
+      "required": true
+    },
+    "titulo_principal": {
+      "type": "string",
+      "required": true
+    },
+    "ubicacion": {
+      "type": "string"
+    },
+    "descripcion_breve": {
+      "type": "text"
+    },
+    "sub_eventos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "eventos.sub-evento"
+    }
+  }
+}

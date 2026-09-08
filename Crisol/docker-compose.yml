@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  crisol-landing:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: crisol_landing_app
+    restart: always
+    ports:
+      # Mapeo de puertos: [Puerto de tu máquina/Host]:[Puerto interno del Contenedor Nginx]
+      - "3000:80"
+    environment:
+      - NODE_ENV=production
+      - ASTRO_TELEMETRY_DISABLED=1

@@ -1,0 +1,285 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { getSeminarioAnual } from '../services/strapi';
+
+const seminarioData = await getSeminarioAnual('2026');
+---
+
+<Layout title={`${seminarioData.titulo} | Instituto Primigenias 33`}>
+  <Header />
+
+  <main class="seminario-main">
+    <!-- Hero / Header del Seminario -->
+    <section class="hero-section hero-bg-overlay">
+      <div class="container hero-content scroll-reveal">
+        <span class="badge badge-gold">Evento Exclusivo 2026</span>
+        <h1 class="page-title text-gradient-gold">
+          {seminarioData.titulo}
+        </h1>
+        <p class="hero-subtitle">
+          {seminarioData.subtitulo}
+        </p>
+      </div>
+    </section>
+
+    <!-- Contenido Principal: Video + PDF -->
+    <section class="section">
+      <div class="container seminario-container">
+        <div class="seminario-grid">
+          <!-- Columna Principal del Video Reproductor (Dominante) -->
+          <div class="video-column">
+            <div class="glass-panel video-card breathing-glow">
+              <div class="video-header">
+                <span class="video-status-dot"></span>
+                <h3>Ponencia Magistral Anual</h3>
+              </div>
+
+              <!-- Contenedor Responsive 16:9 para Video (YouTube / Google Drive) -->
+              <div class="video-responsive-wrapper">
+                <iframe
+                  class="video-iframe"
+                  src={seminarioData.videoUrl}
+                  title="Seminario Anual Numerología 2026 - Instituto Primigenias 33"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+
+              <div class="video-meta">
+                <div class="meta-item">
+                  <span>Expositor: Dirección Académica</span>
+                </div>
+                <div class="meta-item">
+                  <span>Duración: Seminario Completo</span>
+                </div>
+                <div class="meta-item">
+                  <span>Ciclo: Vibración 2026</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna Lateral Compacta: Descarga de PDF -->
+          <div class="download-column">
+            <!-- Tarjeta Compacta de Descarga de PDF -->
+            <div class="glass-panel download-card highlight-gold">
+              <div class="download-icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+              </div>
+              <h2>Documento Oficial</h2>
+              <p>
+                Guía completa con el análisis numérico, tablas de cálculo y síntesis arquetípica para 2026.
+              </p>
+
+              <a
+                href={seminarioData.pdfUrl}
+                download="Seminario-Numerologia-Primigenias33-2026.pdf"
+                class="btn btn-primary download-btn"
+              >
+                Descargar Material PDF
+              </a>
+
+              <div class="pdf-file-info">
+                <span>Formato PDF</span>
+                <span>•</span>
+                <span>Descarga Gratuita</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .seminario-main {
+    padding-bottom: 4rem;
+  }
+
+  .hero-content {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 3.5rem 1rem 2.5rem 1rem;
+  }
+
+  .page-title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.25;
+  }
+
+  .hero-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  .seminario-container {
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+
+  .seminario-grid {
+    display: grid;
+    grid-template-columns: 1fr 310px;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .video-card {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .video-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .video-status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--accent-gold);
+    box-shadow: 0 0 10px var(--accent-gold);
+  }
+
+  .video-header h3 {
+    font-size: 1.35rem;
+    color: #fff;
+    margin: 0;
+    flex: 1;
+  }
+
+  .video-responsive-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    background: #000;
+    border: 1px solid var(--border-light);
+  }
+
+  .video-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .video-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-light);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .download-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .download-card {
+    padding: 1.75rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  .highlight-gold {
+    border-top: 4px solid var(--accent-gold);
+  }
+
+  .download-icon-wrapper {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(245, 158, 11, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+  }
+
+  .pdf-icon {
+    font-size: 1.6rem;
+  }
+
+  .download-card h2 {
+    font-size: 1.3rem;
+    color: #fff;
+    margin: 0;
+  }
+
+  .download-card p {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .download-btn {
+    width: 100%;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .btn-icon {
+    font-size: 1.1rem;
+  }
+
+  .pdf-file-info {
+    font-size: 0.775rem;
+    color: var(--text-muted);
+    display: flex;
+    gap: 0.4rem;
+  }
+
+  @media (max-width: 1024px) {
+    .seminario-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .download-card {
+      max-width: 500px;
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .page-title {
+      font-size: 2.25rem;
+    }
+  }
+</style>

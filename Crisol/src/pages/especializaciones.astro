@@ -1,0 +1,195 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+
+const mastersList = [
+  {
+    slug: "lineas-temporales",
+    titulo: "MÁSTER ADVANCED DE LAS LÍNEAS TEMPORALES",
+    imagen: "/images/master-especializaciones.jpg",
+    subtitulo: "2 clases intensivas de 3 hs cada una donde se enseñará el mundo de las líneas temporales desde la formación de la ley de octavas y la repetición de eventos en la vida.",
+    desc1: "Recorreremos el mapa de coordenadas en el tiempo para posicionarnos en el punto de formación del evento a transitar.",
+    desc2: "Utilizando el sendero de vida como ancla en el mundo y la frecuencia del año personal como línea temporal óntica cruzaremos las coordenadas obteniendo un punto fijo donde nos detendremos a observar eventos pasados para comprender su formación a través de los ecos de frecuencia temporales."
+  },
+  {
+    slug: "4-elementos",
+    titulo: "MÁSTER: LOS 4 ELEMENTOS. LECTURA ÓNTICA",
+    imagen: "/images/numerologia-base-ontica.jpg",
+    subtitulo: "Integración de fuego, agua, aire y tierra en la estructura del mapa numérico.",
+    desc1: "Abordaje profundo de la alquimia de los elementos aplicada a la decodificación personal y grupal.",
+    desc2: "Herramientas de equilibración elemental y aplicación en consulta profesional."
+  },
+  {
+    slug: "numeros-maestros",
+    titulo: "MÁSTER DE LA FORMACIÓN ÓNTICA DE LOS NÚMEROS MAESTROS",
+    imagen: "/images/master-especializaciones.jpg",
+    subtitulo: "Estudio avanzado de las frecuencias 11, 22, 33 y 44.",
+    desc1: "Comprende la exigencia espiritual y la responsabilidad creadora de los números maestros.",
+    desc2: "Metodología para desmantelar la distorsión del ego en personas con frecuencias maestras."
+  },
+  {
+    slug: "futurologia",
+    titulo: "MÁSTER EN FUTUROLOGÍA ÓNTICA",
+    imagen: "/images/numerologia-base-ontica.jpg",
+    subtitulo: "Predicción de tendencias de frecuencia y proyección de ciclos en el mapa de vida.",
+    desc1: "Análisis de prospectiva sin determinismos, iluminando los caminos de menor resistencia.",
+    desc2: "Herramientas avanzadas de previsión para la toma de decisiones estratégicas."
+  },
+  {
+    slug: "formacion-numero",
+    titulo: "MÁSTER EN LA FORMACIÓN ÓNTICA DEL NÚMERO",
+    imagen: "/images/master-especializaciones.jpg",
+    subtitulo: "La raíz primordial y la geometría viva de la matemática sagrada.",
+    desc1: "Exploración ontológica del origen del número antes de manifestarse como concepto.",
+    desc2: "Profundización en los principios fundantes del Instituto Primigenias 33."
+  },
+  {
+    slug: "4-puertas",
+    titulo: "SEMINARIO DE LAS 4 PUERTAS DE SALIDA",
+    imagen: "/images/numerologia-base-ontica.jpg",
+    subtitulo: "Protocolos de resolución de bloqueos y trampas de percepción.",
+    desc1: "Las 4 vías de salida para trascender bucles de repetición y mandatos estancados.",
+    desc2: "Seminario intensivo con ejercicios prácticos y guía metodológica."
+  }
+];
+---
+
+<Layout title="Másters de Numerología & Especializaciones | Instituto Primigenias 33" description="Formación avanzada en Másters y Seminarios de Numerología Base Óntica del Instituto Primigenias 33.">
+  <Header />
+
+  <main class="especializaciones-main">
+    <!-- Hero Banner Header -->
+    <section class="hero-banner hero-bg-overlay">
+      <div class="container text-center scroll-reveal">
+        <span class="badge badge-gold">Formación Superior</span>
+        <h1 class="page-title text-gradient-flame">MÁSTERS DE NUMEROLOGÍA</h1>
+        <p class="hero-subtitle">
+          Seminarios de especialización intensiva para consultores y practicantes avanzados en desarrollo humano.
+        </p>
+      </div>
+    </section>
+
+    <!-- Grid de Másters y Seminarios (6 tarjetas) -->
+    <section class="section">
+      <div class="container">
+        <div class="masters-grid">
+          {mastersList.map((item) => (
+            <article class="glass-panel master-card highlight-gold breathing-glow">
+              <a href={`/especializaciones/${item.slug}/`} class="master-card-img-link">
+                <div class="master-card-img">
+                  <img src={item.imagen} alt={item.titulo} class="card-img" />
+                </div>
+              </a>
+              <div class="master-card-body">
+                <h3>
+                  <a href={`/especializaciones/${item.slug}/`} class="card-title-link">
+                    {item.titulo}
+                  </a>
+                </h3>
+                <a href={`/especializaciones/${item.slug}/`} class="btn btn-secondary btn-sm master-link-btn">
+                  Ver más
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <WhatsAppButton />
+</Layout>
+
+<style>
+  .especializaciones-main {
+    padding-bottom: 4rem;
+  }
+
+  .hero-banner {
+    padding: 4.5rem 1rem 3.5rem;
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0.75rem auto 0;
+    line-height: 1.6;
+  }
+
+  .masters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .master-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 0;
+    border-radius: var(--radius-md);
+  }
+
+  .master-card-img {
+    height: 180px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .master-card:hover .card-img {
+    transform: scale(1.05);
+  }
+
+  .master-card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    flex: 1;
+    justify-content: space-between;
+  }
+
+  .master-card-body h3 {
+    font-size: 1.1rem;
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .master-card-img-link {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .card-title-link {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .card-title-link:hover {
+    color: var(--accent-orange, #ff6b35);
+  }
+
+  .master-link-btn {
+    align-self: center;
+  }
+</style>

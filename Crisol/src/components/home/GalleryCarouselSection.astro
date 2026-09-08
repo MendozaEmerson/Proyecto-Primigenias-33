@@ -1,0 +1,253 @@
+---
+// Componente de Carrusel de Imágenes Institucionales + Testimonios
+import { getGaleriaInicio, getTestimoniosAlumnos } from '../../services/strapi';
+
+const galleryImages = await getGaleriaInicio();
+const testimoniosList = await getTestimoniosAlumnos();
+---
+
+<section class="section bg-dim">
+  <div class="container">
+    <!-- Carrusel de Imágenes Solamente (Cambio Automático) -->
+    <div class="gallery-carousel-wrapper" id="autoGalleryWrapper">
+      <div class="gallery-track" id="autoGalleryTrack">
+        {galleryImages.map((img) => (
+          <div class="gallery-item">
+            <img src={img.imagen} alt={img.titulo} />
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Fila de 2 Columnas: Frase a la Izquierda y Testimonios al Costado -->
+    <div class="quote-testimonial-row">
+      <!-- Columna Izquierda: Frase Destacada -->
+      <div class="glass-panel quote-box">
+        <p class="quote-text">
+          "Utilizo la Numerología Óntica Transpersonal en mi consultorio como una gran herramienta para que los consultantes puedan hacer visible lo invisible que es lo que les da forma a su Ser."
+        </p>
+      </div>
+
+      <!-- Columna Derecha: Carrusel de Testimonios (4 Espacios Interactivos) -->
+      <div class="glass-panel testimonial-slider-box" data-testimonios={JSON.stringify(testimoniosList)}>
+        <div class="testimonial-content" id="activeTestimonial">
+          <img id="tFoto" src={testimoniosList[0]?.avatar || '/images/alumna-luciana-masa.jpg'} alt={testimoniosList[0]?.nombre || 'Estudiante'} class="student-avatar" />
+          <h4 id="tNombre" class="student-name">{testimoniosList[0]?.nombre || 'Estudiante'}</h4>
+          <span id="tRol" class="student-role">{testimoniosList[0]?.curso || 'Numerología Óntica'}</span>
+          <p id="tCita" class="student-quote">{testimoniosList[0]?.comentario || ''}</p>
+        </div>
+        <div class="slider-dots" id="sliderDots">
+          {testimoniosList.map((_, idx) => (
+            <span class={`dot ${idx === 0 ? 'active' : ''}`} data-index={idx}></span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // 1. Carrusel de Imágenes Automático
+  const galleryWrapper = document.getElementById('autoGalleryWrapper');
+  if (galleryWrapper) {
+    let scrollAmount = 0;
+    const itemWidth = 720;
+    
+    setInterval(() => {
+      const items = galleryWrapper.querySelectorAll('.gallery-item');
+      if (items.length <= 1) return;
+      if (scrollAmount >= itemWidth * (items.length - 1)) {
+        scrollAmount = 0;
+        galleryWrapper.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        scrollAmount += itemWidth;
+        galleryWrapper.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+      }
+    }, 3500);
+  }
+
+  // 2. Carrusel de Testimonios Interactivo
+  const sliderBox = document.querySelector('.testimonial-slider-box') as HTMLElement;
+  const testimoniosList = sliderBox?.dataset.testimonios ? JSON.parse(sliderBox.dataset.testimonios) : [];
+
+  let currentIndex = 0;
+  let testimonialTimer: ReturnType<typeof setInterval>;
+
+  const tFoto = document.getElementById('tFoto') as HTMLImageElement;
+  const tNombre = document.getElementById('tNombre');
+  const tRol = document.getElementById('tRol');
+  const tCita = document.getElementById('tCita');
+  const dots = document.querySelectorAll('#sliderDots .dot');
+
+  function renderTestimonial(index: number) {
+    if (!testimoniosList || index < 0 || index >= testimoniosList.length) return;
+    currentIndex = index;
+    const item = testimoniosList[index];
+
+    if (tFoto) {
+      tFoto.src = item.avatar || item.foto || '/images/alumna-luciana-masa.jpg';
+      tFoto.alt = item.nombre || 'Estudiante';
+    }
+    if (tNombre) tNombre.textContent = item.nombre || 'Estudiante';
+    if (tRol) tRol.textContent = item.curso || item.rol || 'Numerología Óntica';
+    if (tCita) tCita.textContent = item.comentario || item.cita || '';
+
+    dots.forEach((dot, idx) => {
+      if (idx === index) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+  }
+
+  function startAutoSlide() {
+    if (!testimoniosList || testimoniosList.length <= 1) return;
+    testimonialTimer = setInterval(() => {
+      const nextIdx = (currentIndex + 1) % testimoniosList.length;
+      renderTestimonial(nextIdx);
+    }, 4000);
+  }
+
+  dots.forEach((dot, idx) => {
+    dot.addEventListener('click', () => {
+      clearInterval(testimonialTimer);
+      renderTestimonial(idx);
+      startAutoSlide();
+    });
+  });
+
+  startAutoSlide();
+</script>
+
+<style>
+  /* Gallery Carousel (Carrusel de imágenes solamente) */
+  .gallery-carousel-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 3rem auto;
+    overflow-x: auto;
+    border-radius: var(--radius-lg);
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-orange) transparent;
+  }
+
+  .gallery-track {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .gallery-item {
+    flex: 0 0 700px;
+    height: 380px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Quote and Testimonial Side by Side Row */
+  .quote-testimonial-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .quote-box {
+    padding: 2.5rem 2rem;
+    border-left: 4px solid var(--accent-gold);
+    background: rgba(245, 158, 11, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .quote-text {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.7;
+    text-align: center;
+    margin: 0;
+  }
+
+  .testimonial-slider-box {
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    height: 100%;
+    justify-content: center;
+  }
+
+  .student-avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-orange, #ff6b35);
+    margin-bottom: 0.5rem;
+  }
+
+  .student-name {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0;
+  }
+
+  .student-role {
+    font-size: 0.8rem;
+    color: var(--accent-gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .student-quote {
+    font-size: 0.925rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin: 0;
+  }
+
+  .slider-dots {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .dot.active {
+    background: var(--accent-gold);
+    width: 20px;
+    border-radius: 9999px;
+  }
+
+  @media (max-width: 900px) {
+    .quote-testimonial-row {
+      grid-template-columns: 1fr;
+    }
+    .gallery-item {
+      flex: 0 0 300px;
+      height: 240px;
+    }
+  }
+</style>

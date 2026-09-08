@@ -1,0 +1,135 @@
+---
+// Componente del Catálogo de Cursos Informativo
+const listaCursos = [
+  {
+    codigo: "CUR-01",
+    titulo: "Desarrollo Web Fullstack e Inteligencia Artificial",
+    categoria: "Tecnología",
+    duracion: "60 Horas",
+    modalidad: "100% Online",
+    nivel: "Intermedio",
+    badgeColor: "badge-info",
+    descripcion: "Aprende a construir aplicaciones modernas con React, Node.js e integración de APIs de Inteligencia Artificial."
+  },
+  {
+    codigo: "CUR-02",
+    titulo: "Diseño UX/UI y Sistemas de Diseño Avanzados",
+    categoria: "Diseño",
+    duracion: "40 Horas",
+    modalidad: "100% Online",
+    nivel: "Principiante",
+    badgeColor: "badge-success",
+    descripcion: "Domina Figma, arquitecturas de información, prototipado dinámico y metodologías de investigación con usuarios."
+  },
+  {
+    codigo: "CUR-03",
+    titulo: "Gestión Estratégica en Moodle para Docentes",
+    categoria: "Educación",
+    duracion: "30 Horas",
+    modalidad: "100% Online",
+    nivel: "Avanzado",
+    badgeColor: "badge-warning",
+    descripcion: "Configuración de aulas virtuales, banco de preguntas, cuestionarios automatizados y métricas de evaluación."
+  }
+];
+---
+
+<section id="cursos" class="section">
+  <div class="container">
+    <div class="section-title">
+      <span class="badge badge-success">Oferta Académica</span>
+      <h2>Cursos Disponibles</h2>
+      <p>Explora la nómina de capacitaciones activas. El desarrollo académico de los cursos se realiza en el Aula Virtual Moodle.</p>
+    </div>
+
+    <div class="cursos-grid">
+      {listaCursos.map((curso) => (
+        <article class="curso-card glass-panel">
+          <div class="curso-header">
+            <span class={`badge ${curso.badgeColor}`}>{curso.categoria}</span>
+            <span class="curso-codigo">{curso.codigo}</span>
+          </div>
+
+          <h3 class="curso-titulo">{curso.titulo}</h3>
+          <p class="curso-descripcion">{curso.descripcion}</p>
+
+          <div class="curso-meta">
+            <div class="meta-item">
+              <span>Duración: {curso.duracion}</span>
+            </div>
+            <div class="meta-item">
+              <span>Nivel: {curso.nivel}</span>
+            </div>
+          </div>
+
+          <div class="curso-footer">
+            <a href="https://moodle.tucliente.com" target="_blank" rel="noopener noreferrer" class="btn btn-moodle btn-block">
+              Ver Curso en Moodle
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .cursos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  .curso-card {
+    padding: 2.25rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .curso-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+  }
+
+  .curso-codigo {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-dim);
+  }
+
+  .curso-titulo {
+    font-size: 1.35rem;
+    margin-bottom: 0.85rem;
+    line-height: 1.3;
+  }
+
+  .curso-descripcion {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+
+  .curso-meta {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+  }
+
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .btn-block {
+    width: 100%;
+  }
+</style>

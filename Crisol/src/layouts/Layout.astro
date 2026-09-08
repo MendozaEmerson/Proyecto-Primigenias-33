@@ -1,0 +1,45 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "Instituto Primigenias 33 | Ciencias Ónticas & Campus Virtual",
+  description = "Portal de información institucional, diplomados en Coaching Transpersonal, Numerología Óntica y acceso a Moodle del Instituto Primigenias 33."
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Meta SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+
+    <!-- Astro View Transitions para navegación fluida entre páginas -->
+    <ViewTransitions />
+
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body>
+    <slot />
+
+    <!-- Botón Flotante Fijo de WhatsApp -->
+    <WhatsAppButton />
+  </body>
+</html>

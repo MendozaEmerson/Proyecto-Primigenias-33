@@ -1,0 +1,156 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { formacionesList } from '../data/formaciones';
+---
+
+<Layout title="Formaciones y Diplomaturas | Instituto Primigenias 33" description="Explora nuestras formaciones en Coaching Transpersonal, Numerología Óntica y Memorias Cuánticas del Instituto Primigenias 33.">
+  <Header />
+
+  <main class="formaciones-main">
+    <!-- Header Banner -->
+    <section class="page-header hero-bg-overlay">
+      <div class="container text-center scroll-reveal">
+        <span class="badge badge-gold">Oferta Académica</span>
+        <h1 class="page-title text-gradient-flame">NUESTROS CURSOS Y FORMACIONES</h1>
+        <p class="lead">
+          Propuestas educativas diseñadas para el autoconocimiento, la transformación personal y la capacitación profesional en Ciencias Ónticas.
+        </p>
+      </div>
+    </section>
+
+    <!-- Catálogo de Formaciones (3 Tarjetas como en la Imagen de Referencia) -->
+    <section class="section">
+      <div class="container">
+        <div class="formaciones-grid">
+          {formacionesList.map((item) => (
+            <article class="glass-panel formacion-card highlight-gold breathing-glow">
+              <div class="card-img-box">
+                <img src={item.imagen} alt={item.titulo} class="card-img" />
+              </div>
+              <div class="card-body-content">
+                <h3 class="card-title">{item.titulo}</h3>
+                <p class="card-desc">{item.desc}</p>
+                <div class="card-action-box">
+                  <a href={item.link} class="btn btn-primary btn-block">
+                    {item.btnText}
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <WhatsAppButton />
+</Layout>
+
+<style>
+  .formaciones-main {
+    padding-bottom: 4rem;
+  }
+
+  .page-header {
+    padding: 4.5rem 1rem 3.5rem;
+    text-align: center;
+  }
+
+  .page-title {
+    font-size: 2.75rem;
+    font-weight: 800;
+    margin: 0.75rem 0;
+  }
+
+  .lead {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Grid de 3 Tarjetas (Formaciones) */
+  .formaciones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  .formacion-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 0;
+    border-radius: var(--radius-lg);
+  }
+
+  .card-img-box {
+    height: 190px;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+    border-bottom: 2px solid var(--accent-orange, #ff6b35);
+  }
+
+  .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .formacion-card:hover .card-img {
+    transform: scale(1.05);
+  }
+
+  .card-body-content {
+    padding: 1.5rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    flex: 1;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.3;
+    margin: 0;
+    letter-spacing: 0.5px;
+  }
+
+  .card-desc {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+    flex-grow: 1;
+  }
+
+  .card-action-box {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .btn-block {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 900px) {
+    .formaciones-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "integrantes",
+  "info": {
+    "singularName": "integrante",
+    "pluralName": "integrantes",
+    "displayName": "Integrante",
+    "description": "Equipo docente e instructores de La Escuela"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "cargo": {
+      "type": "string"
+    },
+    "foto": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

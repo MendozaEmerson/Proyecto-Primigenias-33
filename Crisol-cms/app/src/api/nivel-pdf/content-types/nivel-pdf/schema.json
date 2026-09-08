@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nivel_pdfs",
+  "info": {
+    "singularName": "nivel-pdf",
+    "pluralName": "nivel-pdfs",
+    "displayName": "NivelPDF",
+    "description": "Programas descargables en PDF para niveles y cursos"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre_nivel": {
+      "type": "string",
+      "required": true
+    },
+    "slug_nivel": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "archivo_pdf": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files",
+        "images"
+      ]
+    }
+  }
+}

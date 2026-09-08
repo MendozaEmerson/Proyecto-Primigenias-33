@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clase_jornadas",
+  "info": {
+    "singularName": "clase-jornada",
+    "pluralName": "clase-jornadas",
+    "displayName": "ClaseJornada",
+    "description": "Clases grabadas gratuitas de la Jornada Abierta"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "anio": {
+      "type": "string",
+      "default": "2026"
+    },
+    "orden": {
+      "type": "integer",
+      "default": 1
+    },
+    "numero_clase": {
+      "type": "string"
+    },
+    "categoria_badge": {
+      "type": "string"
+    },
+    "titulo_clase": {
+      "type": "string",
+      "required": true
+    },
+    "descripcion": {
+      "type": "text"
+    },
+    "url_video_youtube": {
+      "type": "string"
+    },
+    "duracion": {
+      "type": "string",
+      "default": "45 min"
+    }
+  }
+}

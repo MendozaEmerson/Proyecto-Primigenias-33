@@ -1,0 +1,230 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { getClasesJornada } from '../services/strapi';
+
+const clasesJornadaRaw = await getClasesJornada('2026');
+const clasesJornada = clasesJornadaRaw.map(c => ({
+  numero: c.numeroClase,
+  titulo: c.tituloClase,
+  duracion: c.duracion,
+  categoria: c.categoriaBadge,
+  videoUrl: c.videoUrl,
+  descripcion: c.descripcion
+}));
+---
+
+<Layout title="Jornada Abierta 2026: Clases Gratuitas | Instituto Primigenias 33" description="Serie de conferencias y clases gratuitas de la Jornada Abierta 2026 del Instituto Primigenias 33 en Ciencias Ónticas y Desarrollo Humano.">
+  <Header />
+
+  <main class="jornada-main">
+    <!-- Hero / Header de la Jornada -->
+    <section class="hero-section hero-bg-overlay">
+      <div class="container hero-content scroll-reveal">
+        <span class="badge badge-cyan">Acceso Libre & Gratuito 2026</span>
+        <h1 class="page-title text-gradient-gold">
+          Jornada Abierta 2026: Clases Abiertas
+        </h1>
+        <p class="hero-subtitle">
+          Bienvenido a la serie de ponencias y clases gratuitas de la Jornada 2026. 
+          Aprende con nuestros docentes sobre ciencias ónticas, arquetipos y transformación personal.
+        </p>
+      </div>
+    </section>
+
+    <!-- Grid de las 4 Clases -->
+    <section class="section">
+      <div class="container">
+        <div class="section-intro text-center">
+          <span class="badge badge-gold">Contenido Exclusivo</span>
+          <h2>Módulos de la Jornada 2026</h2>
+          <p>Disfrute de las 4 clases grabadas en video disponibles en acceso libre sin necesidad de registro previo.</p>
+        </div>
+
+        <div class="clases-grid">
+          {clasesJornada.map((clase) => (
+            <article class="glass-panel clase-card breathing-glow">
+              <div class="clase-header">
+                <span class="clase-num-badge">Clase {clase.numero}</span>
+                <span class="badge badge-info">{clase.categoria}</span>
+              </div>
+
+              <!-- Reproductor 16:9 Responsive -->
+              <div class="video-responsive-wrapper">
+                <iframe
+                  class="video-iframe"
+                  src={clase.videoUrl}
+                  title={clase.titulo}
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+
+              <div class="clase-content">
+                <h3>{clase.titulo}</h3>
+                <p>{clase.descripcion}</p>
+
+                <div class="clase-meta">
+                  <div class="meta-item">
+                    <span>Duración: {clase.duracion}</span>
+                  </div>
+                  <div class="meta-item text-green">
+                    <span>Acceso Gratuito</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .jornada-main {
+    padding-bottom: 4rem;
+  }
+
+  .hero-content {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 3.5rem 1rem 2.5rem 1rem;
+  }
+
+  .page-title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.25;
+  }
+
+  .hero-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  .section-intro {
+    margin-bottom: 3rem;
+  }
+
+  .section-intro h2 {
+    font-size: 2.2rem;
+    color: #fff;
+    margin: 0.75rem 0 0.5rem 0;
+  }
+
+  .section-intro p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+  }
+
+  .clases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    gap: 2.5rem;
+  }
+
+  .clase-card {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    border-top: 3px solid var(--accent-cyan);
+  }
+
+  .clase-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .clase-num-badge {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--accent-cyan);
+    background: rgba(6, 182, 212, 0.15);
+    padding: 0.3rem 0.85rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(6, 182, 212, 0.3);
+  }
+
+  .video-responsive-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    background: #000;
+    border: 1px solid var(--border-light);
+  }
+
+  .video-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .clase-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .clase-content h3 {
+    font-size: 1.3rem;
+    color: #fff;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .clase-content p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .clase-meta {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border-light);
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+  }
+
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .text-green {
+    color: #10b981;
+  }
+
+  @media (max-width: 768px) {
+    .clases-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .page-title {
+      font-size: 2.25rem;
+    }
+  }
+</style>

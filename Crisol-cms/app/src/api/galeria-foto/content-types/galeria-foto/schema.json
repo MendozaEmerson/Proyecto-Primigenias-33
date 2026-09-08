@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "galeria_fotos",
+  "info": {
+    "singularName": "galeria-foto",
+    "pluralName": "galeria-fotos",
+    "displayName": "GaleriaFoto",
+    "description": "Galería de imágenes para carrusel de inicio"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "imagen": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "mostrar_en_carrusel_inicio": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

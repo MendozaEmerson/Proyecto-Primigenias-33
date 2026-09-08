@@ -1,0 +1,459 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import WhatsAppButton from '../../components/WhatsAppButton.astro';
+
+export async function getStaticPaths() {
+  const mastersList = [
+    {
+      slug: "lineas-temporales",
+      titulo: "MÁSTER ADVANCED DE LAS LÍNEAS TEMPORALES",
+      imagen: "/images/master-especializaciones.jpg",
+      subtitulo: "2 clases intensivas de 3 hs cada una donde se enseñará el mundo de las líneas temporales desde la formación de la ley de octavas y la repetición de eventos en la vida.",
+      desc1: "Recorreremos el mapa de coordenadas en el tiempo para posicionarnos en el punto de formación del evento a transitar.",
+      desc2: "Utilizando el sendero de vida como ancla en el mundo y la frecuencia del año personal como línea temporal óntica cruzaremos las coordenadas obteniendo un punto fijo donde nos detendremos a observar eventos pasados para comprender su formación a través de los ecos de frecuencia temporales."
+    },
+    {
+      slug: "4-elementos",
+      titulo: "MÁSTER: LOS 4 ELEMENTOS. LECTURA ÓNTICA",
+      imagen: "/images/numerologia-base-ontica.jpg",
+      subtitulo: "Integración de fuego, agua, aire y tierra en la estructura del mapa numérico personal y transpersonal.",
+      desc1: "Abordaje profundo de la alquimia de los elementos aplicada a la decodificación individual, de parejas y de equipos de trabajo.",
+      desc2: "Herramientas de equilibración elemental y aplicación práctica en consulta profesional para restaurar la armonía vibracional."
+    },
+    {
+      slug: "numeros-maestros",
+      titulo: "MÁSTER DE LA FORMACIÓN ÓNTICA DE LOS NÚMEROS MAESTROS",
+      imagen: "/images/master-especializaciones.jpg",
+      subtitulo: "Estudio avanzado de las frecuencias 11, 22, 33 y 44 y su impacto en la misión espiritual del ser.",
+      desc1: "Comprende la exigencia espiritual y la responsabilidad creadora de los números maestros en la matriz de nacimiento.",
+      desc2: "Metodología para desmantelar la distorsión del ego en personas con frecuencias maestras y canalizar su potencial genuino."
+    },
+    {
+      slug: "futurologia",
+      titulo: "MÁSTER EN FUTUROLOGÍA ÓNTICA",
+      imagen: "/images/numerologia-base-ontica.jpg",
+      subtitulo: "Predicción de tendencias de frecuencia y proyección de ciclos en el mapa de vida sin determinismos.",
+      desc1: "Análisis de prospectiva iluminando los caminos de menor resistencia y los periodos clave de transformación personal.",
+      desc2: "Herramientas avanzadas de previsión para la toma de decisiones estratégicas en consultoría individual y empresarial."
+    },
+    {
+      slug: "formacion-numero",
+      titulo: "MÁSTER EN LA FORMACIÓN ÓNTICA DEL NÚMERO",
+      imagen: "/images/master-especializaciones.jpg",
+      subtitulo: "La raíz primordial y la geometría viva de la matemática sagrada del ser.",
+      desc1: "Exploración ontológica del origen del número antes de manifestarse como concepto mental o símbolo.",
+      desc2: "Profundización en los principios fundantes del Instituto Primigenias 33 para instructores y docentes."
+    },
+    {
+      slug: "4-puertas",
+      titulo: "SEMINARIO DE LAS 4 PUERTAS DE SALIDA",
+      imagen: "/images/numerologia-base-ontica.jpg",
+      subtitulo: "Protocolos de resolución de bloqueos, desarticulación de mandatos y trampas de percepción.",
+      desc1: "Las 4 vías de salida para trascender bucles de repetición y memorias inconscientes estancadas en el clan.",
+      desc2: "Seminario intensivo con ejercicios prácticos de decodificación y guía metodológica para el abordaje en consulta."
+    }
+  ];
+
+  return mastersList.map((item) => ({
+    params: { slug: item.slug },
+    props: { item, allMasters: mastersList }
+  }));
+}
+
+const { item, allMasters } = Astro.props;
+// Filtrar los otros másters para el carrusel
+const otherMasters = allMasters.filter((m) => m.slug !== item.slug);
+---
+
+<Layout title={`${item.titulo} | Instituto Primigenias 33`}>
+  <!-- Top Bar / Header Nav -->
+  <header class="top-nav">
+    <div class="nav-container">
+      <a href="/" class="brand-logo">
+        <img src="/images/logo-primigenias33.jpeg" alt="Instituto Primigenias 33" class="logo-img" />
+        <div class="brand-text">
+          <span class="brand-title">PRIMIGENIAS 33</span>
+          <span class="brand-subtitle">Desarrollo Humano & Numerología</span>
+        </div>
+      </a>
+      <a href="/especializaciones/" class="back-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Volver a Especializaciones
+      </a>
+    </div>
+  </header>
+
+  <main class="master-detail-main">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb">
+        <a href="/">Inicio</a> &gt; <a href="/especializaciones/">Especializaciones</a> &gt; <span class="active">{item.titulo}</span>
+      </nav>
+
+      <!-- Detalle Principal del Máster -->
+      <div class="glass-panel featured-master-card highlight-gold">
+        <div class="featured-grid">
+          <div class="featured-img-col">
+            <img src={item.imagen} alt={item.titulo} class="featured-img" />
+          </div>
+
+          <div class="featured-text-col">
+            <h1 class="featured-title">{item.titulo}</h1>
+
+            <div class="featured-sub">
+              <p>{item.subtitulo}</p>
+            </div>
+
+            <div class="featured-desc">
+              <p>{item.desc1}</p>
+              <p>{item.desc2}</p>
+            </div>
+
+            <div class="featured-action">
+              <a href="/contacto/" class="btn btn-contact">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                Ver más / Consultar Inscripción
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sección Carrusel Interactivo de Otras Especializaciones -->
+      <section class="carousel-section">
+        <div class="carousel-header">
+          <h2 class="carousel-title">TODOS LOS MÁSTERS Y SEMINARIOS</h2>
+          <div class="carousel-controls">
+            <button id="prevBtn" class="carousel-arrow-btn" aria-label="Anterior">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button id="nextBtn" class="carousel-arrow-btn" aria-label="Siguiente">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="carousel-wrapper" id="carouselTrack">
+          {allMasters.map((m) => (
+            <div class={`carousel-card glass-panel ${m.slug === item.slug ? 'active-card' : ''}`}>
+              <div class="card-thumb">
+                <img src={m.imagen} alt={m.titulo} />
+              </div>
+              <div class="card-info">
+                <h3>{m.titulo}</h3>
+              </div>
+              <div class="card-action">
+                <a href={`/especializaciones/${m.slug}/`} class="btn btn-secondary btn-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                  {m.slug === item.slug ? 'Viendo ahora' : 'Ver más'}
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <Footer />
+  <WhatsAppButton />
+</Layout>
+
+<script>
+  // Script para scroll horizontal suave en el carrusel
+  const track = document.getElementById('carouselTrack');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  if (track && prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', () => {
+      track.scrollBy({ left: -320, behavior: 'smooth' });
+    });
+    nextBtn.addEventListener('click', () => {
+      track.scrollBy({ left: 320, behavior: 'smooth' });
+    });
+  }
+</script>
+
+<style>
+  .top-nav {
+    background: rgba(9, 9, 12, 0.95);
+    border-bottom: 1px solid rgba(230, 81, 0, 0.2);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+  }
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+  }
+  .logo-img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-orange, #ff6b35);
+  }
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+  }
+  .brand-title {
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+  }
+  .brand-subtitle {
+    color: var(--accent-gold, #ffb703);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+  .back-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+  .back-link:hover {
+    color: var(--accent-orange, #ff6b35);
+  }
+
+  .master-detail-main {
+    padding: 2.5rem 0 5rem;
+    background: radial-gradient(circle at 50% 0%, #1c0b05 0%, #09090c 70%);
+    min-height: 85vh;
+  }
+
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 2rem;
+  }
+  .breadcrumb a {
+    color: var(--accent-gold, #ffb703);
+    text-decoration: none;
+  }
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+  .breadcrumb .active {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .featured-master-card {
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    margin-bottom: 4rem;
+  }
+
+  .featured-grid {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .featured-img-col {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .featured-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .featured-text-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .featured-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+
+  .featured-sub p {
+    font-size: 0.95rem;
+    color: var(--accent-gold);
+    line-height: 1.6;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .featured-desc p {
+    font-size: 0.925rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 0.75rem;
+  }
+
+  .btn-contact {
+    background: linear-gradient(135deg, #e65100 0%, #ff6b35 100%);
+    color: #ffffff;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.8rem 1.5rem;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(230, 81, 0, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .btn-contact:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(230, 81, 0, 0.6);
+  }
+
+  /* Carrusel Section */
+  .carousel-section {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2.5rem;
+  }
+
+  .carousel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .carousel-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    margin: 0;
+  }
+
+  .carousel-controls {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .carousel-arrow-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .carousel-arrow-btn:hover {
+    background: rgba(230, 81, 0, 0.3);
+    border-color: var(--accent-orange, #ff6b35);
+  }
+
+  .carousel-wrapper {
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-orange, #ff6b35) transparent;
+  }
+
+  .carousel-wrapper::-webkit-scrollbar {
+    height: 6px;
+  }
+  .carousel-wrapper::-webkit-scrollbar-thumb {
+    background: var(--accent-orange, #ff6b35);
+    border-radius: 9999px;
+  }
+
+  .carousel-card {
+    flex: 0 0 300px;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 10px;
+    gap: 0.85rem;
+    background: rgba(18, 18, 23, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.2s, border-color 0.2s;
+  }
+
+  .carousel-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(230, 81, 0, 0.4);
+  }
+
+  .carousel-card.active-card {
+    border-color: var(--accent-gold, #ffb703);
+    background: rgba(245, 158, 11, 0.08);
+  }
+
+  .card-thumb {
+    width: 100%;
+    height: 140px;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card-info {
+    flex: 1;
+  }
+
+  .card-info h3 {
+    font-size: 0.95rem;
+    color: #ffffff;
+    margin: 0;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .card-action {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  @media (max-width: 900px) {
+    .featured-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>

@@ -1,0 +1,140 @@
+---
+// Componente de Eventos Destacados 2026 (Seminario Anual + Jornada Abierta)
+---
+
+<section class="section section-parallax">
+  <div class="container">
+    <div class="section-title">
+      <span class="badge badge-gold">Eventos Destacados 2026</span>
+      <h2>Seminario Anual & Jornadas Abiertas 2026</h2>
+      <p>Explore nuestro seminario anual especial de numerología o acceda libremente a las clases grabadas de la Jornada Abierta 2026.</p>
+    </div>
+
+    <div class="grid-2col">
+      <!-- Tarjeta 1: Seminario Anual Numerología 2026 -->
+      <div class="glass-panel p-card card-with-image highlight-gold breathing-glow">
+        <span class="card-badge badge-gold">Seminario Exclusivo</span>
+        <div class="card-img-wrapper">
+          <img src="/images/numerologia-2026.jpg" alt="Numerología del Año 2026 - Seminario Anual Instituto Primigenias 33" class="card-banner-img" />
+        </div>
+        <div class="card-body">
+          <h3>Seminario Anual: Numerología 2026</h3>
+          <p>Descubra las frecuencias arquetípicas y claves ontológicas del ciclo 2026 en nuestra presentación magistral en video con guía PDF descargable.</p>
+          <a href="/seminario-2026/" class="btn btn-primary btn-block">Ver Seminario Anual 2026</a>
+        </div>
+      </div>
+
+      <!-- Tarjeta 2: Jornada Abierta 2026 -->
+      <div class="glass-panel p-card card-with-image highlight-cyan">
+        <span class="card-badge badge-cyan">Jornada Gratuita</span>
+        <div class="card-img-wrapper">
+          <img src="/images/jornada-abierta-2026.jpg" alt="Jornada Abierta 2026 - Clases Gratuitas Instituto Primigenias 33" class="card-banner-img" />
+        </div>
+        <div class="card-body">
+          <h3>Jornada Abierta 2026: Clases Gratuitas</h3>
+          <p>Acceda a la serie de 4 clases abiertas en video sobre ciencias ónticas, neuroeducación y arquetipos del ciclo 2026 sin costo.</p>
+          <a href="/jornada-abierta-2026/" class="btn btn-primary btn-block">Ver Clases de la Jornada</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .grid-2col {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .p-card {
+    padding: 2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow: hidden;
+  }
+
+  .card-with-image {
+    padding: 0;
+  }
+
+  .card-img-wrapper {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .card-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .card-with-image:hover .card-banner-img {
+    transform: scale(1.05);
+  }
+
+  .card-body {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+  }
+
+  .p-card h3 {
+    color: #fff;
+    font-size: 1.35rem;
+    margin: 0;
+  }
+
+  .p-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .highlight-gold {
+    border-top: 4px solid var(--accent-gold);
+  }
+
+  .highlight-cyan {
+    border-top: 4px solid var(--accent-cyan);
+  }
+
+  .card-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    z-index: 2;
+    backdrop-filter: blur(8px);
+  }
+
+  .badge-gold {
+    background: rgba(245, 158, 11, 0.2);
+    color: var(--accent-gold);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+  }
+
+  .badge-cyan {
+    background: rgba(6, 182, 212, 0.2);
+    color: var(--accent-cyan);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+  }
+
+  .btn-block {
+    width: 100%;
+    margin-top: auto;
+  }
+</style>

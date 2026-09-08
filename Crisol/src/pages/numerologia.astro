@@ -1,0 +1,241 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const niveles = [
+  {
+    slug: "primer-nivel",
+    link: "/numerologia/primer-nivel/",
+    titulo: "Primer Nivel",
+    subtitulo: "Diseño Transpersonal",
+    imagen: "/images/numerologia-base-ontica.jpg",
+    desc: "Introducción a la base óntica, matriz personal de nacimiento y decodificación del ego y arquetipos.",
+    btnText: "Conocer Primer Nivel"
+  },
+  {
+    slug: "segundo-nivel",
+    link: "/numerologia/segundo-nivel/",
+    titulo: "Segundo Nivel",
+    subtitulo: "Descodificación Ancestral",
+    imagen: "/images/numerologia-base-ontica.jpg",
+    desc: "Árbol numerológico ancestral, frecuencias de herencia familiar y desactivación de mandatos.",
+    btnText: "Conocer Segundo Nivel"
+  },
+  {
+    slug: "tercer-nivel",
+    link: "/numerologia/tercer-nivel/",
+    titulo: "Tercer Nivel",
+    subtitulo: "La Geometría de la Frecuencia",
+    imagen: "/images/numerologia-base-ontica.jpg",
+    desc: "Numerología 3D, cálculos avanzados de vibración geométrica y mapas del sendero de vida.",
+    btnText: "Conocer Tercer Nivel"
+  },
+  {
+    slug: "especialidades",
+    link: "/especializaciones/",
+    titulo: "Especialidades",
+    subtitulo: "Técnicas Avanzadas",
+    imagen: "/images/master-especializaciones.jpg",
+    desc: "Entrenamiento práctico, consulta individual y metodología de interpretación profesional.",
+    btnText: "Ver más"
+  }
+];
+---
+
+<Layout title="Escuela de Numerología Base Óntica | Instituto Primigenias 33" description="Formación integral en Numerología Base Óntica. Explora nuestros niveles de capacitación del Instituto Primigenias 33.">
+  <Header />
+
+  <main class="numerologia-main">
+    <!-- Banner Principal de la Escuela -->
+    <section class="hero-section hero-bg-overlay">
+      <div class="container numerologia-hero-grid scroll-reveal">
+        <div class="hero-image-box">
+          <div class="glass-panel image-card breathing-glow">
+            <img src="/images/numerologia-base-ontica.jpg" alt="Escuela de Numerología Base Óntica" class="school-img" />
+          </div>
+        </div>
+
+        <div class="hero-text-box">
+          <span class="badge badge-gold">Formación Continua</span>
+          <h1 class="text-gradient-flame">ESCUELA DE NUMEROLOGÍA</h1>
+          <h2 class="sub-heading">Base Óntica</h2>
+          <p class="hero-desc">
+            Donde de manera profunda y práctica iluminamos la sombra y hacemos visible el potencial que el mapa del nombre y la fecha traen para desplegarnos en la vida. Todo direccionado de manera estratégica para que al finalizar pueda analizar, interpretar y decodificar una frecuencia formativa desde su origen. Cada nivel se realiza por separado de manera cronológica.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Niveles / Capítulos -->
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <span class="badge badge-warning">Estructura Curricular</span>
+          <h2>HAZ CLIC AQUÍ PARA CONOCER NUESTROS NIVELES</h2>
+          <p>Seleccione el nivel para acceder al temario detallado, modalidades y programa en PDF.</p>
+        </div>
+
+        <div class="niveles-grid">
+          {niveles.map((nivel) => (
+            <article class="glass-panel nivel-card highlight-gold breathing-glow">
+              <div class="nivel-img-wrapper">
+                <img src={nivel.imagen} alt={nivel.titulo} class="nivel-banner-img" />
+              </div>
+
+              <div class="nivel-body">
+                <h3>{nivel.titulo}</h3>
+                <h4 class="nivel-sub">{nivel.subtitulo}</h4>
+                <p>{nivel.desc}</p>
+                
+                <a href={nivel.link} class={`btn btn-primary btn-block ${nivel.slug === 'especialidades' ? 'btn-highlight-sm' : ''}`}>
+                  {nivel.btnText}
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .numerologia-main {
+    padding-bottom: 4rem;
+  }
+
+  .numerologia-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 3.5rem;
+    align-items: center;
+    padding: 4rem 1rem;
+  }
+
+  .hero-image-box {
+    display: flex;
+    justify-content: center;
+  }
+
+  .image-card {
+    padding: 0.5rem;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .school-img {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    border-radius: var(--radius-md);
+    display: block;
+  }
+
+  .hero-text-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero-text-box h1 {
+    font-size: 2.75rem;
+    font-weight: 800;
+  }
+
+  .sub-heading {
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+    font-family: var(--font-heading);
+    margin-top: -0.5rem;
+  }
+
+  .hero-desc {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .niveles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .nivel-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 0;
+    border-radius: var(--radius-md);
+  }
+
+  .nivel-img-wrapper {
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .nivel-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .nivel-card:hover .nivel-banner-img {
+    transform: scale(1.05);
+  }
+
+  .nivel-body {
+    padding: 1.15rem 1.25rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+  }
+
+  .nivel-body h3 {
+    font-size: 1.3rem;
+    color: #fff;
+    margin: 0;
+  }
+
+  .nivel-sub {
+    font-size: 0.9rem;
+    color: var(--accent-gold);
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .nivel-body p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.45;
+    flex-grow: 1;
+    margin: 0.25rem 0 0.75rem 0;
+  }
+
+  .btn-block {
+    width: 100%;
+  }
+
+  .btn-highlight-sm {
+    max-width: 160px;
+    margin: 0 auto;
+    font-size: 0.875rem;
+    padding: 0.55rem 1.25rem;
+  }
+
+  @media (max-width: 900px) {
+    .numerologia-hero-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>

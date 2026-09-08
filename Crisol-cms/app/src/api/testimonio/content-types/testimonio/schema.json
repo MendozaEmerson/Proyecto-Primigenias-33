@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "testimonios",
+  "info": {
+    "singularName": "testimonio",
+    "pluralName": "testimonios",
+    "displayName": "Testimonio",
+    "description": "Testimonios y comentarios de estudiantes"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre_estudiante": {
+      "type": "string",
+      "required": true
+    },
+    "curso_realizado": {
+      "type": "string"
+    },
+    "comentario": {
+      "type": "text",
+      "required": true
+    },
+    "foto_estudiante": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

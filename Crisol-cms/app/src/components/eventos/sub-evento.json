@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_eventos_sub_eventos",
+  "info": {
+    "displayName": "sub-evento",
+    "icon": "calendar"
+  },
+  "options": {},
+  "attributes": {
+    "titulo_subevento": {
+      "type": "string"
+    },
+    "etiqueta_badge": {
+      "type": "string"
+    },
+    "imagen": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

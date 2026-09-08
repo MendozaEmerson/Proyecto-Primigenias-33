@@ -1,0 +1,409 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getPdfNivel } from '../../services/strapi';
+
+const pdfProgramaUrl = await getPdfNivel('primer-nivel');
+
+const clasesPrograma = [
+  {
+    numero: "1er Clase",
+    titulo: "Introducción y Fundamentos Ónticos",
+    contenido: "Presentación del curso. ¿Qué son las frecuencias? ¿Qué es óntico? ¿Qué es el observador óntico?"
+  },
+  {
+    numero: "2da Clase",
+    titulo: "Hogar de Nacimiento e Inconsciente",
+    contenido: "Hogar de nacimiento. Frecuencias de hogar. Introducción a lo transpersonal. Sombra - Inconsciente colectivo - Arquetipos."
+  },
+  {
+    numero: "3ra Clase",
+    titulo: "Arquetipos, Madre y Padre",
+    contenido: "Los arquetipos y el hogar. Afectación del yo. Tipo de madre y padre. Desactivación del hogar de nacimiento. Reglas y mandatos."
+  },
+  {
+    numero: "4ta Clase",
+    titulo: "Mandatos y Sendero de la Vida",
+    contenido: "Reconocimiento de mandatos del hogar. Voces que me llevé. Introducción al sendero de la vida."
+  },
+  {
+    numero: "5ta Clase",
+    titulo: "Cálculo del Mapa Personal",
+    contenido: "El Sendero de la Vida y fórmulas de cálculo del mapa numérico personal de nacimiento."
+  },
+  {
+    numero: "6ta Clase",
+    titulo: "Las 9 Frecuencias Vibracionales",
+    contenido: "Estudio detallado de las 9 frecuencias numéricas y decodificación de la sombra individual."
+  },
+  {
+    numero: "7ma Clase",
+    titulo: "Matriz del Nombre y Apellido",
+    contenido: "Lectura del nombre completo, apellidos de herencia y expresión del potencial vibracional."
+  },
+  {
+    numero: "8va Clase",
+    titulo: "Ciclos de Vida y Pináculos",
+    contenido: "Determinación de ciclos de vida, momentos de cambio, pináculos y desafíos temporales."
+  },
+  {
+    numero: "9na Clase",
+    titulo: "Integración Transpersonal",
+    contenido: "Integración de la matriz numérica en la consulta y acompañamiento personal."
+  },
+  {
+    numero: "10ma Clase",
+    titulo: "Herramientas de Transmutación",
+    contenido: "Métodos prácticos para desmantelar creencias limitantes a partir de la frecuencia del número."
+  },
+  {
+    numero: "11ra Clase",
+    titulo: "Práctica Intensiva de Caso",
+    contenido: "Análisis de casos reales y ejercicios prácticos de decodificación en vivo."
+  },
+  {
+    numero: "12da Clase",
+    titulo: "Síntesis y Evaluación Integradora",
+    contenido: "Evaluación práctica integradora y cierre de contenidos del Primer Nivel."
+  }
+];
+---
+
+<Layout title="Primer Nivel – Numerología de Base Óntica | Instituto Primigenias 33">
+  <Header />
+
+  <main class="nivel-main">
+    <!-- Hero / Título del Nivel -->
+    <section class="hero-section hero-bg-overlay">
+      <div class="container text-center scroll-reveal">
+        <h1 class="page-title text-gradient-flame">
+          PRIMER NIVEL – NUMEROLOGÍA DE BASE ÓNTICA
+        </h1>
+        <p class="lead">
+          Diseño transpersonal y herramientas para hacer consciente el potencial velado de tu mapa numérico.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contenido Principal: Información + Galería -->
+    <section class="section">
+      <div class="container nivel-container">
+        <div class="nivel-grid">
+          <!-- Columna Izquierda: Imágenes Docente y Diagrama -->
+          <div class="media-column">
+            <div class="glass-panel image-box breathing-glow">
+              <img src="/images/diana-numerologia-clase.jpg" alt="Diana Braconi impartiendo clase de Numerología" class="media-img" />
+              <span class="img-caption">Diana Braconi - Docente Instructora</span>
+            </div>
+
+            <div class="glass-panel image-box">
+              <img src="/images/numerologia-base-ontica.jpg" alt="Diagrama Numerología Base Óntica" class="media-img" />
+            </div>
+          </div>
+
+          <!-- Columna Derecha: Descripción + Detalles + Botones -->
+          <div class="content-column">
+            <!-- Bloque Diferenciado: Detalles -->
+            <div class="glass-panel course-details-box highlight-gold">
+              <h3>Detalles</h3>
+              <ul class="details-list">
+                <li>
+                  <strong>Duración:</strong> 3 meses (1 clase semanal de 2 horas vía Zoom - Total 12 clases).
+                </li>
+                <li>
+                  <strong>Modalidades:</strong> Offline (en videos y PDF descargables) y Online (clases en vivo vía Zoom).
+                </li>
+                <li>
+                  <strong>Plataforma:</strong> Campus Virtual Moodle con acceso a grabaciones y material 24/7.
+                </li>
+              </ul>
+            </div>
+
+            <!-- Bloque de Descripción Temática -->
+            <div class="glass-panel topic-desc-box">
+              <h3>Descripción del Nivel</h3>
+              <p>
+                Los Números nos acercan a un conocimiento más profundo del mundo invisible que nos mueve. A través del estudio numérico de nuestro nombre y fecha de nacimiento entramos a una dimensión diferente donde la energía la leemos a través del número. Los números son un desplegado de esa energía y nos permiten interpretar lo velado a nuestra razón. Hacemos consciente lo inconsciente. Descubrimos aquellas herramientas que traemos con nosotros para desplegarnos en el mundo.
+              </p>
+              <p>
+                Introducción a la base óntica y transpersonal. Una numerología que te hace visible tu base de creencias, te conecta con tu propósito de vida y hace visible tu máxima expresión.
+              </p>
+
+              <!-- Botones de Acción: Ver más / Contacto y Programa PDF con iconos -->
+              <div class="action-buttons">
+                <a href="/contacto/" class="btn btn-contact">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                  Ver más / Contacto
+                </a>
+                <a
+                  href={pdfProgramaUrl}
+                  target="_blank"
+                  class="btn btn-program-pdf"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><polyline points="9 15 12 18 15 15"></polyline></svg>
+                  Programa PDF
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección de Programa de la Cursada con Desplegables Modernos (Accordions) -->
+        <div class="programa-section">
+          <div class="section-title text-center">
+            <span class="badge badge-info">Temario de Clases</span>
+            <h2>PROGRAMA DE LA CURSADA</h2>
+            <p>Haz clic en cada clase para explorar los temas específicos a desarrollar.</p>
+          </div>
+
+          <div class="accordion-list">
+            {clasesPrograma.map((clase, idx) => (
+              <details class="glass-panel accordion-item" open={idx === 0}>
+                <summary class="accordion-summary">
+                  <span class="clase-badge">{clase.numero}</span>
+                  <span class="clase-title">{clase.titulo}</span>
+                  <span class="accordion-arrow">▼</span>
+                </summary>
+                <div class="accordion-content">
+                  <p>{clase.contenido}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .nivel-main {
+    padding-bottom: 4rem;
+  }
+
+  .lead {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 750px;
+    margin: 0.5rem auto 0 auto;
+  }
+
+  .nivel-container {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  .nivel-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  .media-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .image-box {
+    padding: 0.75rem;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .media-img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    display: block;
+    object-fit: cover;
+  }
+
+  .img-caption {
+    display: block;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--accent-gold);
+    margin-top: 0.5rem;
+    font-weight: 600;
+  }
+
+  .content-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .course-details-box {
+    padding: 1.75rem;
+    border-left: 4px solid var(--accent-gold);
+    background: rgba(245, 158, 11, 0.05);
+  }
+
+  .course-details-box h3 {
+    font-size: 1.3rem;
+    color: var(--accent-gold);
+    margin-bottom: 1rem;
+  }
+
+  .details-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+  }
+
+  .details-list strong {
+    color: #fff;
+  }
+
+  .topic-desc-box {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .topic-desc-box h3 {
+    font-size: 1.4rem;
+    color: #fff;
+  }
+
+  .topic-desc-box p {
+    color: var(--text-muted);
+    font-size: 0.975rem;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .action-buttons {
+    display: flex;
+    gap: 1.25rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-contact {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.75rem 1.25rem;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+  }
+
+  .btn-contact:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.45);
+    transform: translateY(-2px);
+  }
+
+  .btn-program-pdf {
+    background: linear-gradient(135deg, #e65100 0%, #ff6b35 100%);
+    color: #ffffff;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.75rem 1.25rem;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(230, 81, 0, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .btn-program-pdf:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(230, 81, 0, 0.6);
+  }
+
+  .programa-section {
+    margin-top: 4.5rem;
+    max-width: 950px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .accordion-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .accordion-item {
+    padding: 0;
+    overflow: hidden;
+    transition: border-color 0.25s ease;
+  }
+
+  .accordion-summary {
+    padding: 1.25rem 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    user-select: none;
+    color: #fff;
+    font-size: 1.05rem;
+  }
+
+  .clase-badge {
+    background: rgba(234, 88, 12, 0.2);
+    color: var(--accent-orange);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.825rem;
+    font-weight: 700;
+    border: 1px solid rgba(234, 88, 12, 0.3);
+    flex-shrink: 0;
+  }
+
+  .clase-title {
+    flex: 1;
+  }
+
+  .accordion-arrow {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    transition: transform 0.3s ease;
+  }
+
+  details[open] .accordion-arrow {
+    transform: rotate(180deg);
+  }
+
+  .accordion-content {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    border-top: 1px solid var(--border-light);
+    margin-top: 0.5rem;
+  }
+
+  .accordion-content p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 900px) {
+    .nivel-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

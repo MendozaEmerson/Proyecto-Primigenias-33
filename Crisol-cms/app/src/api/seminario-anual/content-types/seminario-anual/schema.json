@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "seminario_anuales",
+  "info": {
+    "singularName": "seminario-anual",
+    "pluralName": "seminario-anuales",
+    "displayName": "SeminarioAnual",
+    "description": "Seminarios anuales con video de YouTube y PDF de estudio"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "anio": {
+      "type": "string",
+      "required": true
+    },
+    "titulo_seminario": {
+      "type": "string",
+      "required": true
+    },
+    "subtitulo": {
+      "type": "text"
+    },
+    "url_video_youtube": {
+      "type": "string"
+    },
+    "archivo_pdf_material": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files",
+        "images"
+      ]
+    }
+  }
+}

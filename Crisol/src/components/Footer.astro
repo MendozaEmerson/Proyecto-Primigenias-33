@@ -1,0 +1,213 @@
+---
+// Componente de Pie de Página institucional del Instituto Primigenias 33
+---
+
+<footer class="footer">
+  <div class="container footer-content">
+    
+    <!-- Columna 1: FORMACIÓN -->
+    <div class="footer-col">
+      <h4>FORMACIÓN</h4>
+      <ul class="footer-list">
+        <li><a href="/formaciones/">Coach Transpersonal</a></li>
+        <li><a href="/numerologia/">Numerología Óntica</a></li>
+        <li><a href="/especializaciones/">Másters & Especializaciones</a></li>
+      </ul>
+    </div>
+
+    <!-- Columna 2: CONTACTO (Direcciones de Ejemplo) -->
+    <div class="footer-col">
+      <h4>CONTACTO</h4>
+      <address class="contact-info">
+        <p>Urb las viñas casa parque A – 17, Arequipa, Perú.</p>
+        <p><a href="tel:+51967747483">+51 967747483</a></p>
+        <p><a href="mailto:Primigenias33@gmail.com">Primigenias33@gmail.com</a></p>
+      </address>
+    </div>
+
+    <!-- Columna 3: FILOSOFÍA -->
+    <div class="footer-col">
+      <h4>FILOSOFÍA</h4>
+      <blockquote class="footer-quote">
+        "Allin Kawsay: El Ser - Humano no está dentro del universo; es el universo mismo experimentándose a sí mismo."
+      </blockquote>
+    </div>
+
+    <!-- Columna 4: LOGO OFICIAL Y CONTADOR DE VISITAS -->
+    <div class="footer-col logo-col">
+      <div class="official-logo-wrapper">
+        <img src="/images/logo-1-clean.png" alt="Escuela Primigenias 33 - Ciencias Ónticas" class="official-logo-img" />
+        <div class="logo-title-group">
+          <span class="logo-brand-text">PRIMIGENIAS 33</span>
+          <span class="logo-sub-text">ESCUELA DE CIENCIAS ÓNTICAS</span>
+        </div>
+      </div>
+      <div class="visits-counter">
+        <span>Total Page Visits: 2234</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container footer-bottom">
+    <p>&copy; {new Date().getFullYear()} Escuela Primigenias 33. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: linear-gradient(180deg, #0f0a07 0%, #09090c 100%);
+    color: #f8fafc;
+    border-top: 2px solid var(--accent-orange, #ff6b35);
+    box-shadow: 0 -4px 20px rgba(230, 81, 0, 0.12);
+    padding: 3.5rem 0 2rem 0;
+    margin-top: 4rem;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr 1.3fr 1.2fr;
+    gap: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .footer-col h4 {
+    font-size: 0.95rem;
+    font-weight: 800;
+    margin-bottom: 1.2rem;
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .footer-list a {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .footer-list a:hover {
+    color: var(--accent-orange, #ff6b35);
+  }
+
+  .contact-info {
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5;
+  }
+
+  .contact-info a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .contact-info a:hover {
+    color: var(--accent-gold, #ffb703);
+  }
+
+  .footer-quote {
+    font-style: italic;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.6;
+    margin: 0;
+    border-left: 2px solid var(--accent-gold, #ffb703);
+    padding-left: 0.85rem;
+  }
+
+  /* Columna Logo Oficial y Contador */
+  .logo-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .official-logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+  }
+
+  .official-logo-img {
+    height: 64px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.5)) drop-shadow(0 0 4px rgba(234, 88, 12, 0.4));
+  }
+
+  .logo-title-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo-brand-text {
+    font-family: var(--font-serif, 'Cinzel', serif);
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    background: linear-gradient(90deg, #dc2626 0%, #ea580c 20%, #f59e0b 40%, #10b981 60%, #06b6d4 80%, #a855f7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+  }
+
+  .logo-sub-text {
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.9;
+  }
+
+  .visits-counter {
+    margin-top: 1.25rem;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .footer-bottom {
+    padding-top: 1.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  @media (max-width: 900px) {
+    .footer-content {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .logo-col {
+      align-items: flex-start;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

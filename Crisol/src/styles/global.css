@@ -1,0 +1,283 @@
+/* =========================================================
+   SISTEMA DE DISEÑO INSTITUTO PRIMIGENIAS 33
+   Paleta: Negro Onyx + Gama Naranjas Rojizos & Dorado Ámbar
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap');
+
+:root {
+  /* Paleta Diseñador: Negro Onyx + Naranja Fuego + Dorado Ámbar + Purpura Místico */
+  --bg-primary: #0a0a0e;
+  --bg-secondary: #12121a;
+  --bg-card: rgba(18, 18, 26, 0.88);
+  --bg-card-hover: rgba(28, 28, 42, 0.94);
+
+  --accent-flame: #ff6b35;    /* Naranja Fuego Vívido */
+  --accent-orange: #ea580c;   /* Naranja Cálido */
+  --accent-gold: #f59e0b;     /* Dorado Ámbar Frecuencial */
+  --accent-yellow: #fbbf24;   /* Destello Amarillo */
+  --accent-purple: #a855f7;   /* Violeta Transpersonal */
+  --accent-cyan: #06b6d4;     /* Cían Consciente */
+  --accent-emerald: #10b981;  /* Esmeralda */
+
+  --gradient-brand: linear-gradient(135deg, #ff6b35 0%, #ea580c 45%, #f59e0b 100%);
+  --gradient-gold: linear-gradient(135deg, #ff6b35 0%, #f59e0b 50%, #fbbf24 100%);
+  --gradient-flame: linear-gradient(135deg, #e11d48 0%, #ff6b35 50%, #f59e0b 100%);
+  --gradient-moodle: linear-gradient(135deg, #ff6b35 0%, #ea580c 100%);
+  --gradient-purple: linear-gradient(135deg, #a855f7 0%, #ff6b35 100%);
+
+  --text-main: #f8fafc;
+  --text-muted: #cbd5e1;
+  --text-dim: #94a3b8;
+
+  --border-light: rgba(255, 107, 53, 0.22);
+  --border-glow: rgba(245, 158, 11, 0.55);
+  --border-purple: rgba(168, 85, 247, 0.35);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 26px;
+
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Cinzel', serif;
+
+  --shadow-card: 0 10px 35px -5px rgba(0, 0, 0, 0.85);
+  --shadow-glow: 0 12px 35px rgba(255, 107, 53, 0.35);
+  --shadow-gold: 0 12px 35px rgba(245, 158, 11, 0.35);
+}
+
+/* Reset y Bases */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  scroll-behavior: smooth;
+  line-height: 1.6;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(220, 38, 38, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(245, 158, 11, 0.1) 0%, transparent 45%);
+  background-attachment: fixed;
+}
+
+/* Tipografía */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1.25;
+  color: var(--text-main);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Componentes y Utilidades */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.text-gradient {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-gold {
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-flame {
+  background: var(--gradient-flame);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel:hover {
+  border-color: var(--border-glow);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-4px);
+}
+
+/* Animación Breathing Glow */
+.breathing-glow {
+  animation: breatheGlow 4s infinite ease-in-out;
+}
+
+@keyframes breatheGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(234, 88, 12, 0.2);
+    border-color: rgba(234, 88, 12, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 32px rgba(245, 158, 11, 0.45);
+    border-color: rgba(245, 158, 11, 0.6);
+  }
+}
+
+/* Animación Scroll Reveal */
+.scroll-reveal {
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Botones Principales */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.75rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--gradient-gold);
+  color: #000;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.55);
+}
+
+.btn-moodle {
+  background: var(--gradient-moodle);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.35);
+}
+
+.btn-moodle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.55);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-main);
+  border: 1px solid var(--border-light);
+  backdrop-filter: blur(8px);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--border-glow);
+  transform: translateY(-2px);
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.825rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-info {
+  background: rgba(220, 38, 38, 0.18);
+  color: #f87171;
+  border: 1px solid rgba(220, 38, 38, 0.35);
+}
+
+.badge-success {
+  background: rgba(245, 158, 11, 0.18);
+  color: var(--accent-gold);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+.badge-warning {
+  background: rgba(234, 88, 12, 0.18);
+  color: var(--accent-orange);
+  border: 1px solid rgba(234, 88, 12, 0.35);
+}
+
+/* Secciones generales */
+.section {
+  padding: 5.5rem 0;
+}
+
+.section-title {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.section-title h2 {
+  font-size: 2.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.section-title p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.bg-dim {
+  background-color: var(--bg-secondary);
+}
+
+/* Fondos Overlay y Parallax */
+.hero-bg-overlay {
+  position: relative;
+  background-image: linear-gradient(180deg, rgba(10, 10, 14, 0.62) 0%, rgba(10, 10, 14, 0.92) 100%), url('/images/banner.png');
+  background-size: cover;
+  background-position: center top;
+}
+
+.section-parallax {
+  position: relative;
+  background-image: linear-gradient(180deg, rgba(9, 9, 12, 0.88) 0%, rgba(17, 17, 22, 0.92) 100%), url('/images/bg-parallax.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}

@@ -1,0 +1,191 @@
+---
+// Componente de Sección Hero para la página principal
+import { getIntegrantesEquipo } from '../../services/strapi';
+
+const integrantes = await getIntegrantesEquipo();
+const omarCard = integrantes.find(i => i.nombre.toLowerCase().includes('omar')) || {
+  nombre: "Omar Orlando Zambrano Pinto",
+  cargo: "Fundador e Instructor Principal",
+  foto: "/images/omar.png"
+};
+---
+
+<section class="hero-section">
+  <div class="container hero-grid scroll-reveal">
+    <div class="hero-text-column">
+      <h1 class="hero-title text-gradient-flame">
+        ¿Quiénes somos?
+      </h1>
+
+      <div class="about-brief">
+        <p>
+          Somos una institución de vanguardia dedicada al estudio, comprensión y desarrollo de la existencia humana. La <strong>Escuela de Ciencias Ónticas Primigenias 33</strong> nace con el propósito de fusionar la sabiduría ancestral con el rigor analítico para guiar a las personas hacia su máximo potencial.
+        </p>
+        <p>
+          Nuestra metodología se fundamenta en las <strong>Ciencias Ónticas</strong>, una disciplina enfocada en el estudio del ser en su estado más puro y esencial. No nos limitamos a la teoría; investigamos las leyes primigenias que rigen la realidad y la conciencia. El <strong>número 33</strong> corona nuestra filosofía como el símbolo de la maestría interior, la evolución espiritual consciente y la manifestación del propósito de vida en el plano terrenal.
+        </p>
+        <p class="mission-highlight">
+          <strong>Misión:</strong> Facilitar herramientas de conocimiento profundo que permitan a cada individuo decodificar su diseño original y alinearse con su verdadero ser.
+        </p>
+      </div>
+
+      <div class="sacred-quote-box">
+        <span class="quote-symbol">«</span>
+        <p class="quote-content">
+          <strong>Allin Kawsay:</strong> El Ser - Humano no está dentro del universo; es el universo mismo experimentándose a sí mismo.
+        </p>
+      </div>
+
+      <div class="hero-actions">
+        <a href="/nosotros/" class="btn btn-primary btn-lg">
+          Conócenos
+        </a>
+      </div>
+    </div>
+
+    <!-- Columna Derecha con Foto del Fundador Omar Zambrano -->
+    <div class="hero-image-column">
+      <div class="glass-panel director-card breathing-glow">
+        <div class="director-img-wrapper">
+          <img src={omarCard.foto} alt={`${omarCard.nombre} - ${omarCard.cargo}`} class="director-img" />
+        </div>
+        <div class="director-caption-bar">
+          <span class="director-name">{omarCard.nombre}</span>
+          <span class="director-title">{omarCard.cargo}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    padding: 5rem 0 4rem 0;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+  }
+
+  .hero-text-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 3.25rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .about-brief p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .mission-highlight {
+    font-size: 1.1rem;
+    color: var(--accent-gold);
+    line-height: 1.7;
+  }
+
+  .sacred-quote-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background: rgba(245, 158, 11, 0.08);
+    border-left: 4px solid var(--accent-gold);
+    padding: 1.1rem 1.35rem;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    margin: 0.25rem 0 0.75rem 0;
+  }
+
+  .quote-symbol {
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--accent-gold);
+    font-family: var(--font-serif, 'Cinzel', serif);
+  }
+
+  .quote-content {
+    font-size: 1.05rem;
+    color: #ffffff;
+    font-style: italic;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .hero-image-column {
+    display: flex;
+    justify-content: center;
+  }
+
+  .director-card {
+    padding: 0;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    width: 100%;
+    max-width: 440px;
+    border: 1px solid var(--border-glow);
+  }
+
+  .director-img-wrapper {
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+  }
+
+  .director-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .director-caption-bar {
+    background: var(--gradient-gold);
+    color: #000;
+    padding: 1rem 1.25rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .director-name {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+
+  .director-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+    .hero-title {
+      font-size: 2.25rem;
+    }
+  }
+</style>

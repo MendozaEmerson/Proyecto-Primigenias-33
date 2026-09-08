@@ -1,0 +1,173 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { docentesList } from '../data/docentes';
+---
+
+<Layout title="Directorio de Profesionales | Instituto Primigenias 33" description="Conoce al cuerpo docente y profesionales egresados capacitados en el Instituto Primigenias 33.">
+  <Header />
+
+  <main class="directorio-main">
+    <!-- Header Banner -->
+    <section class="page-header hero-bg-overlay">
+      <div class="container text-center scroll-reveal">
+        <span class="badge badge-cyan">Cuerpo Docente</span>
+        <h1 class="page-title text-gradient-flame">DIRECTORIO DE PROFESIONALES</h1>
+        <p class="lead">
+          Equipo de profesionales y cuerpo docente del Instituto Primigenias 33 capacitados en Ciencias Ónticas, Numerología y Desarrollo Humano.
+        </p>
+      </div>
+    </section>
+
+    <!-- Lista de Docentes -->
+    <section class="section">
+      <div class="container">
+        <div class="docentes-grid">
+          {docentesList.map((docente) => (
+            <article class="glass-panel docente-card highlight-gold breathing-glow">
+              <div class="docente-img-box">
+                <img src={docente.imagen} alt={docente.nombre} class="docente-img" />
+              </div>
+              <div class="docente-body">
+                <span class={`badge ${docente.badge}`}>{docente.modalidad}</span>
+                <h3 class="docente-nombre">{docente.nombre}</h3>
+                <span class="docente-rol">{docente.rol}</span>
+                <p class="docente-bio">{docente.bio}</p>
+                <div class="docente-action">
+                  <a href="/contacto/" class="btn btn-outline-light btn-block">Consultar con Docente</a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <WhatsAppButton />
+</Layout>
+
+<style>
+  .directorio-main {
+    padding-bottom: 4rem;
+  }
+
+  .page-header {
+    padding: 4.5rem 1rem 3.5rem;
+    text-align: center;
+  }
+
+  .page-title {
+    font-size: 2.75rem;
+    font-weight: 800;
+    margin: 0.75rem 0;
+  }
+
+  .lead {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .docentes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  .docente-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 0;
+    border-radius: var(--radius-lg);
+  }
+
+  .docente-img-box {
+    height: 250px;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+    border-bottom: 2px solid var(--accent-gold);
+  }
+
+  .docente-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.4s ease;
+  }
+
+  .docente-card:hover .docente-img {
+    transform: scale(1.06);
+  }
+
+  .docente-body {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+    flex: 1;
+  }
+
+  .docente-nombre {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 0;
+  }
+
+  .docente-rol {
+    font-size: 0.85rem;
+    color: var(--accent-gold);
+    font-weight: 700;
+  }
+
+  .docente-bio {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+    flex-grow: 1;
+  }
+
+  .docente-action {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .btn-block {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .btn-outline-light {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.875rem;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  .btn-outline-light:hover {
+    background: var(--gradient-gold);
+    color: #000;
+    border-color: transparent;
+  }
+</style>

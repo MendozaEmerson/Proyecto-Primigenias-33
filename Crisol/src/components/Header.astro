@@ -1,0 +1,161 @@
+---
+// Componente de Encabezado / Navegación Multi-Página Institucional
+const currentPath = Astro.url.pathname;
+---
+
+<header class="navbar-wrapper">
+  <div class="navbar container">
+    <a href="/" class="logo" aria-label="Inicio Escuela Primigenias 33">
+      <img src="/images/logo-1-clean.png" alt="Emblema Sagrado Primigenias 33" class="header-logo-img" />
+      <div class="logo-text">
+        <span class="brand">PRIMIGENIAS<span class="brand-number">33</span></span>
+        <span class="subtext">ESCUELA DE CIENCIAS ÓNTICAS</span>
+      </div>
+    </a>
+
+    <nav class="nav-links">
+      <a href="/" class={currentPath === "/" ? "active" : ""}>Inicio</a>
+      <a href="/nosotros/" class={currentPath.startsWith("/nosotros") ? "active" : ""}>La Escuela</a>
+      <a href="/formaciones/" class={currentPath.startsWith("/formaciones") ? "active" : ""}>Formaciones</a>
+      <a href="/eventos/" class={currentPath.startsWith("/eventos") ? "active" : ""}>Eventos</a>
+      <a href="/contacto/" class={currentPath.startsWith("/contacto") ? "active" : ""}>Contacto</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="http://localhost:8085" target="_blank" rel="noopener noreferrer" class="btn btn-moodle btn-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        Aula Virtual
+      </a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .navbar-wrapper {
+    position: sticky;
+    top: 0.75rem;
+    z-index: 100;
+    padding: 0 1rem;
+    width: 100%;
+  }
+
+  .navbar {
+    max-width: 1240px;
+    margin: 0 auto;
+    background: rgba(12, 12, 18, 0.86);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 9999px;
+    padding: 0.5rem 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(245, 158, 11, 0.12);
+    transition: all 0.3s ease;
+  }
+
+  .navbar:hover {
+    border-color: rgba(245, 158, 11, 0.35);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(245, 158, 11, 0.22);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+  }
+
+  .header-logo-img {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 14px rgba(245, 158, 11, 0.7)) drop-shadow(0 0 7px rgba(234, 88, 12, 0.5));
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .logo:hover .header-logo-img {
+    transform: scale(1.08) rotate(3deg);
+    filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.9)) drop-shadow(0 0 10px rgba(255, 107, 53, 0.8));
+  }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .brand {
+    font-family: var(--font-serif, 'Cinzel', serif);
+    font-size: 1.45rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    background: linear-gradient(90deg, #dc2626 0%, #ea580c 20%, #f59e0b 40%, #10b981 60%, #06b6d4 80%, #a855f7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.1;
+  }
+
+  .brand-number {
+    background: linear-gradient(90deg, #06b6d4 0%, #a855f7 50%, #e11d48 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: 3px;
+  }
+
+  .subtext {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.92;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    transition: all 0.25s ease;
+    padding: 0.35rem 0.25rem;
+    position: relative;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(245, 158, 11, 0.4);
+  }
+
+  .nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gradient-gold);
+    border-radius: 2px;
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.8);
+  }
+
+  .btn-sm {
+    padding: 0.55rem 1.25rem;
+    font-size: 0.875rem;
+    border-radius: 9999px;
+  }
+
+  @media (max-width: 900px) {
+    .nav-links {
+      display: none;
+    }
+  }
+</style>

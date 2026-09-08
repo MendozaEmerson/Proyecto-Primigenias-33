@@ -1,0 +1,471 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { getIntegrantesEquipo } from '../services/strapi';
+
+const teamMembers = await getIntegrantesEquipo();
+---
+
+<Layout title="Sobre Nosotros | Escuela Primigenias 33" description="Conozca la historia, pilares institucionales y la visión de la Escuela de Ciencias Ónticas Primigenias 33 y su equipo directivo.">
+  <Header />
+
+  <main class="nosotros-main">
+    <!-- Header Banner -->
+    <section class="page-header hero-bg-overlay">
+      <div class="container text-center scroll-reveal">
+        <span class="badge badge-gold">Identidad e Institución</span>
+        <h1 class="page-title text-gradient-flame">LA ESCUELA</h1>
+        <p class="lead">
+          Una institución de vanguardia comprometida con las Ciencias Ónticas y la evolución consciente del ser.
+        </p>
+      </div>
+    </section>
+
+    <!-- Sección 1: NOSOTROS (Texto exacto del cliente - Imagen 1) -->
+    <section class="section">
+      <div class="container">
+        <div class="glass-panel nosotros-grid highlight-gold">
+          <div class="nosotros-img-col">
+            <img src="/images/grupo-estudiantes-graduacion.jpg" alt="Comunidad de la Escuela Primigenias 33" class="nosotros-img" />
+          </div>
+          <div class="nosotros-text-col">
+            <h2 class="section-heading">Nosotros</h2>
+            <p>
+              En la <strong>Escuela de Ciencias Ónticas Primigenias 33</strong> nos respalda una comunidad comprometidos con la excelencia académica y humana. No operamos bajo dogmas cerrados; fomentamos un entorno de aprendizaje dinámico y profesional.
+            </p>
+            <p>
+              Nuestros pilares institucionales garantizan un estándar educativo de alto nivel:
+            </p>
+
+            <ul class="pillars-list">
+              <li>
+                <span class="pillar-title">Integridad Intelectual:</span> Traducimos conceptos profundos en herramientas prácticas, claras y aplicables para el día a día.
+              </li>
+              <li>
+                <span class="pillar-title">Evolución Consciente:</span> Impulsamos el crecimiento personal de nuestros estudiantes mediante el acompañamiento continuo.
+              </li>
+              <li>
+                <span class="pillar-title">Compromiso Social:</span> Formamos líderes de conciencia capaces de generar un impacto positivo y equilibrado en su entorno.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección: EL ORIGEN DE NUESTRO SÍMBOLO (Foto img.jpeg + Historia) -->
+    <section class="section origen-simbolo-section">
+      <div class="container">
+        <div class="glass-panel origen-grid highlight-gold">
+          <div class="origen-info-col">
+            <span class="badge badge-success">Historia & Símbolo</span>
+            <h2 class="origen-title">El Origen de Nuestro Emblema</h2>
+            <p class="origen-desc">
+              Esta imagen captura la matriz geométrica viva en la naturaleza de donde nació el símbolo oficial de la <strong>Escuela Primigenias 33</strong>. Una revelación esencial que conecta las espirales concéntricas y los arcos frecuenciales con la arquitectura sagrada del ser.
+            </p>
+            <div class="sacred-phrase-pill">
+              <span class="phrase-tag">FILOSOFÍA INSTITUCIONAL:</span>
+              <p>«Allin Kawsay: El Ser - Humano no está dentro del universo; es el universo mismo experimentándose a sí mismo».</p>
+            </div>
+          </div>
+          <div class="origen-img-col">
+            <div class="origen-img-card breathing-glow">
+              <img src="/images/origen-emblema-sagrado.jpg" alt="Fotografía original de la matriz de donde nació el logo de Primigenias 33" class="origen-img" />
+              <div class="origen-caption-bar">
+                <span>Fotografía Original: Origen del Logo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 2: ACERCA DE MÍ - Omar Orlando Zambrano Pinto (Texto e Imagen exactos - Imagen 2) -->
+    <section class="section bg-dim">
+      <div class="container">
+        <div class="section-title text-center">
+          <span class="badge badge-gold">Fundador y Mentor</span>
+          <h2 class="sobre-mi-heading">Acerca de mí</h2>
+        </div>
+
+        <div class="glass-panel sobre-mi-grid highlight-gold">
+          <div class="sobre-mi-info-col">
+            <h3 class="founder-name">Omar Orlando Zambrano Pinto</h3>
+            
+            <blockquote class="founder-quote-box">
+              "Hola, soy <strong>Omar Orlando Zambrano Pinto</strong>. Durante años me formé para entender el mundo a través de la <strong>Ingeniería Industrial</strong>, buscando la eficiencia en el exterior. Mi perspectiva cambió por completo cuando la <strong>numerología óntica</strong> me permitió descifrar mi propio mapa de vida y conectar con mi verdadero yo. Hoy, mi mayor anhelo es compartir contigo ese camino. A través de las <strong>ciencias ónticas</strong> y herramientas prácticas, te acompaño a estructurar tu crecimiento personal, comprender tu esencia y reconocer tu potencia."
+            </blockquote>
+          </div>
+
+          <div class="sobre-mi-img-col">
+            <div class="founder-img-card breathing-glow">
+              <img src="/images/omar.png" alt="Omar Orlando Zambrano Pinto - Fundador e Instructor" class="founder-img" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 3: EQUIPO PRIMIGENIAS 33 -->
+    <section class="section">
+      <div class="container">
+        <div class="section-title text-center">
+          <span class="badge badge-warning">Comunidad Educativa</span>
+          <h2 class="team-heading">EQUIPO PRIMIGENIAS 33</h2>
+          <p class="team-intro">Equipo multidisciplinario que acompaña el desarrollo académico y humano de nuestros estudiantes.</p>
+        </div>
+
+        <div class="team-grid">
+          {teamMembers.map((member) => (
+            <div class="team-card-frame">
+              <div class="team-card-inner">
+                <div class="team-photo-box">
+                  <img src={member.foto} alt={member.nombre} class="team-photo" />
+                </div>
+                <div class="team-caption">
+                  <span class="team-name">{member.nombre}</span>
+                  <span class="team-role">{member.cargo}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <WhatsAppButton />
+</Layout>
+
+<style>
+  .nosotros-main {
+    padding-bottom: 4rem;
+  }
+
+  .page-header {
+    padding: 4.5rem 1rem 3rem;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    font-size: 2.75rem;
+    font-weight: 800;
+    margin: 0.75rem 0;
+  }
+
+  .lead {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  /* Sección 1: NOSOTROS Grid */
+  .nosotros-grid {
+    display: grid;
+    grid-template-columns: 440px 1fr;
+    gap: 3rem;
+    align-items: center;
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .nosotros-img-col {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nosotros-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .nosotros-text-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .section-heading {
+    font-size: 2rem;
+    color: #ffffff;
+    font-weight: 800;
+    margin: 0;
+  }
+
+  .nosotros-text-col p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .pillars-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.95rem;
+  }
+
+  .pillars-list li {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .pillar-title {
+    font-weight: 800;
+    color: var(--accent-gold);
+    margin-right: 0.35rem;
+  }
+
+  /* Sección 2: SOBRE MÍ Grid */
+  .sobre-mi-heading {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-top: 0.5rem;
+    letter-spacing: 1px;
+  }
+
+  .sobre-mi-grid {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 3.5rem;
+    align-items: center;
+    padding: 3rem 2.5rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .sobre-mi-info-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .founder-name {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0;
+  }
+
+  .founder-quote-box {
+    font-size: 1.08rem;
+    color: #f8fafc;
+    line-height: 1.8;
+    background: rgba(255, 255, 255, 0.04);
+    border-left: 4px solid var(--accent-orange);
+    padding: 1.5rem 1.75rem;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    margin: 0;
+  }
+
+  .sobre-mi-img-col {
+    display: flex;
+    justify-content: center;
+  }
+
+  .founder-img-card {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 2px solid var(--accent-orange, #ff6b35);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 380px;
+  }
+
+  .founder-img {
+    width: 100%;
+    height: 440px;
+    display: block;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  /* Sección 3: TEAM PRIMIGENIAS 33 */
+  .team-heading {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 1px;
+    margin: 0.5rem 0 0.25rem;
+  }
+
+  .team-intro {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.75rem;
+    max-width: 1200px;
+    margin: 2.5rem auto 0;
+  }
+
+  .team-card-frame {
+    background: linear-gradient(135deg, #ffb703 0%, #ff6b35 100%);
+    padding: 8px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(230, 81, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .team-card-frame:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(230, 81, 0, 0.5);
+  }
+
+  .team-card-inner {
+    background: #0f0f14;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    height: 100%;
+  }
+
+  .team-photo-box {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .team-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  .team-caption {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .team-name {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #ffffff;
+    font-family: var(--font-heading);
+  }
+
+  .team-role {
+    font-size: 0.825rem;
+    color: var(--accent-gold);
+    font-weight: 600;
+  }
+
+  @media (max-width: 900px) {
+    .nosotros-grid,
+    .origen-grid,
+    .sobre-mi-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  /* Sección: El Origen del Símbolo */
+  .origen-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 3rem;
+    align-items: center;
+    padding: 3rem 2.5rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .origen-info-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .origen-title {
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0;
+  }
+
+  .origen-desc {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .sacred-phrase-pill {
+    background: rgba(245, 158, 11, 0.08);
+    border-left: 4px solid var(--accent-gold);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    margin-top: 0.5rem;
+  }
+
+  .phrase-tag {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--accent-gold);
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+
+  .sacred-phrase-pill p {
+    font-style: italic;
+    font-size: 1.05rem;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .origen-img-col {
+    display: flex;
+    justify-content: center;
+  }
+
+  .origen-img-card {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 2px solid var(--accent-gold, #f59e0b);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .origen-img {
+    width: 100%;
+    height: 380px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .origen-caption-bar {
+    background: rgba(12, 12, 18, 0.9);
+    color: var(--accent-gold);
+    padding: 0.75rem 1rem;
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-top: 1px solid rgba(245, 158, 11, 0.3);
+  }
+</style>
