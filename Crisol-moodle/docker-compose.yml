@@ -1,0 +1,35 @@
+services:
+  mariadb:
+    image: mariadb:10.11
+    container_name: crisol-moodle-db
+    restart: always
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    environment:
+      - MYSQL_ROOT_PASSWORD=crisol_root_pass_2026
+      - MYSQL_DATABASE=moodle
+      - MYSQL_USER=moodleuser
+      - MYSQL_PASSWORD=crisol_moodle_pass_2026
+    volumes:
+      - mariadb_data:/var/lib/mysql
+
+  moodle:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: crisol-moodle-app
+    restart: always
+    ports:
+      - '8085:80'
+    environment:
+      - MOODLE_URL=http://localhost:8085
+    volumes:
+      - moodle_code:/var/www/html
+      - moodle_data:/var/www/moodledata
+      - ./php.ini:/usr/local/etc/php/conf.d/moodle.ini
+    depends_on:
+      - mariadb
+
+volumes:
+  mariadb_data:
+  moodle_code:
+  moodle_data:

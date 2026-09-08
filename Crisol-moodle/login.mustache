@@ -1,0 +1,41 @@
+{{> theme_boost/head }}
+
+<body {{{ bodyattributes }}} class="crisol-login-page">
+{{> core/local/toast/wrapper}}
+
+<div id="page-wrapper" class="crisol-login-bg">
+    <div class="crisol-login-topbar">
+        <div class="crisol-brand-left">
+            <img src="/pix/logo-crisol.png" alt="Escuela Primigenias 33" class="crisol-logo-head" />
+        </div>
+        <div class="crisol-lang-right">
+            {{#languagemenu}}
+                {{>core/action_menu}}
+            {{/languagemenu}}
+        </div>
+    </div>
+
+    <div class="crisol-login-content-container">
+        <div class="crisol-login-grid">
+            <!-- Left Branding Side (Identical to Client Reference Image) -->
+            <div class="crisol-login-hero-text">
+                <h1 class="crisol-main-title">Campus virtual - Crisol Ciencias Ónticas</h1>
+                <p class="crisol-welcome-sub">¡Bienvenidos!</p>
+            </div>
+
+            <!-- Right Form Side -->
+            <div class="crisol-login-card">
+                {{{ output.main_content }}}
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+{{#js}}
+M.util.js_pending('theme_boost/loader');
+require(['theme_boost/loader'], function() {
+  M.util.js_complete('theme_boost/loader');
+});
+{{/js}}

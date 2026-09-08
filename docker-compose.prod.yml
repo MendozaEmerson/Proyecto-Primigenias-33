@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  # 1. MariaDB Database for Moodle LMS
+  crisol-moodle-db:
+    image: mariadb:10.11
+    container_name: crisol-moodle-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 'CrisolDBRootPassword2026!'
+      MYSQL_DATABASE: 'moodle'
+      MYSQL_USER: 'moodleuser'
+      MYSQL_PASSWORD: 'CrisolMoodleDBPass2026!'
+    volumes:
+      - moodle_db_data:/var/lib/mysql
+    networks:
+      - crisol-net
+
+  # 2. Campus Virtual Moodle LMS
+  crisol-moodle-app:
+    image: moodle:4.5
+    container_name: crisol-moodle-app
+    restart: always
+    depends_on:
+      - crisol-moodle-db
+    environment:
+      MOODLE_DATABASE_TYPE: 'mariadb'
+      MOODLE_DATABASE_HOST: 'crisol-moodle-db'
+      MOODLE_DATABASE_NAME: 'moodle'
+      MOODLE_DATABASE_USER: 'moodleuser'
+      MOODLE_DATABASE_PASSWORD: 'CrisolMoodleDBPass2026!'
+    ports:
+      - "8085:80"
+    volumes:
+      - moodle_app_data:/var/www/html
+      - moodledata_var:/var/www/moodledata
+    networks:
+      - crisol-net
+
+  # 3. Main Web Application (Astro)
+  crisol-web-app:
+    build:
+      context: ./Crisol
+      dockerfile: Dockerfile
+    container_name: crisol-web-app
+    restart: always
+    ports:
+      - "4321:4321"
+    networks:
+      - crisol-net
+
+networks:
+  crisol-net:
+    driver: bridge
+
+volumes:
+  moodle_db_data:
+  moodle_app_data:
+  moodledata_var:

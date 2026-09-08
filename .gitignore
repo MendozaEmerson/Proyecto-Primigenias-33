@@ -1,0 +1,14 @@
+# Node & Build artifacts
+node_modules/
+.astro/
+dist/
+build/
+.env
+.env.local
+*.log
+
+# Temp files
+scratch/
+.system_generated/
+.DS_Store
+Thumbs.db

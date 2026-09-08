@@ -1,0 +1,151 @@
+
+
+/* =========================================================
+   ESTILOS EXCLUSIVOS CRISOL CIENCIAS ÓNTICAS (MOODLE)
+   ========================================================= */
+
+body.crisol-login-page, body#page-login-index {
+  background-color: #050508 !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+}
+
+#page-login-index #page-wrapper, .crisol-login-bg {
+  background: linear-gradient(180deg, rgba(5, 5, 8, 0.78) 0%, rgba(9, 9, 13, 0.94) 100%),
+              url('/pix/bg-moodle-hero.jpg') center center / cover no-repeat fixed !important;
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+#page-login-index #page, #page-login-index #page-content, #page-login-index #region-main-box, #page-login-index #region-main {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.crisol-login-topbar {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 2rem 3.5rem !important;
+  width: 100% !important;
+}
+
+.crisol-logo-head {
+  height: 55px !important;
+  width: auto !important;
+  filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.6)) !important;
+}
+
+.crisol-login-content-container {
+  max-width: 1240px !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+  padding: 1rem 3.5rem 4rem 3.5rem !important;
+  flex: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.crisol-login-grid {
+  display: grid !important;
+  grid-template-columns: 1.25fr 420px !important;
+  gap: 4rem !important;
+  width: 100% !important;
+  align-items: center !important;
+}
+
+.crisol-main-title {
+  font-size: 3.25rem !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.02em !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.crisol-welcome-sub {
+  font-size: 2.25rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+}
+
+/* Login Card Form */
+.crisol-login-card, #page-login-index .login-container {
+  background: rgba(18, 18, 24, 0.88) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 16px !important;
+  padding: 2.25rem !important;
+  backdrop-filter: blur(16px) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75) !important;
+}
+
+#page-login-index .loginform h1, #page-login-index .login-heading {
+  display: none !important;
+}
+
+#page-login-index label {
+  color: #ffffff !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.4rem !important;
+}
+
+#page-login-index .form-control {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 8px !important;
+  padding: 0.75rem 1rem !important;
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+}
+
+#page-login-index #loginbtn, #page-login-index .btn-primary {
+  background: linear-gradient(135deg, #e65100 0%, #ff6b35 100%) !important;
+  border: none !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 8px !important;
+  width: 100% !important;
+  margin-top: 1.25rem !important;
+  box-shadow: 0 4px 15px rgba(230, 81, 0, 0.4) !important;
+  cursor: pointer !important;
+  transition: transform 0.2s, box-shadow 0.2s !important;
+}
+
+#page-login-index #loginbtn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(230, 81, 0, 0.6) !important;
+}
+
+#page-login-index a {
+  color: #f59e0b !important;
+  font-size: 0.875rem !important;
+}
+
+/* Panel de Cursos Interno */
+.card, .block, .dashboard-card {
+  background: rgba(18, 18, 26, 0.85) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px !important;
+  color: #f8fafc !important;
+}
+
+@media (max-width: 900px) {
+  .crisol-login-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .crisol-main-title {
+    font-size: 2.2rem !important;
+  }
+}
