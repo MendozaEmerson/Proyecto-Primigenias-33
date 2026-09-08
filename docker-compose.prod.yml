@@ -14,7 +14,7 @@ services:
     networks:
       - crisol-net
 
-  # 2. Campus Virtual Moodle LMS (Built from custom Dockerfile)
+  # 2. Campus Virtual Moodle LMS
   crisol-moodle-app:
     build:
       context: ./Crisol-moodle
@@ -37,7 +37,7 @@ services:
     networks:
       - crisol-net
 
-  # 3. Main Web Application (Astro)
+  # 3. Main Web Application (Astro + Nginx)
   crisol-web-app:
     build:
       context: ./Crisol
@@ -45,7 +45,7 @@ services:
     container_name: crisol-web-app
     restart: always
     ports:
-      - "4321:4321"
+      - "4321:80"
     networks:
       - crisol-net
 
