@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   # 1. MariaDB Database for Moodle LMS
   crisol-moodle-db:
@@ -16,9 +14,11 @@ services:
     networks:
       - crisol-net
 
-  # 2. Campus Virtual Moodle LMS
+  # 2. Campus Virtual Moodle LMS (Built from custom Dockerfile)
   crisol-moodle-app:
-    image: moodle:4.5
+    build:
+      context: ./Crisol-moodle
+      dockerfile: Dockerfile
     container_name: crisol-moodle-app
     restart: always
     depends_on:
