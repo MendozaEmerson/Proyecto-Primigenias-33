@@ -58,7 +58,7 @@ const currentPath = Astro.url.pathname;
 </header>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('astro:page-load', () => {
     const toggleBtn = document.querySelector('.mobile-menu-toggle');
     const mobileMenu = document.querySelector('.mobile-menu');
     const hamburgerIcon = document.querySelector('.hamburger-icon');
@@ -271,6 +271,11 @@ const currentPath = Astro.url.pathname;
   }
 
   @media (max-width: 900px) {
+    .header-logo-img { height: 50px; }
+    .brand { font-size: 1.1rem; }
+    .subtext { font-size: 0.55rem; }
+    .logo { gap: 0.5rem; }
+    
     .nav-links, .nav-actions {
       display: none;
     }
