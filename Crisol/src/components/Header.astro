@@ -1,4 +1,4 @@
----
+﻿---
 // Componente de Encabezado / Navegación Multi-Página Institucional
 const currentPath = Astro.url.pathname;
 ---
@@ -27,8 +27,60 @@ const currentPath = Astro.url.pathname;
         Aula Virtual
       </a>
     </div>
+
+    <button class="mobile-menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <svg class="hamburger-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+      <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  <div class="mobile-menu">
+    <nav class="mobile-nav-links">
+      <a href="/" class={currentPath === "/" ? "active" : ""}>Inicio</a>
+      <a href="/nosotros/" class={currentPath.startsWith("/nosotros") ? "active" : ""}>La Escuela</a>
+      <a href="/formaciones/" class={currentPath.startsWith("/formaciones") ? "active" : ""}>Formaciones</a>
+      <a href="/eventos/" class={currentPath.startsWith("/eventos") ? "active" : ""}>Eventos</a>
+      <a href="/contacto/" class={currentPath.startsWith("/contacto") ? "active" : ""}>Contacto</a>
+      
+      <a href="http://194.163.144.149:8085" target="_blank" rel="noopener noreferrer" class="btn btn-moodle btn-mobile-moodle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        Aula Virtual
+      </a>
+    </nav>
   </div>
 </header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.querySelector('.mobile-menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const hamburgerIcon = document.querySelector('.hamburger-icon');
+    const closeIcon = document.querySelector('.close-icon');
+
+    if (toggleBtn && mobileMenu) {
+      toggleBtn.addEventListener('click', () => {
+        const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+        toggleBtn.setAttribute('aria-expanded', !isExpanded);
+        mobileMenu.classList.toggle('is-open');
+        
+        if (isExpanded) {
+          hamburgerIcon.style.display = 'block';
+          closeIcon.style.display = 'none';
+        } else {
+          hamburgerIcon.style.display = 'none';
+          closeIcon.style.display = 'block';
+        }
+      });
+    }
+  });
+</script>
 
 <style>
   .navbar-wrapper {
@@ -153,10 +205,80 @@ const currentPath = Astro.url.pathname;
     border-radius: 9999px;
   }
 
+  /* Hamburger Menu Styles */
+  .mobile-menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  .mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(12, 12, 18, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+  }
+
+  .mobile-menu.is-open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .mobile-nav-links a {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .mobile-nav-links a:hover,
+  .mobile-nav-links a.active {
+    color: #ffffff;
+  }
+
+  .btn-mobile-moodle {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    border-radius: 9999px;
+  }
+
   @media (max-width: 900px) {
-    .nav-links {
+    .nav-links, .nav-actions {
       display: none;
+    }
+    .mobile-menu-toggle {
+      display: block;
+    }
+    .mobile-menu {
+      display: block;
     }
   }
 </style>
-
