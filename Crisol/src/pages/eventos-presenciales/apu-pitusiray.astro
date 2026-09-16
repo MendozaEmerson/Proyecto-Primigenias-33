@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Salida - Diciembre | Apu Pitusiray | Instituto Primigenias 33" description="El Vector de Destino">
+  <Header />
+
+  <main class="page-main">
+    <section class="page-header hero-bg-overlay" style="background-image: linear-gradient(to bottom, rgba(10,10,14,0.7), var(--bg-dark)), url('/images/apu-pitusiray.png');">
+      <div class="container text-center scroll-reveal">
+        <a href="/eventos-presenciales/" class="back-link">← Volver al Programa Anual</a>
+        <h1 class="page-title text-gradient-flame" style="margin-top: 1rem;">Salida - Diciembre | Apu Pitusiray</h1>
+        <p class="lead">El Vector de Destino</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container text-content-box glass-panel breathing-glow">
+        
+        <div class="detail-block">
+          <h3 style="color: var(--accent-cyan);">Clima y Temporada</h3>
+          <p>Comienzo de la temporada de lluvias ligeras. El Valle Sagrado se viste de un verde fosforescente místico y coincide directamente con el solsticio de verano en diciembre, cerrando el año geométrico de la Tierra.</p>
+        </div>
+
+        <div class="detail-block">
+          <h3 style="color: var(--accent-gold);">Breve Historia Mística</h3>
+          <p>Este colosal Apu es el protagonista del mito de Pitusiray y Sawasiray, una historia sagrada de amor, dualidad y transformación que dio origen a las fuentes de agua del valle. Es una montaña de polarización energética donde confluyen las fuerzas masculinas y femeninas del cosmos andino. En la mística andina, el Pitusiray es un Apu Mayor que encarna el misterio de la polaridad y el amor sagrado. Está intrínsecamente conectado con su montaña vecina, el Apu Sawasiray.</p>
+        </div>
+
+        <div class="detail-block">
+          <h3 style="color: var(--accent-orange);">Materias a Trabajar</h3>
+          <p>Es el módulo de la Integración Final del Mapa Numérico. Frente a la imponente simetría del Apu, el estudiante unifica su energía masculina y femenina, su esencia, talentos y su personalidad a través de los números. Camina su sendero, observa su logro y sostiene su POTENCIA.</p>
+        </div>
+
+        <div class="text-center" style="margin-top: 4rem;">
+          <a href="https://wa.me/51967747483" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            Consultar Fechas al WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .page-main { padding-bottom: 4rem; }
+  .page-header { padding: 5rem 1rem; text-align: center; background-position: center; background-size: cover; }
+  .page-title { font-size: 2.5rem; font-weight: 800; margin: 1rem 0; }
+  .back-link { color: var(--accent-cyan); text-decoration: none; font-weight: bold; }
+  .back-link:hover { text-decoration: underline; }
+  .text-content-box { max-width: 800px; margin: 0 auto; padding: 3rem; border-radius: 16px; margin-top: -3rem; position: relative; z-index: 10; text-align: left; }
+  .detail-block { margin-bottom: 2.5rem; }
+  .detail-block h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+  .detail-block p { font-size: 1.15rem; color: var(--text-muted); line-height: 1.8; }
+</style>

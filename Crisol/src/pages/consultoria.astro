@@ -19,9 +19,18 @@ import WhatsAppButton from '../components/WhatsAppButton.astro';
 
     <section class="section">
       <div class="container text-content-box glass-panel breathing-glow">
-        <h2>Aquí empieza tu trabajo interno</h2>
-        <p>Acompañamos en sesiones individuales en los procesos personales de los consultantes. Usamos la numerología óntica para apoyar al consultante en sus engramas.</p>
-        <p>Ayudamos a responder a preguntas profundas sobre sí misma(o), sus relaciones y su entorno. Aunque cada proceso es único, las dudas suelen girar en torno a cuatro grandes pilares:</p>
+        
+        <div class="intro-grid">
+          <div class="intro-text">
+            <h2>Aquí empieza tu trabajo interno</h2>
+            <p>Acompañamos en sesiones individuales en los procesos personales de los consultantes. Usamos la numerología óntica para apoyar al consultante en sus engramas.</p>
+            <p>Ayudamos a responder a preguntas profundas sobre sí misma(o), sus relaciones y su entorno. Aunque cada proceso es único, las dudas suelen girar en torno a cuatro grandes pilares:</p>
+          </div>
+          <div class="intro-image">
+            <img src="/images/consultoria-side.png" alt="Consultoría Personal" class="img-fluid" style="border-radius: 12px; border: 1px solid var(--accent-gold);" />
+          </div>
+        </div>
+
 
         <div class="pilares-grid">
           <div class="pilar-card">
@@ -74,7 +83,7 @@ import WhatsAppButton from '../components/WhatsAppButton.astro';
 
         <div class="text-center" style="margin-top: 3rem;">
           <a href="https://wa.me/51967747483" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg" style="font-size: 1.2rem; padding: 1rem 2rem;">
-            Agendar mi Sesión de Diagnóstico Óntico al whatsapp +51 967747483
+            Agendar mi Sesión
           </a>
         </div>
       </div>
@@ -122,4 +131,8 @@ import WhatsAppButton from '../components/WhatsAppButton.astro';
     .text-content-box { padding: 1.5rem; margin-top: 0; }
     .page-title { font-size: 2.2rem; }
   }
+
+  .intro-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; align-items: center; margin-bottom: 2rem; }
+  .img-fluid { max-width: 100%; height: auto; }
+  @media (max-width: 768px) { .intro-grid { grid-template-columns: 1fr; } }
 </style>

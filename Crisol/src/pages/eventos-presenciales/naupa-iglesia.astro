@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Salida - Agosto | Ñaupa Iglesia | Instituto Primigenias 33" description="El Templo de la Antigüedad Primigenia">
+  <Header />
+
+  <main class="page-main">
+    <section class="page-header hero-bg-overlay" style="background-image: linear-gradient(to bottom, rgba(10,10,14,0.7), var(--bg-dark)), url('/images/naupa-iglesia.png');">
+      <div class="container text-center scroll-reveal">
+        <a href="/eventos-presenciales/" class="back-link">← Volver al Programa Anual</a>
+        <h1 class="page-title text-gradient-flame" style="margin-top: 1rem;">Salida - Agosto | Ñaupa Iglesia</h1>
+        <p class="lead">El Templo de la Antigüedad Primigenia</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container text-content-box glass-panel breathing-glow">
+        
+        <div class="detail-block">
+          <h3 style="color: var(--accent-cyan);">Clima y Temporada</h3>
+          <p>Pleno invierno seco en el Cusco. Es el mes de la Pachamama, el momento del año donde la tierra se encuentra abierta, receptiva y en su máximo punto de introspección espiritual.</p>
+        </div>
+
+        <div class="detail-block">
+          <h3 style="color: var(--accent-gold);">Breve Historia Mística</h3>
+          <p>También conocida como Choquequilla ("Templo de Oro"), es una enigmática cueva sagrada prehispánica. Alberga un fino e impecable portal trapezoidal labrado directamente en la roca oscura, que no conduce a ningún espacio físico. Cuenta con un altar monolítico finamente pulido que lleva tallada una Chacana (Cruz Andina) inconclusa conectada con la Cruz del Sur y la Vía Láctea. Ñaupa Iglesia es un santuario del inframundo (Uku Pacha) y un vórtice. A diferencia de otros templos incas dedicados al Sol (Hanan Pacha), esta huaca subterránea conecta con el origen, la muerte y el renacimiento. Su "falsa puerta" o nicho ciego, tallado de forma tridimensional con una precisión geométrica asombrosa, es considerada un portal interdimensional hacia el mundo de los espíritus y los ancestros.</p>
+        </div>
+
+        <div class="detail-block">
+          <h3 style="color: var(--accent-orange);">Materias a Trabajar</h3>
+          <p>Ñaupa significa "antiguo" o "primigenio". Al interior de esta caverna se trabaja los Engramas Numéricos y el Árbol Ancestral (la huella inconsciente). La estructura matemática de la cueva absorbe las ondas del entorno y promueve un silencio absoluto. Aquí se reprograma el "impacto biológico" raíz que condiciona las respuestas automáticas de supervivencia.</p>
+        </div>
+
+        <div class="text-center" style="margin-top: 4rem;">
+          <a href="https://wa.me/51967747483" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            Consultar Fechas al WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .page-main { padding-bottom: 4rem; }
+  .page-header { padding: 5rem 1rem; text-align: center; background-position: center; background-size: cover; }
+  .page-title { font-size: 2.5rem; font-weight: 800; margin: 1rem 0; }
+  .back-link { color: var(--accent-cyan); text-decoration: none; font-weight: bold; }
+  .back-link:hover { text-decoration: underline; }
+  .text-content-box { max-width: 800px; margin: 0 auto; padding: 3rem; border-radius: 16px; margin-top: -3rem; position: relative; z-index: 10; text-align: left; }
+  .detail-block { margin-bottom: 2.5rem; }
+  .detail-block h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+  .detail-block p { font-size: 1.15rem; color: var(--text-muted); line-height: 1.8; }
+</style>

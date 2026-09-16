@@ -3,6 +3,51 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
+
+const salidas = [
+  {
+    id: 'lago-titicaca',
+    mes: 'Abril',
+    lugar: 'Lago Titicaca (Puno) – El Vientre Cósmico',
+    imagen: '/images/lago-titicaca.png',
+    desc: 'El Lago Titicaca representa la Frecuencia Cero, el estado de potencial puro. Caminando sus islas decodificamos el Hogar de Nacimiento.'
+  },
+  {
+    id: 'aramu-muru',
+    mes: 'Junio',
+    lugar: 'Portal de Aramu Muru – El Umbral Interdimensional',
+    imagen: '/images/aramu-muru.png',
+    desc: 'Un modulador de frecuencia y un resonador de geometría sagrada para observar el Punto de Tensión Máximo.'
+  },
+  {
+    id: 'naupa-iglesia',
+    mes: 'Agosto',
+    lugar: 'Ñaupa Iglesia (Cusco) – Templo Primigenio',
+    imagen: '/images/naupa-iglesia.png',
+    desc: 'Al interior de esta caverna se trabaja los Engramas Numéricos y el Árbol Ancestral. Un santuario del inframundo.'
+  },
+  {
+    id: 'cerro-baul',
+    mes: 'Octubre',
+    lugar: 'Cerro Baúl (Moquegua) – La Fortaleza',
+    imagen: '/images/evento-presencial.png',
+    desc: 'Representa la estabilidad geométrica pura. Es el escenario ideal para trabajar el LOGRO PERSONAL.'
+  },
+  {
+    id: 'apu-pitusiray',
+    mes: 'Diciembre',
+    lugar: 'Apu Pitusiray – El Vector de Destino',
+    imagen: '/images/apu-pitusiray.png',
+    desc: 'Módulo de Integración Final. El estudiante unifica su energía masculina y femenina, su esencia, talentos y personalidad.'
+  }
+];
+
+const carouselImages = [
+  '/images/aramu-muru.png',
+  '/images/lago-titicaca.png',
+  '/images/apu-pitusiray.png',
+  '/images/naupa-iglesia.png'
+];
 ---
 
 <Layout title="Eventos Presenciales | Instituto Primigenias 33" description="Programa Presencial Anual de Numerología Óntica en Lugares de Poder.">
@@ -17,9 +62,9 @@ import WhatsAppButton from '../components/WhatsAppButton.astro';
       </div>
     </section>
 
-    <section class="section">
+    <section class="section pt-0">
       <div class="container text-content-box glass-panel breathing-glow">
-        <h2 style="color: var(--accent-cyan);">VÓRTICES Y ENLACES</h2>
+        <h2 style="color: var(--accent-cyan);">PROGRAMA ANUAL: VÓRTICES Y ENLACES</h2>
         <h3>Programa Presencial Anual de Numerología Óntica en Lugares de Poder</h3>
         
         <div style="margin-top: 2rem;">
@@ -32,10 +77,63 @@ import WhatsAppButton from '../components/WhatsAppButton.astro';
           <p>Transformando la teoría abstracta en un trabajo de campo vivencial y transformador.</p>
         </div>
 
+        <div class="info-grid">
+          <div class="info-item"><strong>Duración:</strong> 5 salidas programadas a campo</div>
+          <div class="info-item"><strong>Modalidad:</strong> Presencial</div>
+          <div class="info-item"><strong>Incluye:</strong> Material de lectura complementario</div>
+          <div class="info-item" style="color: var(--accent-gold);"><strong>Cupos Limitados</strong></div>
+        </div>
+
+        <!-- Tarjetas de Salidas -->
+        <h3 style="margin-top: 4rem; color: #fff; font-size: 1.8rem;">Cronograma de Salidas (Cada 2 meses)</h3>
+        <div class="salidas-grid">
+          {salidas.map((s) => (
+            <div class="salida-card glass-panel">
+              <div class="salida-img-box">
+                <img src={s.imagen} alt={s.lugar} />
+                <span class="salida-mes">{s.mes}</span>
+              </div>
+              <div class="salida-body">
+                <h4>{s.lugar}</h4>
+                <p>{s.desc}</p>
+                <a href={`/eventos-presenciales/${s.id}/`} class="btn btn-outline btn-block mt-auto">Ver Detalles</a>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="flujo-box">
+          <h4 style="color: var(--accent-cyan); font-size: 1.4rem;">Flujo Óntico</h4>
+          <p>Este orden cíclico dibuja un espiral perfecto de aprendizaje itinerante:</p>
+          <ol class="flujo-list">
+            <li><strong>Naces</strong> (Lago Titicaca - Abril)</li>
+            <li><strong>Rompes el bloqueo</strong> (Aramu Muru - Junio)</li>
+            <li><strong>Sanas la memoria celular en el vacío</strong> (Ñaupa Iglesia - Agosto)</li>
+            <li><strong>Construyes tu estructura libre de herencias</strong> (Cerro Baúl - Octubre)</li>
+            <li><strong>Sostienes tu Potencia para proyectarte al mundo unificado</strong> (Pitusiray - Diciembre)</li>
+          </ol>
+        </div>
+
         <div class="text-center" style="margin-top: 4rem;">
+          <p style="font-style: italic; margin-bottom: 1rem;">“No se requieren conocimientos previos en numerología; la metodología se enseñará desde las bases de forma práctica.”</p>
           <a href="https://wa.me/51967747483" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
-            Consultar Próximas Fechas
+            Consultar Fechas y Valor al WhatsApp
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Carrusel Automático -->
+    <section class="section carousel-section">
+      <div class="carousel-container">
+        <div class="carousel-track">
+          {carouselImages.map(img => (
+            <div class="carousel-slide"><img src={img} alt="Lugar de Poder" /></div>
+          ))}
+          {/* Duplicar para el efecto infinito */}
+          {carouselImages.map(img => (
+            <div class="carousel-slide"><img src={img} alt="Lugar de Poder" /></div>
+          ))}
         </div>
       </div>
     </section>
@@ -46,13 +144,69 @@ import WhatsAppButton from '../components/WhatsAppButton.astro';
 </Layout>
 
 <style>
-  .page-main { padding-bottom: 4rem; }
+  .page-main { padding-bottom: 0; }
   .page-header { padding: 5rem 1rem; text-align: center; background-position: center; background-size: cover; }
   .page-title { font-size: 3rem; font-weight: 800; margin: 1rem 0; }
-  .text-content-box { max-width: 800px; margin: 0 auto; padding: 3rem; border-radius: 16px; margin-top: -3rem; position: relative; z-index: 10; text-align: center; }
+  .text-content-box { max-width: 1000px; margin: 0 auto; padding: 3rem; border-radius: 16px; margin-top: -3rem; position: relative; z-index: 10; text-align: center; }
   .text-content-box h2 { font-size: 2.5rem; margin-bottom: 0.5rem; }
   .text-content-box h3 { font-size: 1.5rem; color: #ddd; margin-bottom: 1.5rem; font-weight: 400; }
   .text-content-box p { font-size: 1.15rem; color: var(--text-muted); line-height: 1.8; }
+  
+  .info-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 2rem; background: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 8px; }
+  .info-item { font-size: 1.1rem; }
+  
+  .salidas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    text-align: left;
+  }
+  .salida-card {
+    display: flex; flex-direction: column; padding: 0; overflow: hidden; border-radius: 12px;
+  }
+  .salida-img-box {
+    position: relative; height: 160px;
+  }
+  .salida-img-box img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .salida-mes {
+    position: absolute; top: 10px; right: 10px; background: var(--accent-cyan); color: #000; font-weight: bold; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.9rem;
+  }
+  .salida-body {
+    padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; flex-grow: 1;
+  }
+  .salida-body h4 { color: #fff; font-size: 1.2rem; margin: 0; line-height: 1.3; }
+  .salida-body p { font-size: 0.95rem; line-height: 1.5; margin: 0; }
+  .btn-outline { border: 1px solid var(--accent-cyan); color: var(--accent-cyan); text-align: center; padding: 0.5rem; }
+  .btn-outline:hover { background: var(--accent-cyan); color: #000; }
+  
+  .flujo-box {
+    margin-top: 4rem; text-align: left; background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--accent-gold);
+  }
+  .flujo-list {
+    margin-top: 1.5rem; padding-left: 1.5rem; color: var(--text-muted);
+  }
+  .flujo-list li { margin-bottom: 0.8rem; font-size: 1.1rem; }
+  .flujo-list li strong { color: #fff; }
+  
+  /* Carousel Automático */
+  .carousel-section { overflow: hidden; background: #000; padding: 3rem 0; margin-top: 3rem; }
+  .carousel-container { width: 100%; overflow: hidden; position: relative; }
+  .carousel-track {
+    display: flex; width: calc(300px * 8); animation: scroll 20s linear infinite; gap: 1rem;
+  }
+  .carousel-slide {
+    width: 300px; height: 200px; flex-shrink: 0; border-radius: 8px; overflow: hidden;
+  }
+  .carousel-slide img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-300px * 4 - 4rem)); }
+  }
 
   @media (max-width: 768px) {
     .text-content-box { padding: 1.5rem; margin-top: 0; }

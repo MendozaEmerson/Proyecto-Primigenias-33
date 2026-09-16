@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Salida - Abril | Lago Titicaca (Puno) | Instituto Primigenias 33" description="El Vientre Cósmico">
+  <Header />
+
+  <main class="page-main">
+    <section class="page-header hero-bg-overlay" style="background-image: linear-gradient(to bottom, rgba(10,10,14,0.7), var(--bg-dark)), url('/images/lago-titicaca.png');">
+      <div class="container text-center scroll-reveal">
+        <a href="/eventos-presenciales/" class="back-link">← Volver al Programa Anual</a>
+        <h1 class="page-title text-gradient-flame" style="margin-top: 1rem;">Salida - Abril | Lago Titicaca (Puno)</h1>
+        <p class="lead">El Vientre Cósmico</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container text-content-box glass-panel breathing-glow">
+        
+        <div class="detail-block">
+          <h3 style="color: var(--accent-cyan);">Clima y Temporada</h3>
+          <p>Inicio de la época seca. El agua está en calma, los campos andinos lucen verdes tras las lluvias y la visibilidad del horizonte es absoluta.</p>
+        </div>
+
+        <div class="detail-block">
+          <h3 style="color: var(--accent-gold);">Breve Historia Mística</h3>
+          <p>Considerado el centro del universo andino, es la matriz acuática de donde emergieron Seres para fundar el imperio. Cuenta la leyenda, guarda las memorias del origen de la civilización y el orden cósmico primigenio. Desde la cosmovisión andina, el Lago Titicaca es el útero materno del mundo (Mamacocha). De sus aguas sagradas, específicamente de la Isla del Sol, emergieron Manco Cápac y Mama Ocllo para fundar el Imperio Inca por orden del dios Sol. Es considerado uno de los chakras principales de la Tierra (asociado a la energía sexual y de transmutación, o al chakra sacro), un vórtice energético que equilibra las polaridades masculina y femenina del planeta.</p>
+        </div>
+
+        <div class="detail-block">
+          <h3 style="color: var(--accent-orange);">Materias a Trabajar</h3>
+          <p>El Lago Titicaca representa la Frecuencia Cero, el estado de potencial puro. Flotando sobre el lago, caminando sus islas el estudiante decodifica su Hogar de Nacimiento: (el entorno original) que moldeó su psique. Engramas y punto de tensión.</p>
+        </div>
+
+        <div class="text-center" style="margin-top: 4rem;">
+          <a href="https://wa.me/51967747483" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            Consultar Fechas al WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .page-main { padding-bottom: 4rem; }
+  .page-header { padding: 5rem 1rem; text-align: center; background-position: center; background-size: cover; }
+  .page-title { font-size: 2.5rem; font-weight: 800; margin: 1rem 0; }
+  .back-link { color: var(--accent-cyan); text-decoration: none; font-weight: bold; }
+  .back-link:hover { text-decoration: underline; }
+  .text-content-box { max-width: 800px; margin: 0 auto; padding: 3rem; border-radius: 16px; margin-top: -3rem; position: relative; z-index: 10; text-align: left; }
+  .detail-block { margin-bottom: 2.5rem; }
+  .detail-block h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+  .detail-block p { font-size: 1.15rem; color: var(--text-muted); line-height: 1.8; }
+</style>

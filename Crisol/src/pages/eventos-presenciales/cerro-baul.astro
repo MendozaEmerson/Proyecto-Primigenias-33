@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout title="Salida - Octubre | Cerro Baúl | Instituto Primigenias 33" description="La Fortaleza de la Arquitectura Humana">
+  <Header />
+
+  <main class="page-main">
+    <section class="page-header hero-bg-overlay" style="background-image: linear-gradient(to bottom, rgba(10,10,14,0.7), var(--bg-dark)), url('/images/evento-presencial.png');">
+      <div class="container text-center scroll-reveal">
+        <a href="/eventos-presenciales/" class="back-link">← Volver al Programa Anual</a>
+        <h1 class="page-title text-gradient-flame" style="margin-top: 1rem;">Salida - Octubre | Cerro Baúl</h1>
+        <p class="lead">La Fortaleza de la Arquitectura Humana</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container text-content-box glass-panel breathing-glow">
+        
+        <div class="detail-block">
+          <h3 style="color: var(--accent-cyan);">Clima y Temporada</h3>
+          <p>Primavera en el sur. El clima en Moquegua es templado y soleado, ideal para ascender la exigente e imponente meseta sin las inclemencias del calor extremo de la costa ni el congelamiento de la sierra alta.</p>
+        </div>
+
+        <div class="detail-block">
+          <h3 style="color: var(--accent-gold);">Breve Historia Mística</h3>
+          <p>Una impresionante montaña en forma de baúl que resguarda una ciudadela amurallada preínca en su cima plana. Fue el enclave estratégico más austral del imperio Wari, quienes convivían pacíficamente en la base con los Tiwanaku en un despliegue único de balance territorial y diplomático. Es venerado como un Apu protector de la abundancia. En la mística andina, el Cerro Baúl no es solo una montaña, sino un Apu tutelar de jerarquía superior, un ser vivo y consciente que gobierna y protege la región. Su cima plana es considerada una "Huaca" o santuario supremo, un gigantesco altar natural suspendido entre el cielo y la tierra.</p>
+        </div>
+
+        <div class="detail-block">
+          <h3 style="color: var(--accent-orange);">Materias a Trabajar</h3>
+          <p>El Cerro Baúl representa la estabilidad geométrica pura, la ingeniería del límite, el orden y la solidez del plano físico. Es el escenario ideal para trabajar el LOGRO PERSONAL. Aquí el alumno separa las estructuras heredadas de su linaje familiar de su diseño esencial original. Utilizando los números, el estudiante aprende a edificar una infraestructura sólida para sus proyectos materiales, activando un Logro libre de distorsiones.</p>
+        </div>
+
+        <div class="text-center" style="margin-top: 4rem;">
+          <a href="https://wa.me/51967747483" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            Consultar Fechas al WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .page-main { padding-bottom: 4rem; }
+  .page-header { padding: 5rem 1rem; text-align: center; background-position: center; background-size: cover; }
+  .page-title { font-size: 2.5rem; font-weight: 800; margin: 1rem 0; }
+  .back-link { color: var(--accent-cyan); text-decoration: none; font-weight: bold; }
+  .back-link:hover { text-decoration: underline; }
+  .text-content-box { max-width: 800px; margin: 0 auto; padding: 3rem; border-radius: 16px; margin-top: -3rem; position: relative; z-index: 10; text-align: left; }
+  .detail-block { margin-bottom: 2.5rem; }
+  .detail-block h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+  .detail-block p { font-size: 1.15rem; color: var(--text-muted); line-height: 1.8; }
+</style>
