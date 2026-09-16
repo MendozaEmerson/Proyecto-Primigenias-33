@@ -1,5 +1,5 @@
----
-// Componente de Sección Hero para la página principal
+﻿---
+// Componente de SecciÃ³n Hero para la pÃ¡gina principal
 import { getIntegrantesEquipo } from '../../services/strapi';
 
 const integrantes = await getIntegrantesEquipo();
@@ -14,44 +14,43 @@ const omarCard = integrantes.find(i => i.nombre.toLowerCase().includes('omar')) 
   <div class="container hero-grid scroll-reveal">
     <div class="hero-text-column">
       <h1 class="hero-title text-gradient-flame">
-        ¿Quiénes somos?
+        Â¿QuiÃ©nes somos?
       </h1>
 
       <div class="about-brief">
         <p>
-          Somos una institución de vanguardia dedicada al estudio, comprensión y desarrollo de la existencia humana. La <strong>Escuela de Ciencias Ónticas Primigenias 33</strong> nace con el propósito de fusionar la sabiduría ancestral con el rigor analítico para guiar a las personas hacia su máximo potencial.
+          Somos una instituciÃ³n de vanguardia dedicada al estudio, comprensiÃ³n y desarrollo de la existencia humana. La <strong>Escuela de Ciencias Ã“nticas Primigenias 33</strong> nace con el propÃ³sito de fusionar la sabidurÃ­a ancestral con el rigor analÃ­tico para guiar a las personas hacia su mÃ¡ximo potencial.
         </p>
         <p>
-          Nuestra metodología se fundamenta en las <strong>Ciencias Ónticas</strong>, una disciplina enfocada en el estudio del ser en su estado más puro y esencial. No nos limitamos a la teoría; investigamos las leyes primigenias que rigen la realidad y la conciencia. El <strong>número 33</strong> corona nuestra filosofía como el símbolo de la maestría interior, la evolución espiritual consciente y la manifestación del propósito de vida en el plano terrenal.
+          Nuestra metodologÃ­a se fundamenta en las <strong>Ciencias Ã“nticas</strong>, una disciplina enfocada en el estudio del ser en su estado mÃ¡s puro y esencial. No nos limitamos a la teorÃ­a; investigamos las leyes primigenias que rigen la realidad y la conciencia. El <strong>nÃºmero 33</strong> corona nuestra filosofÃ­a como el sÃ­mbolo de la maestrÃ­a interior, la evoluciÃ³n espiritual consciente y la manifestaciÃ³n del propÃ³sito de vida en el plano terrenal.
         </p>
         <p class="mission-highlight">
-          <strong>Misión:</strong> Facilitar herramientas de conocimiento profundo que permitan a cada individuo decodificar su diseño original y alinearse con su verdadero ser.
+          <strong>MisiÃ³n:</strong> Facilitar herramientas de conocimiento profundo que permitan a cada individuo decodificar su diseÃ±o original y alinearse con su verdadero ser.
         </p>
       </div>
 
       <div class="sacred-quote-box">
-        <span class="quote-symbol">«</span>
+        <span class="quote-symbol">Â«</span>
         <p class="quote-content">
-          <strong>Allin Kawsay:</strong> El Ser - Humano no está dentro del universo; es el universo mismo experimentándose a sí mismo.
+          <strong>Allin Kawsay:</strong> El Ser - Humano no estÃ¡ dentro del universo; es el universo mismo experimentÃ¡ndose a sÃ­ mismo.
         </p>
       </div>
 
       <div class="hero-actions">
         <a href="/nosotros/" class="btn btn-primary btn-lg">
-          Conócenos
+          ConÃ³cenos
         </a>
       </div>
     </div>
 
-    <!-- Columna Derecha con Foto del Fundador Omar Zambrano -->
+    <!-- Columna Derecha con Foto del Origen del Logo -->
     <div class="hero-image-column">
       <div class="glass-panel director-card breathing-glow">
         <div class="director-img-wrapper">
-          <img src={omarCard.foto} alt={`${omarCard.nombre} - ${omarCard.cargo}`} class="director-img" />
+          <img src="/images/origen-logo.png" alt="Fotograf&iacute;a Original: Origen del Logo" class="director-img" />
         </div>
-        <div class="director-caption-bar">
-          <span class="director-name">{omarCard.nombre}</span>
-          <span class="director-title">{omarCard.cargo}</span>
+        <div class="director-caption-bar" style="padding: 1.25rem;">
+          <span class="director-title" style="color: var(--accent-gold); font-size: 1.1rem;">Fotograf&iacute;a Original: Origen del Logo</span>
         </div>
       </div>
     </div>
@@ -189,3 +188,4 @@ const omarCard = integrantes.find(i => i.nombre.toLowerCase().includes('omar')) 
     }
   }
 </style>
+
