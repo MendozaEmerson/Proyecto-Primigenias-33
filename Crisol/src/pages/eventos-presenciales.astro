@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+---
+
+<Layout title="Eventos Presenciales | Instituto Primigenias 33" description="Programa Presencial Anual de Numerología Óntica en Lugares de Poder.">
+  <Header />
+
+  <main class="page-main">
+    <section class="page-header hero-bg-overlay" style="background-image: linear-gradient(to bottom, rgba(10,10,14,0.7), var(--bg-dark)), url('/images/evento-presencial.png');">
+      <div class="container text-center scroll-reveal">
+        <span class="badge badge-cyan">Presencial</span>
+        <h1 class="page-title text-gradient-flame">AULA EN CAMPO | MINTAKA</h1>
+        <p class="lead">TERRALAB - INGENIERÍA TRANSPERSONAL</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container text-content-box glass-panel breathing-glow">
+        <h2 style="color: var(--accent-cyan);">VÓRTICES Y ENLACES</h2>
+        <h3>Programa Presencial Anual de Numerología Óntica en Lugares de Poder</h3>
+        
+        <div style="margin-top: 2rem;">
+          <p>Trabajamos en aulas sin paredes nuestra esencia, talentos, hogar de nacimiento, engramas, puerta de salida, sendero de vida, logro personal y nuestra potencia.</p>
+          
+          <blockquote class="quote-box" style="margin: 2rem 0; padding: 2rem; background: rgba(0,0,0,0.4); border-left: 4px solid var(--accent-cyan); font-size: 1.3rem; font-style: italic; color: #fff;">
+            "Bajar la sabiduría del cosmos a la experiencia de la Tierra"
+          </blockquote>
+          
+          <p>Transformando la teoría abstracta en un trabajo de campo vivencial y transformador.</p>
+        </div>
+
+        <div class="text-center" style="margin-top: 4rem;">
+          <a href="https://wa.me/51967747483" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            Consultar Próximas Fechas
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <WhatsAppButton />
+</Layout>
+
+<style>
+  .page-main { padding-bottom: 4rem; }
+  .page-header { padding: 5rem 1rem; text-align: center; background-position: center; background-size: cover; }
+  .page-title { font-size: 3rem; font-weight: 800; margin: 1rem 0; }
+  .text-content-box { max-width: 800px; margin: 0 auto; padding: 3rem; border-radius: 16px; margin-top: -3rem; position: relative; z-index: 10; text-align: center; }
+  .text-content-box h2 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+  .text-content-box h3 { font-size: 1.5rem; color: #ddd; margin-bottom: 1.5rem; font-weight: 400; }
+  .text-content-box p { font-size: 1.15rem; color: var(--text-muted); line-height: 1.8; }
+
+  @media (max-width: 768px) {
+    .text-content-box { padding: 1.5rem; margin-top: 0; }
+    .page-title { font-size: 2.2rem; }
+  }
+</style>

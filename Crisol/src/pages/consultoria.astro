@@ -1,0 +1,125 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+---
+
+<Layout title="Consultoría Personal | Instituto Primigenias 33" description="Consultorio de Numerología Óntica Online. Acompañamiento en sesiones individuales.">
+  <Header />
+
+  <main class="page-main">
+    <section class="page-header hero-bg-overlay" style="background-image: linear-gradient(to bottom, rgba(10,10,14,0.7), var(--bg-dark)), url('/images/consultoria.png');">
+      <div class="container text-center scroll-reveal">
+        <span class="badge badge-gold">Sesiones 1 a 1</span>
+        <h1 class="page-title text-gradient-flame">Mi Consultorio Personal</h1>
+        <p class="lead">Consultorio de Numerología Óntica Online</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container text-content-box glass-panel breathing-glow">
+        <h2>Aquí empieza tu trabajo interno</h2>
+        <p>Acompañamos en sesiones individuales en los procesos personales de los consultantes. Usamos la numerología óntica para apoyar al consultante en sus engramas.</p>
+        <p>Ayudamos a responder a preguntas profundas sobre sí misma(o), sus relaciones y su entorno. Aunque cada proceso es único, las dudas suelen girar en torno a cuatro grandes pilares:</p>
+
+        <div class="pilares-grid">
+          <div class="pilar-card">
+            <h3>1. Comprensión y autoconocimiento</h3>
+            <ul>
+              <li><strong>¿Por qué me siento así?</strong> Busca dar nombre y sentido a emociones como la tristeza, la ansiedad o el vacío.</li>
+              <li><strong>¿Por qué reacciono de esta manera?</strong> Intenta entender el origen de conductas impulsivas, miedos o patrones repetitivos.</li>
+              <li><strong>¿Quién soy realmente fuera de mis roles?</strong> Explora la identidad más allá del trabajo, la familia o las expectativas sociales.</li>
+            </ul>
+          </div>
+          
+          <div class="pilar-card">
+            <h3>2. Gestión del dolor y el malestar</h3>
+            <ul>
+              <li><strong>¿Cómo puedo superar esto?</strong> Busca herramientas para afrontar un duelo, un trauma, una ruptura o un cambio drástico de vida.</li>
+              <li><strong>¿Qué hago con mis pensamientos intrusivos?</strong> Necesita aprender a frenar el autosabotaje o la mente que no para de rumiar.</li>
+              <li><strong>¿Por qué no puedo pasar página?</strong> Intenta destrabar procesos del pasado que siguen doliendo en el presente.</li>
+            </ul>
+          </div>
+
+          <div class="pilar-card">
+            <h3>3. Relaciones e interacción con el entorno</h3>
+            <ul>
+              <li><strong>¿Por qué siempre elijo el mismo tipo de pareja / amigos?</strong> Busca romper patrones vinculares dañinos.</li>
+              <li><strong>¿Cómo pongo límites sin sentir culpa?</strong> Necesita aprender a decir "no" y proteger su espacio personal.</li>
+              <li><strong>¿Por qué me cuesta tanto que me entiendan?</strong> Explora fallas en su comunicación y asertividad.</li>
+            </ul>
+          </div>
+
+          <div class="pilar-card">
+            <h3>4. Futuro y toma de decisiones</h3>
+            <ul>
+              <li><strong>¿Qué dirección quiero darle a mi vida?</strong> Combate las crisis existenciales o la falta de propósito.</li>
+              <li><strong>¿Cómo tomo esta decisión tan importante?</strong> Busca claridad mental ante dilemas laborales, familiares o de pareja.</li>
+              <li><strong>¿Cómo puedo ser más compasivo conmigo mismo?</strong> Intenta cambiar la autocrítica severa por una autoestima más sana.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="metodologia-box" style="margin-top: 3rem;">
+          <h2 style="color: var(--accent-gold);">Metodología</h2>
+          <p class="quote">"Cada consulta se realiza de forma online mediante videollamada (60 minutos) en vivo mediante plataforma Google Meet e incluye la entrega de tu Mapa Numerológico Óntico Personalizado en formato digital (PDF) con tus frecuencias, puntos de tensión y engramas identificados en cada sesión"</p>
+          <p>Sesiones guiadas por <strong>Omar Orlando Zambrano Pinto</strong>, especialista en Numerología Óntica aplicada al desarrollo del ser.</p>
+        </div>
+
+        <div class="programa-box" style="margin-top: 3rem; background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--accent-orange);">
+          <h3>Programa Integral de 13 Sesiones (Estructurado en 12 + 1)</h3>
+          <p>El camino se divide en un ciclo de 12 encuentros individuales de alineación de frecuencia y diagnóstico, sumado a 1 sesión de cierre y balance para consolidar las herramientas integradas.</p>
+        </div>
+
+        <div class="text-center" style="margin-top: 3rem;">
+          <a href="https://wa.me/51967747483" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg" style="font-size: 1.2rem; padding: 1rem 2rem;">
+            Agendar mi Sesión de Diagnóstico Óntico al whatsapp +51 967747483
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <WhatsAppButton />
+</Layout>
+
+<style>
+  .page-main { padding-bottom: 4rem; }
+  .page-header { padding: 5rem 1rem; text-align: center; background-position: center 20%; background-size: cover; }
+  .page-title { font-size: 3rem; font-weight: 800; margin: 1rem 0; }
+  .text-content-box { max-width: 900px; margin: 0 auto; padding: 3rem; border-radius: 16px; margin-top: -3rem; position: relative; z-index: 10; }
+  .text-content-box h2 { font-size: 2rem; margin-bottom: 1.5rem; color: #fff; }
+  .text-content-box p { font-size: 1.1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem; }
+  
+  .pilares-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .pilar-card {
+    background: rgba(0,0,0,0.3);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-top: 2px solid var(--accent-gold);
+  }
+  .pilar-card h3 { color: var(--accent-gold); font-size: 1.2rem; margin-bottom: 1rem; }
+  .pilar-card ul { padding-left: 1rem; color: var(--text-muted); }
+  .pilar-card li { margin-bottom: 0.75rem; font-size: 0.95rem; line-height: 1.5; }
+  .pilar-card li strong { color: #fff; display: block; margin-bottom: 0.2rem; }
+  
+  .quote {
+    font-style: italic;
+    border-left: 4px solid var(--accent-gold);
+    padding-left: 1.5rem;
+    color: #e0e0e0 !important;
+  }
+
+  @media (max-width: 768px) {
+    .pilares-grid { grid-template-columns: 1fr; }
+    .text-content-box { padding: 1.5rem; margin-top: 0; }
+    .page-title { font-size: 2.2rem; }
+  }
+</style>

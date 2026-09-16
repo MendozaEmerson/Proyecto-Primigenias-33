@@ -1,13 +1,13 @@
 ---
-// Componente de Eventos Destacados 2026 (Seminario Anual + Jornada Abierta)
+// Componente de Eventos Destacados (Seminario Anual + Jornada Abierta)
 ---
 
 <section class="section section-parallax">
   <div class="container">
     <div class="section-title">
-      <span class="badge badge-gold">Eventos Destacados 2026</span>
-      <h2>Seminario Anual & Jornadas Abiertas 2026</h2>
-      <p>Explore nuestro seminario anual especial de numerología o acceda libremente a las clases grabadas de la Jornada Abierta 2026.</p>
+      <span class="badge badge-gold">Eventos Destacados</span>
+      <h2>Seminario Anual & Jornadas Abiertas</h2>
+      <p>Explore nuestro seminario anual especial de numerología o acceda libremente a las clases grabadas de la Jornada Abierta.</p>
     </div>
 
     <div class="grid-2col">
@@ -20,7 +20,7 @@
         <div class="card-body">
           <h3>Seminario Anual: Numerología 2026</h3>
           <p>Descubra las frecuencias arquetípicas y claves ontológicas del ciclo 2026 en nuestra presentación magistral en video con guía PDF descargable.</p>
-          <a href="/seminario-2026/" class="btn btn-primary btn-block">Ver Seminario Anual 2026</a>
+          <button class="btn btn-block btn-upcoming" disabled>Próximamente</button>
         </div>
       </div>
 
@@ -31,9 +31,43 @@
           <img src="/images/jornada-abierta-2026.jpg" alt="Jornada Abierta 2026 - Clases Gratuitas Instituto Primigenias 33" class="card-banner-img" />
         </div>
         <div class="card-body">
-          <h3>Jornada Abierta 2026: Clases Gratuitas</h3>
-          <p>Acceda a la serie de 4 clases abiertas en video sobre ciencias ónticas, neuroeducación y arquetipos del ciclo 2026 sin costo.</p>
-          <a href="/jornada-abierta-2026/" class="btn btn-primary btn-block">Ver Clases de la Jornada</a>
+          <h3>Jornada Abierta 2027: Clases Gratuitas</h3>
+          <p>Acceda a la serie de 2 clases abiertas en video sobre ciencias ónticas, neuroeducación y arquetipos del ciclo 2026 sin costo.</p>
+          <button class="btn btn-block btn-upcoming" disabled>Próximamente</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title" style="margin-top: 5rem;">
+      <span class="badge badge-gold">Servicios Especiales</span>
+      <h2>Consultorías y Eventos Presenciales</h2>
+      <p>Acompañamiento personalizado y experiencias vivenciales para tu desarrollo óntico.</p>
+    </div>
+
+    <div class="grid-2col">
+      <!-- Tarjeta: Consultoría -->
+      <div class="glass-panel p-card card-with-image highlight-gold breathing-glow">
+        <span class="card-badge badge-gold">Consultoría</span>
+        <div class="card-img-wrapper">
+          <img src="/images/consultoria.png" alt="Mi Consultorio Personal - Numerología Óntica" class="card-banner-img" style="object-position: top;" />
+        </div>
+        <div class="card-body">
+          <h3>Mi Consultorio Personal: Numerología Óntica</h3>
+          <p>Acompañamos en sesiones individuales para responder a preguntas profundas sobre ti mismo(a), tus relaciones y tu entorno, apoyados en tu mapa numerológico.</p>
+          <a href="/consultoria/" class="btn btn-primary btn-block">Ver Consultoría</a>
+        </div>
+      </div>
+
+      <!-- Tarjeta: Eventos Presenciales -->
+      <div class="glass-panel p-card card-with-image highlight-cyan">
+        <span class="card-badge badge-cyan">Presencial</span>
+        <div class="card-img-wrapper">
+          <img src="/images/evento-presencial.png" alt="AULA EN CAMPO | MINTAKA TERRALAB" class="card-banner-img" />
+        </div>
+        <div class="card-body">
+          <h3>AULA EN CAMPO | MINTAKA TERRALAB</h3>
+          <p>Ingeniería Transpersonal, Vórtices y Enlaces: Programa Presencial Anual de Numerología Óntica en Lugares de Poder. Trabajamos en aulas sin paredes.</p>
+          <a href="/eventos-presenciales/" class="btn btn-primary btn-block">Ver Eventos</a>
         </div>
       </div>
     </div>
@@ -136,5 +170,17 @@
   .btn-block {
     width: 100%;
     margin-top: auto;
+  }
+
+  .btn-upcoming {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px dashed rgba(255, 255, 255, 0.3);
+    cursor: not-allowed;
+  }
+  .btn-upcoming:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: none;
+    box-shadow: none;
   }
 </style>
