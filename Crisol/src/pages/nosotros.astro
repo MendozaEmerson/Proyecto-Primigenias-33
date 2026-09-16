@@ -1,4 +1,4 @@
-﻿---
+---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -8,22 +8,22 @@ import { getIntegrantesEquipo } from '../services/strapi';
 const teamMembers = await getIntegrantesEquipo();
 ---
 
-<Layout title="Sobre Nosotros | Escuela Primigenias 33" description="Conozca la historia, pilares institucionales y la visiÃ³n de la Escuela de Ciencias Ã“nticas Primigenias 33 y su equipo directivo.">
+<Layout title="Sobre Nosotros | Escuela Primigenias 33" description="Conozca la historia, pilares institucionales y la visión de la Escuela de Ciencias Ónticas Primigenias 33 y su equipo directivo.">
   <Header />
 
   <main class="nosotros-main">
     <!-- Header Banner -->
     <section class="page-header hero-bg-overlay">
       <div class="container text-center scroll-reveal">
-        <span class="badge badge-gold">Identidad e InstituciÃ³n</span>
+        <span class="badge badge-gold">Identidad e Institución</span>
         <h1 class="page-title text-gradient-flame">LA ESCUELA</h1>
         <p class="lead">
-          Una instituciÃ³n de vanguardia comprometida con las Ciencias Ã“nticas y la evoluciÃ³n consciente del ser.
+          Una institución de vanguardia comprometida con las Ciencias Ónticas y la evolución consciente del ser.
         </p>
       </div>
     </section>
 
-    <!-- SecciÃ³n 1: NOSOTROS (Texto exacto del cliente - Imagen 1) -->
+    <!-- Sección 1: NOSOTROS (Texto exacto del cliente - Imagen 1) -->
     <section class="section">
       <div class="container">
         <div class="glass-panel nosotros-grid highlight-gold">
@@ -33,21 +33,21 @@ const teamMembers = await getIntegrantesEquipo();
           <div class="nosotros-text-col">
             <h2 class="section-heading">Nosotros</h2>
             <p>
-              En la <strong>Escuela de Ciencias Ã“nticas Primigenias 33</strong> nos respalda una comunidad comprometidos con la excelencia acadÃ©mica y humana. No operamos bajo dogmas cerrados; fomentamos un entorno de aprendizaje dinÃ¡mico y profesional.
+              En la <strong>Escuela de Ciencias Ónticas Primigenias 33</strong> nos respalda una comunidad comprometidos con la excelencia académica y humana. No operamos bajo dogmas cerrados; fomentamos un entorno de aprendizaje dinámico y profesional.
             </p>
             <p>
-              Nuestros pilares institucionales garantizan un estÃ¡ndar educativo de alto nivel:
+              Nuestros pilares institucionales garantizan un estándar educativo de alto nivel:
             </p>
 
             <ul class="pillars-list">
               <li>
-                <span class="pillar-title">Integridad Intelectual:</span> Traducimos conceptos profundos en herramientas prÃ¡cticas, claras y aplicables para el dÃ­a a dÃ­a.
+                <span class="pillar-title">Integridad Intelectual:</span> Traducimos conceptos profundos en herramientas prácticas, claras y aplicables para el día a día.
               </li>
               <li>
-                <span class="pillar-title">EvoluciÃ³n Consciente:</span> Impulsamos el crecimiento personal de nuestros estudiantes mediante el acompaÃ±amiento continuo.
+                <span class="pillar-title">Evolución Consciente:</span> Impulsamos el crecimiento personal de nuestros estudiantes mediante el acompañamiento continuo.
               </li>
               <li>
-                <span class="pillar-title">Compromiso Social:</span> Formamos lÃ­deres de conciencia capaces de generar un impacto positivo y equilibrado en su entorno.
+                <span class="pillar-title">Compromiso Social:</span> Formamos líderes de conciencia capaces de generar un impacto positivo y equilibrado en su entorno.
               </li>
             </ul>
           </div>
@@ -55,26 +55,26 @@ const teamMembers = await getIntegrantesEquipo();
       </div>
     </section>
 
-    <!-- SecciÃ³n: EL ORIGEN DE NUESTRO SÃMBOLO (Foto img.jpeg + Historia) -->
+    <!-- Sección: EL ORIGEN DE NUESTRO SÍMBOLO (Foto img.jpeg + Historia) -->
     <section class="section origen-simbolo-section">
       <div class="container">
         <div class="glass-panel origen-grid highlight-gold">
           <div class="origen-info-col">
-            <span class="badge badge-success">Historia & SÃ­mbolo</span>
+            <span class="badge badge-success">Historia & Símbolo</span>
             <h2 class="origen-title">El Origen de Nuestro Emblema</h2>
             <p class="origen-desc">
-              Esta imagen captura la matriz geomÃ©trica viva en la naturaleza de donde naciÃ³ el sÃ­mbolo oficial de la <strong>Escuela Primigenias 33</strong>. Una revelaciÃ³n esencial que conecta las espirales concÃ©ntricas y los arcos frecuenciales con la arquitectura sagrada del ser.
+              Esta imagen captura la matriz geométrica viva en la naturaleza de donde nació el símbolo oficial de la <strong>Escuela Primigenias 33</strong>. Una revelación esencial que conecta las espirales concéntricas y los arcos frecuenciales con la arquitectura sagrada del ser.
             </p>
             <div class="sacred-phrase-pill">
-              <span class="phrase-tag">FILOSOFÃA INSTITUCIONAL:</span>
-              <p>Â«Allin Kawsay: El Ser - Humano no estÃ¡ dentro del universo; es el universo mismo experimentÃ¡ndose a sÃ­ mismoÂ».</p>
+              <span class="phrase-tag">FILOSOFÍA INSTITUCIONAL:</span>
+              <p>«Allin Kawsay: El Ser - Humano no está dentro del universo; es el universo mismo experimentándose a sí mismo».</p>
             </div>
           </div>
           <div class="origen-img-col">
             <div class="origen-img-card breathing-glow">
-              <img src="/images/origen-emblema-sagrado.jpg" alt="FotografÃ­a original de la matriz de donde naciÃ³ el logo de Primigenias 33" class="origen-img" />
+              <img src="/images/origen-emblema-sagrado.jpg" alt="Fotografía original de la matriz de donde nació el logo de Primigenias 33" class="origen-img" />
               <div class="origen-caption-bar">
-                <span>FotografÃ­a Original: Origen del Logo</span>
+                <span>Fotografía Original: Origen del Logo</span>
               </div>
             </div>
           </div>
@@ -82,12 +82,12 @@ const teamMembers = await getIntegrantesEquipo();
       </div>
     </section>
 
-    <!-- SecciÃ³n 2: ACERCA DE MÃ - Omar Orlando Zambrano Pinto (Texto e Imagen exactos - Imagen 2) -->
+    <!-- Sección 2: ACERCA DE MÍ - Omar Orlando Zambrano Pinto (Texto e Imagen exactos - Imagen 2) -->
     <section class="section bg-dim">
       <div class="container">
         <div class="section-title text-center">
           <span class="badge badge-gold">Fundador y Mentor</span>
-          <h2 class="sobre-mi-heading">Acerca de mÃ­</h2>
+          <h2 class="sobre-mi-heading">Acerca de mí</h2>
         </div>
 
         <div class="glass-panel sobre-mi-grid highlight-gold">
@@ -95,11 +95,11 @@ const teamMembers = await getIntegrantesEquipo();
             <h3 class="founder-name" style="margin-bottom: 0.5rem;">Omar Orlando Zambrano Pinto</h3>
           <div class="founder-titles" style="margin-bottom: 1.5rem; color: var(--accent-orange);">
             <strong style="display: block; font-size: 1.1rem; text-transform: uppercase;">Fundador y Coach Principal</strong>
-            <span style="font-size: 0.95rem; text-transform: uppercase;">Coach en Numerolog&iacute;a &Oacute;ntica y Transpersonal</span>
+            <span style="font-size: 0.95rem; text-transform: uppercase;">Coach en Numerología Óntica y Transpersonal</span>
           </div>
             
             <blockquote class="founder-quote-box">
-              "Hola, soy <strong>Omar Orlando Zambrano Pinto</strong>. Durante aÃ±os me formÃ© para entender el mundo a travÃ©s de la <strong>IngenierÃ­a Industrial</strong>, buscando la eficiencia en el exterior. Mi perspectiva cambiÃ³ por completo cuando la <strong>numerologÃ­a Ã³ntica</strong> me permitiÃ³ descifrar mi propio mapa de vida y conectar con mi verdadero yo. Hoy, mi mayor anhelo es compartir contigo ese camino. A travÃ©s de las <strong>ciencias Ã³nticas</strong> y herramientas prÃ¡cticas, te acompaÃ±o a estructurar tu crecimiento personal, comprender tu esencia y reconocer tu potencia."
+              "Hola, soy <strong>Omar Orlando Zambrano Pinto</strong>. Durante años me formé para entender el mundo a través de la <strong>Ingeniería Industrial</strong>, buscando la eficiencia en el exterior. Mi perspectiva cambió por completo cuando la <strong>numerología óntica</strong> me permitió descifrar mi propio mapa de vida y conectar con mi verdadero yo. Hoy, mi mayor anhelo es compartir contigo ese camino. A través de las <strong>ciencias ónticas</strong> y herramientas prácticas, te acompaño a estructurar tu crecimiento personal, comprender tu esencia y reconocer tu potencia."
             </blockquote>
           </div>
 
@@ -112,13 +112,13 @@ const teamMembers = await getIntegrantesEquipo();
       </div>
     </section>
 
-    <!-- SecciÃ³n 3: EQUIPO PRIMIGENIAS 33 -->
+    <!-- Sección 3: EQUIPO PRIMIGENIAS 33 -->
     <section class="section">
       <div class="container">
         <div class="section-title text-center">
           <span class="badge badge-warning">Comunidad Educativa</span>
           <h2 class="team-heading">EQUIPO PRIMIGENIAS 33</h2>
-          <p class="team-intro">Equipo multidisciplinario que acompaÃ±a el desarrollo acadÃ©mico y humano de nuestros estudiantes.</p>
+          <p class="team-intro">Equipo multidisciplinario que acompaña el desarrollo académico y humano de nuestros estudiantes.</p>
         </div>
 
         <div class="team-grid">
@@ -167,7 +167,7 @@ const teamMembers = await getIntegrantesEquipo();
     margin: 0 auto;
   }
 
-  /* SecciÃ³n 1: NOSOTROS Grid */
+  /* Sección 1: NOSOTROS Grid */
   .nosotros-grid {
     display: grid;
     grid-template-columns: 440px 1fr;
@@ -231,7 +231,7 @@ const teamMembers = await getIntegrantesEquipo();
     margin-right: 0.35rem;
   }
 
-  /* SecciÃ³n 2: SOBRE MÃ Grid */
+  /* Sección 2: SOBRE MÍ Grid */
   .sobre-mi-heading {
     font-size: 2.25rem;
     font-weight: 800;
@@ -295,7 +295,7 @@ const teamMembers = await getIntegrantesEquipo();
     object-position: top center;
   }
 
-  /* SecciÃ³n 3: TEAM PRIMIGENIAS 33 */
+  /* Sección 3: TEAM PRIMIGENIAS 33 */
   .team-heading {
     font-size: 2rem;
     font-weight: 800;
@@ -386,7 +386,7 @@ const teamMembers = await getIntegrantesEquipo();
     }
   }
 
-  /* SecciÃ³n: El Origen del SÃ­mbolo */
+  /* Sección: El Origen del Símbolo */
   .origen-grid {
     display: grid;
     grid-template-columns: 1fr 380px;
@@ -473,4 +473,3 @@ const teamMembers = await getIntegrantesEquipo();
     border-top: 1px solid rgba(245, 158, 11, 0.3);
   }
 </style>
-
