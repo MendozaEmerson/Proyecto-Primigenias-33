@@ -16,6 +16,7 @@
       <div class="glass-panel curso-card-featured highlight-gold breathing-glow">
         <div class="curso-image-side">
           <img src="/images/numerologia-main.png" alt="Diplomado en Numerología Óntica" class="curso-banner-img" />
+          <div class="badge-type">Curso</div>
         </div>
         <div class="curso-info-side">
           <h3>Numerología</h3>
@@ -37,6 +38,7 @@
       <div class="glass-panel curso-card-featured highlight-gold breathing-glow">
         <div class="curso-image-side">
           <img src="/images/taller-nombres-oficial.png" alt="Taller: Nombre ideal para tu bebé" class="curso-banner-img" style="object-position: top;" />
+          <div class="badge-type" style="background: var(--accent-gold); color: #000;">Taller</div>
         </div>
         <div class="curso-info-side">
           <h3>CO - CREEMOS EL NOMBRE DE TU BEBE</h3>
@@ -141,5 +143,21 @@
     .aprende-container {
       grid-template-columns: 1fr;
     }
+  }
+
+  .badge-type {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 0.35rem 0.85rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid rgba(255,255,255,0.2);
+    z-index: 10;
   }
 </style>
