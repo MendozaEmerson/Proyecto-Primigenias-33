@@ -9,28 +9,23 @@ export interface Formacion {
 
 export const formacionesList: Formacion[] = [
   {
-    id: "coach",
-    titulo: "COACH TRANSPERSONAL Y ÓNTICO",
-    imagen: "/images/grupo-estudiantes-graduacion.jpg",
-    desc: "Formación integral de 12 meses para proyectar tu desarrollo personal y convertirte en creador de tu propia realidad.",
-    link: "/contacto/",
-    btnText: "Ver Formación"
-  },
-  {
     id: "numerologia",
     titulo: "ESCUELA DE NUMEROLOGÍA ÓNTICA",
-    imagen: "/images/numerologia-base-ontica.jpg",
+    imagen: "/images/numerologia-main.png",
     desc: "Estudio del potencial numérico personal, lectura transpersonal de tu nombre y fecha de nacimiento.",
     link: "/numerologia/",
     btnText: "Ver Formación"
-  },
+  }
+];
+
+export const talleresList: Formacion[] = [
   {
-    id: "memorias-cuanticas",
-    titulo: "MEMORIAS CUÁNTICAS",
-    imagen: "/images/master-especializaciones.jpg",
-    desc: "Descodificación de símbolos y arquetipos junguianos para la capacitación de facilitadores profesionales.",
-    link: "/contacto/",
-    btnText: "Ver Formación"
+    id: "taller-bebes",
+    titulo: "CO - CREEMOS EL NOMBRE DE TU BEBE",
+    imagen: "/images/taller-nombres-oficial.png",
+    desc: "Hablemos del nombre de tu bebé... no desde la moda, sino desde su esencia pura.",
+    link: "/talleres/nombres-bebes/",
+    btnText: "Ver Taller"
   }
 ];
 
@@ -73,7 +68,7 @@ export const especializacionesList: Especializacion[] = [
     titulo: "Números Maestros y Códigos de la Mente",
     desc: "Decodificación profunda de los dígitos dobles (11, 22, 33, 44) y su impacto en la misión de vida.",
     badge: "Nivel Superior",
-    imagen: "/images/numerologia-base-ontica.jpg",
+    imagen: "/images/numerologia-main.png",
     detalles: [
       "Arquitectura sagrada de los números dobles.",
       "Misión colectiva y responsabilidad transpersonal.",
