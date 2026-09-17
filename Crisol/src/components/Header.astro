@@ -17,7 +17,7 @@ const currentPath = Astro.url.pathname;
       <a href="/" class={currentPath === "/" ? "active" : ""}>Inicio</a>
       <a href="/nosotros/" class={currentPath.startsWith("/nosotros") ? "active" : ""}>La Escuela</a>
       <a href="/formaciones/" class={currentPath.startsWith("/formaciones") ? "active" : ""}>Formaciones</a>
-      <a href="/eventos/" class={currentPath.startsWith("/eventos") ? "active" : ""}>Eventos</a>
+      <a href="/eventos/" class={currentPath === "/eventos" || currentPath === "/eventos/" ? "active" : ""}>Eventos</a>
       <a href="/contacto/" class={currentPath.startsWith("/contacto") ? "active" : ""}>Contacto</a>
     </nav>
 
@@ -46,7 +46,7 @@ const currentPath = Astro.url.pathname;
       <a href="/" class={currentPath === "/" ? "active" : ""}>Inicio</a>
       <a href="/nosotros/" class={currentPath.startsWith("/nosotros") ? "active" : ""}>La Escuela</a>
       <a href="/formaciones/" class={currentPath.startsWith("/formaciones") ? "active" : ""}>Formaciones</a>
-      <a href="/eventos/" class={currentPath.startsWith("/eventos") ? "active" : ""}>Eventos</a>
+      <a href="/eventos/" class={currentPath === "/eventos" || currentPath === "/eventos/" ? "active" : ""}>Eventos</a>
       <a href="/contacto/" class={currentPath.startsWith("/contacto") ? "active" : ""}>Contacto</a>
       
       <a href="http://194.163.144.149:8085" target="_blank" rel="noopener noreferrer" class="btn btn-moodle btn-mobile-moodle">

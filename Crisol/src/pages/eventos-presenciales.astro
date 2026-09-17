@@ -46,7 +46,8 @@ const carouselImages = [
   '/images/aramu-muru.png',
   '/images/lago-titicaca.png',
   '/images/apu-pitusiray.png',
-  '/images/naupa-iglesia.png'
+  '/images/naupa-iglesia.png',
+  '/images/carrusel-4.png'
 ];
 ---
 
@@ -195,7 +196,7 @@ const carouselImages = [
   .carousel-section { overflow: hidden; background: #000; padding: 3rem 0; margin-top: 3rem; }
   .carousel-container { width: 100%; overflow: hidden; position: relative; }
   .carousel-track {
-    display: flex; width: calc(300px * 8); animation: scroll 20s linear infinite; gap: 1rem;
+    display: flex; width: calc(300px * 10); animation: scroll 20s linear infinite; gap: 1rem;
   }
   .carousel-slide {
     width: 300px; height: 200px; flex-shrink: 0; border-radius: 8px; overflow: hidden;
@@ -205,7 +206,7 @@ const carouselImages = [
   }
   @keyframes scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-300px * 4 - 4rem)); }
+    100% { transform: translateX(calc(-300px * 5 - 5rem)); }
   }
 
   @media (max-width: 768px) {
