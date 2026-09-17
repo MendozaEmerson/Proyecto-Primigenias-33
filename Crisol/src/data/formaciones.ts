@@ -110,7 +110,7 @@ export const especializacionesList: Especializacion[] = [
       "Pasaje por la puerta de la mente y la emoción.",
       "Integración del Ser consciente en la cotidianeidad."
     ]
-  }
+  },
   {
     slug: "frecuencia-emprendedora",
     link: "/talleres/frecuencia-emprendedora/",
