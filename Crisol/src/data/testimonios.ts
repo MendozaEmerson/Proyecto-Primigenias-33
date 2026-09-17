@@ -7,36 +7,24 @@ export interface Testimonio {
 
 export const testimoniosList: Testimonio[] = [
   {
-    nombre: "Luciana Masa",
-    foto: "/images/alumna-luciana-masa.jpg",
-    rol: "Alumna egresada del Instituto Primigenias 33",
-    cita: '"La formación óntica cambió por completo mi perspectiva profesional y de vida."'
+    nombre: "Alumno de Numerología",
+    foto: "/images/alumno1.png",
+    rol: "Numerología Óntica",
+    cita: "«Gracias a la numerología, logré reconocer mis sombras, dones y esencia. Esta herramienta fue fundamental en mi autoconocimiento, ya que me ayudó a comprender mi propósito de vida y a encontrar el camino hacia la respuesta de la gran pregunta: ¿quién soy?»"
   },
   {
-    nombre: "Fernanda Cassia Alfano",
-    foto: "/images/directora-diana.jpg",
-    rol: "Alumna egresada y Lic. en Psicología",
-    cita: '"Las herramientas de lectura transpersonal me permitieron abordar a mis pacientes con una profundidad sin precedentes."'
-  },
-  {
-    nombre: "Lorena Paula Rodríguez",
-    foto: "/images/diana-numerologia-clase.jpg",
-    rol: "Alumna egresada y Consultora",
-    cita: '"El mapa de la fecha de nacimiento e inconsciente colectivo es imprescindible para el autoconocimiento real."'
-  },
-  {
-    nombre: "Zulma Ofelia Christensen",
-    foto: "/images/directora-diana.jpg",
-    rol: "Alumna egresada y Analista",
-    cita: '"Comprender la matriz numérica y la geometría de la frecuencia me dio la claridad que buscaba durante años."'
+    nombre: "Alumno de Numerología",
+    foto: "/images/alumno2.png",
+    rol: "Numerología Óntica",
+    cita: "Antes de descubrir la numerología, sentía que mi vida era una rutina eterna y sin sentido, limitada a trabajar y sobrevivir; sin embargo, las sesiones y clases de este maravilloso tema transformaron por completo mi perspectiva al recordarme mi verdadera identidad, mis talentos olvidados y el propósito de mis vivencias pasadas. Este conocimiento no solo me abrió los ojos y reavivó mi chispa interior con esperanza, sino que se convirtió en la guía fundamental que hoy me inspira a seguir descubriéndome y a cumplir con mi misión en este mundo."
   }
 ];
 
 export const galleryCarouselImages = [
-  { src: "/images/grupo-estudiantes-graduacion.jpg", alt: "Graduación Instituto Primigenias 33" },
-  { src: "/images/curso-numerologia-diploma.jpg", alt: "Entrega de Diplomas Numerología" },
-  { src: "/images/jornada-abierta-2026.jpg", alt: "Jornada Abierta Presencial" },
-  { src: "/images/numerologia-2026.jpg", alt: "Seminario Anual 2026" },
-  { src: "/images/diana-numerologia-clase.jpg", alt: "Clase de Numerología Base Óntica" },
-  { src: "/images/diana-fundadora-cristales.jpg", alt: "Dirección Institucional" }
+  { src: "/images/lago-titicaca.png", alt: "Lago Titicaca" },
+  { src: "/images/aramu-muru.png", alt: "Aramu Muru" },
+  { src: "/images/naupa-iglesia.png", alt: "Ñaupa Iglesia" },
+  { src: "/images/apu-pitusiray.png", alt: "Apu Pitusiray" },
+  { src: "/images/carrusel-4.png", alt: "Evento Presencial" },
+  { src: "/images/numerologia-main.png", alt: "Clase de Numerología Base Óntica" }
 ];
