@@ -111,4 +111,22 @@ export const especializacionesList: Especializacion[] = [
       "Integración del Ser consciente en la cotidianeidad."
     ]
   }
+  {
+    slug: "frecuencia-emprendedora",
+    link: "/talleres/frecuencia-emprendedora/",
+    titulo: "Taller Frecuencia Emprendedora 33",
+    subtitulo: "Dirección a tu propósito",
+    imagen: "/images/frecuencia-emprendedora.png",
+    desc: "Herramientas desde la Numerología Óntica para dar dirección a tu propósito empresarial.",
+    btnText: "Conocer Taller"
+  },
+  {
+    slug: "arquetipos-frecuencias",
+    link: "/talleres/arquetipos-frecuencias/",
+    titulo: "Arquetipos y Frecuencias",
+    subtitulo: "Numerología en Consulta",
+    imagen: "/images/arquetipos-frecuencias.png",
+    desc: "Integración de la Numerología óntica en la Consulta Terapéutica para optimizar diagnósticos.",
+    btnText: "Conocer Taller"
+  }
 ];
