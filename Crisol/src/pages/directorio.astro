@@ -75,8 +75,9 @@ import { docentesList } from '../data/docentes';
   }
 
   .docentes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 2.5rem;
     max-width: 1240px;
     margin: 0 auto;
@@ -88,6 +89,8 @@ import { docentesList } from '../data/docentes';
     overflow: hidden;
     padding: 0;
     border-radius: var(--radius-lg);
+    width: 380px;
+    max-width: 100%;
   }
 
   .docente-img-box {
