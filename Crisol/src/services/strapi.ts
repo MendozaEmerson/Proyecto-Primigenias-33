@@ -74,7 +74,7 @@ export async function getIntegrantesEquipo(): Promise<IntegranteEquipo[]> {
   const fallbackList: IntegranteEquipo[] = docentesList.map(d => ({
     nombre: d.nombre,
     cargo: d.especialidad,
-    foto: d.foto
+    foto: d.imagen
   }));
 
   const strapiData = await fetchStrapiData<any[]>('integrantes', []);
@@ -130,7 +130,13 @@ export async function getGaleriaInicio(): Promise<FotoGaleria[]> {
 export async function getTestimoniosAlumnos(): Promise<TestimonioAlumno[]> {
   const strapiData = await fetchStrapiData<any[]>('testimonios', []);
   if (!strapiData || strapiData.length === 0) {
-    return testimoniosList;
+    return testimoniosList.map((t, idx) => ({
+      id: String(idx),
+      nombre: t.nombre,
+      curso: t.rol,
+      comentario: t.cita,
+      avatar: t.foto
+    }));
   }
 
   return strapiData.map((item: any) => {

@@ -20,21 +20,20 @@ const testimoniosList = await getTestimoniosAlumnos();
     </div>
 
     <!-- Fila de 2 Columnas: Frase a la Izquierda y Testimonios al Costado -->
-    <div class="quote-testimonial-row">
+    <div class="quote-testimonial-row" data-testimonios={JSON.stringify(testimoniosList)}>
       <!-- Columna Izquierda: Frase Destacada -->
       <div class="glass-panel quote-box">
-        <p class="quote-text">
-          "Utilizo la Numerología Óntica Transpersonal en mi consultorio como una gran herramienta para que los consultantes puedan hacer visible lo invisible que es lo que les da forma a su Ser."
+        <p id="tGranCita" class="quote-text">
+          {testimoniosList[0]?.comentario || ''}
         </p>
       </div>
 
-      <!-- Columna Derecha: Carrusel de Testimonios (4 Espacios Interactivos) -->
-      <div class="glass-panel testimonial-slider-box" data-testimonios={JSON.stringify(testimoniosList)}>
+      <!-- Columna Derecha: Carrusel de Testimonios -->
+      <div class="glass-panel testimonial-slider-box">
         <div class="testimonial-content" id="activeTestimonial">
           <img id="tFoto" src={testimoniosList[0]?.avatar || '/images/alumna-luciana-masa.jpg'} alt={testimoniosList[0]?.nombre || 'Estudiante'} class="student-avatar" />
           <h4 id="tNombre" class="student-name">{testimoniosList[0]?.nombre || 'Estudiante'}</h4>
           <span id="tRol" class="student-role">{testimoniosList[0]?.curso || 'Numerología Óntica'}</span>
-          <p id="tCita" class="student-quote">{testimoniosList[0]?.comentario || ''}</p>
         </div>
         <div class="slider-dots" id="sliderDots">
           {testimoniosList.map((_, idx) => (
@@ -67,8 +66,8 @@ const testimoniosList = await getTestimoniosAlumnos();
   }
 
   // 2. Carrusel de Testimonios Interactivo
-  const sliderBox = document.querySelector('.testimonial-slider-box') as HTMLElement;
-  const testimoniosList = sliderBox?.dataset.testimonios ? JSON.parse(sliderBox.dataset.testimonios) : [];
+  const rowBox = document.querySelector('.quote-testimonial-row') as HTMLElement;
+  const testimoniosList = rowBox?.dataset.testimonios ? JSON.parse(rowBox.dataset.testimonios) : [];
 
   let currentIndex = 0;
   let testimonialTimer: ReturnType<typeof setInterval>;
@@ -76,7 +75,7 @@ const testimoniosList = await getTestimoniosAlumnos();
   const tFoto = document.getElementById('tFoto') as HTMLImageElement;
   const tNombre = document.getElementById('tNombre');
   const tRol = document.getElementById('tRol');
-  const tCita = document.getElementById('tCita');
+  const tGranCita = document.getElementById('tGranCita');
   const dots = document.querySelectorAll('#sliderDots .dot');
 
   function renderTestimonial(index: number) {
@@ -90,7 +89,7 @@ const testimoniosList = await getTestimoniosAlumnos();
     }
     if (tNombre) tNombre.textContent = item.nombre || 'Estudiante';
     if (tRol) tRol.textContent = item.curso || item.rol || 'Numerología Óntica';
-    if (tCita) tCita.textContent = item.comentario || item.cita || '';
+    if (tGranCita) tGranCita.textContent = item.comentario || item.cita || '';
 
     dots.forEach((dot, idx) => {
       if (idx === index) {
