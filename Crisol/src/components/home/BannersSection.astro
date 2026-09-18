@@ -1,26 +1,13 @@
 ---
-// Componente de Banners Destacados (Continúa Tu Formación & Directorio de Profesionales)
+// Componente de Banners Destacados (Directorio de Profesionales)
 ---
 
 <section class="section">
   <div class="container">
-    <div class="banner-row-grid">
-      <!-- Banner 1: Continúa Tu Formación (Másters y Seminarios) -->
-      <div class="glass-panel banner-wide-card highlight-gold breathing-glow">
-        <div class="banner-bg-img" style="background-image: url('/images/master-especializaciones.jpg');"></div>
-        <div class="banner-overlay-content">
-          <span class="badge badge-gold">Especializaciones</span>
-          <h2>CONTINÚA TU FORMACIÓN</h2>
-          <p>Desde cualquier parte del mundo</p>
-          <a href="/especializaciones/" class="btn btn-outline-light">
-            VER MÁSTERS
-          </a>
-        </div>
-      </div>
-
-      <!-- Banner 2: Directorio de Profesionales (Docentes) -->
-      <div class="glass-panel banner-wide-card highlight-cyan">
-        <div class="banner-bg-img" style="background-image: url('/images/directorio-profesionales.jpg');"></div>
+    <div class="banner-single-wrapper">
+      <!-- Banner: Directorio de Profesionales (Docentes) -->
+      <div class="glass-panel banner-wide-card highlight-cyan breathing-glow">
+        <div class="banner-bg-img" style="background-image: url('/images/bg-parallax.jpg'); filter: brightness(0.4);"></div>
         <div class="banner-overlay-content">
           <span class="badge badge-cyan">Docentes</span>
           <h2>DIRECTORIO DE PROFESIONALES</h2>
@@ -35,11 +22,10 @@
 </section>
 
 <style>
-  .banner-row-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    max-width: 1200px;
+  .banner-single-wrapper {
+    display: flex;
+    justify-content: center;
+    max-width: 800px;
     margin: 0 auto;
   }
 
@@ -48,6 +34,7 @@
     border-radius: var(--radius-lg);
     overflow: hidden;
     min-height: 220px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -60,7 +47,6 @@
     inset: 0;
     background-size: cover;
     background-position: center;
-    filter: brightness(0.35);
     transition: transform 0.5s ease;
   }
 
@@ -112,11 +98,5 @@
     color: #000000;
     border-color: #ffffff;
     transform: translateY(-2px);
-  }
-
-  @media (max-width: 768px) {
-    .banner-row-grid {
-      grid-template-columns: 1fr;
-    }
   }
 </style>

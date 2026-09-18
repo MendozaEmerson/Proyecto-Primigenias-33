@@ -26,6 +26,22 @@ export const talleresList: Formacion[] = [
     desc: "Hablemos del nombre de tu bebé... no desde la moda, sino desde su esencia pura.",
     link: "/talleres/nombres-bebes/",
     btnText: "Ver Taller"
+  },
+  {
+    id: "frecuencia-emprendedora",
+    titulo: "Taller Frecuencia Emprendedora 33",
+    imagen: "/images/frecuencia-emprendedora.png",
+    desc: "Herramientas desde la Numerología Óntica para dar dirección a tu propósito empresarial.",
+    link: "/talleres/frecuencia-emprendedora/",
+    btnText: "Conocer Taller"
+  },
+  {
+    id: "arquetipos-frecuencias",
+    titulo: "Arquetipos y Frecuencias",
+    imagen: "/images/arquetipos-frecuencias.png",
+    desc: "Integración de la Numerología Óntica en la Consulta Terapéutica para optimizar diagnósticos.",
+    link: "/talleres/arquetipos-frecuencias/",
+    btnText: "Conocer Taller"
   }
 ];
 
@@ -110,23 +126,5 @@ export const especializacionesList: Especializacion[] = [
       "Pasaje por la puerta de la mente y la emoción.",
       "Integración del Ser consciente en la cotidianeidad."
     ]
-  },
-  {
-    slug: "frecuencia-emprendedora",
-    link: "/talleres/frecuencia-emprendedora/",
-    titulo: "Taller Frecuencia Emprendedora 33",
-    subtitulo: "Dirección a tu propósito",
-    imagen: "/images/frecuencia-emprendedora.png",
-    desc: "Herramientas desde la Numerología Óntica para dar dirección a tu propósito empresarial.",
-    btnText: "Conocer Taller"
-  },
-  {
-    slug: "arquetipos-frecuencias",
-    link: "/talleres/arquetipos-frecuencias/",
-    titulo: "Arquetipos y Frecuencias",
-    subtitulo: "Numerología en Consulta",
-    imagen: "/images/arquetipos-frecuencias.png",
-    desc: "Integración de la Numerología óntica en la Consulta Terapéutica para optimizar diagnósticos.",
-    btnText: "Conocer Taller"
   }
 ];
