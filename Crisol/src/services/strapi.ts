@@ -100,10 +100,13 @@ export interface FotoGaleria {
 }
 
 export async function getGaleriaInicio(): Promise<FotoGaleria[]> {
-      const fallback: FotoGaleria[] = [
-      { titulo: 'Conexión con la Naturaleza', imagen: '/images/carrusel-1.png' },
-      { titulo: 'Exploración Ancestral', imagen: '/images/carrusel-2.png' },
-      { titulo: 'Montañas Sagradas', imagen: '/images/carrusel-3.png' },
+          const fallback: FotoGaleria[] = [
+      { titulo: 'Lago Titicaca', imagen: '/images/lago-titicaca.png' },
+      { titulo: 'Aramu Muru', imagen: '/images/aramu-muru.png' },
+      { titulo: 'Apu Pitusiray', imagen: '/images/apu-pitusiray.png' },
+      { titulo: 'Naupa Iglesia', imagen: '/images/naupa-iglesia.png' },
+      { titulo: 'Numerología', imagen: '/images/numerologia-main.png' },
+      { titulo: 'El Origen', imagen: '/images/origen-logo.png' }
     ];
 
   const strapiData = await fetchStrapiData<any[]>('galeria-fotos', []);
