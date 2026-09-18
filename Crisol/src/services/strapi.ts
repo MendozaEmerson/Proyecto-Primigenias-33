@@ -100,11 +100,11 @@ export interface FotoGaleria {
 }
 
 export async function getGaleriaInicio(): Promise<FotoGaleria[]> {
-  const fallback: FotoGaleria[] = [
-    { titulo: 'Graduación 2024', imagen: '/images/grupo-estudiantes-graduacion.jpg' },
-    { titulo: 'Entrega de Diplomas', imagen: '/images/alumna-luciana-masa.jpg' },
-    { titulo: 'Exposición Holística', imagen: '/images/expo-holistica-2024.jpg' },
-  ];
+      const fallback: FotoGaleria[] = [
+      { titulo: 'Conexión con la Naturaleza', imagen: '/images/carrusel-1.png' },
+      { titulo: 'Exploración Ancestral', imagen: '/images/carrusel-2.png' },
+      { titulo: 'Montañas Sagradas', imagen: '/images/carrusel-3.png' },
+    ];
 
   const strapiData = await fetchStrapiData<any[]>('galeria-fotos', []);
   if (!strapiData || strapiData.length === 0) {
