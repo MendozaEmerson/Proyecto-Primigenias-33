@@ -9,7 +9,7 @@ const niveles = [
     link: "/numerologia/primer-nivel/",
     titulo: "Primer Nivel",
     subtitulo: "Diseño Transpersonal",
-    imagen: "/images/numerologia-nivel1.png",
+    imagen: "/images/nivel1-card.png",
     desc: "Introducción a la base óntica, matriz personal de nacimiento y decodificación del ego y arquetipos.",
     btnText: "Conocer Primer Nivel"
   },
@@ -18,7 +18,7 @@ const niveles = [
     link: "/numerologia/segundo-nivel/",
     titulo: "Segundo Nivel",
     subtitulo: "Descodificación Ancestral",
-    imagen: "/images/numerologia-nivel2.png",
+    imagen: "/images/nivel2-card.png",
     desc: "Árbol numerológico ancestral, frecuencias de herencia familiar y desactivación de mandatos.",
     btnText: "Conocer Segundo Nivel"
   },
@@ -27,7 +27,7 @@ const niveles = [
     link: "/numerologia/tercer-nivel/",
     titulo: "Tercer Nivel",
     subtitulo: "La Geometría de la Frecuencia",
-    imagen: "/images/numerologia-nivel3.png",
+    imagen: "/images/nivel3-card.png",
     desc: "Numerología 3D, cálculos avanzados de vibración geométrica y mapas del sendero de vida.",
     btnText: "Conocer Tercer Nivel"
   },
@@ -52,7 +52,7 @@ const niveles = [
       <div class="container numerologia-hero-grid scroll-reveal">
         <div class="hero-image-box">
           <div class="glass-panel image-card breathing-glow">
-            <img src="/images/numerologia-main.png" alt="Escuela de Numerología Base Óntica" class="school-img" />
+            <img src="/images/numerologia-oficial.png" alt="Escuela de Numerología Base Óntica" class="school-img" />
           </div>
         </div>
 
@@ -61,19 +61,12 @@ const niveles = [
           <h1 class="text-gradient-flame">ESCUELA DE NUMEROLOGÍA</h1>
           <h2 class="sub-heading">Base Óntica</h2>
           <p class="hero-desc">
-            Donde de manera profunda y práctica iluminamos la sombra y hacemos visible el potencial que el mapa del nombre y la fecha traen para desplegarnos en la vida. Todo direccionado de manera estratégica para que al finalizar pueda analizar, interpretar y decodificar una frecuencia formativa desde su origen. Cada nivel se realiza por separado de manera cronológica.
+            Formamos profesionales en decodificación de frecuencias a través de un método innovador y profundo de base óntica. El programa enseña de forma práctica a interpretar símbolos, mapas emocionales y sistemas de creencias utilizando el nombre y la fecha de nacimiento para liberar tu Potencial. La formación se da de manera cronológica por niveles independientes, cada uno con su propia certificación oficial.
           </p>
         </div>
       </div>
     
-    <div class="container text-center" style="margin-top: 3rem; margin-bottom: 2rem;">
-      <p style="font-size: 0.85rem; color: var(--text-muted); font-style: italic; max-width: 600px; margin: 0 auto; line-height: 1.5;">
-        Con el respaldo de Instituto Crisol Ciencias Onticas.<br/>
-        Método Numerología Óntica<br/>
-        Roberto Omar Ávila - Diana Andrea Braconi<br/>
-        Derechos Reservados
-      </p>
-    </div>
+    
 </section>
 
     <!-- Sección de Niveles / Capítulos -->
@@ -82,7 +75,7 @@ const niveles = [
         <div class="section-title">
           <span class="badge badge-warning">Estructura Curricular</span>
           <h2>HAZ CLIC AQUÍ PARA CONOCER NUESTROS NIVELES</h2>
-          <p>Seleccione el nivel para acceder al temario detallado, modalidades y programa en PDF.</p>
+          
         </div>
 
         <div class="niveles-grid">
@@ -95,7 +88,7 @@ const niveles = [
               <div class="nivel-body">
                 <h3>{nivel.titulo}</h3>
                 <h4 class="nivel-sub">{nivel.subtitulo}</h4>
-                <p>{nivel.desc}</p>
+                
                 
                 <a href={nivel.link} class={`btn btn-primary btn-block ${nivel.slug === 'especialidades' ? 'btn-highlight-sm' : ''}`}>
                   {nivel.btnText}
@@ -192,7 +185,7 @@ const niveles = [
   }
 
   .nivel-img-wrapper {
-    height: 200px;
+    height: 180px;
     width: 100%;
     overflow: hidden;
     background: #000;
@@ -201,7 +194,7 @@ const niveles = [
   .nivel-banner-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; background: transparent;
     transition: transform 0.4s ease;
   }
 

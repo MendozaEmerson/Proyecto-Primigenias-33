@@ -26,5 +26,5 @@ export const galleryCarouselImages = [
   { src: "/images/naupa-iglesia.png", alt: "Ñaupa Iglesia" },
   { src: "/images/apu-pitusiray.png", alt: "Apu Pitusiray" },
   { src: "/images/carrusel-4.png", alt: "Evento Presencial" },
-  { src: "/images/numerologia-main.png", alt: "Clase de Numerología Base Óntica" }
+  { src: "/images/numerologia-oficial.png", alt: "Clase de Numerología Base Óntica" }
 ];

@@ -105,7 +105,7 @@ export async function getGaleriaInicio(): Promise<FotoGaleria[]> {
       { titulo: 'Aramu Muru', imagen: '/images/aramu-muru.png' },
       { titulo: 'Apu Pitusiray', imagen: '/images/apu-pitusiray.png' },
       { titulo: 'Naupa Iglesia', imagen: '/images/naupa-iglesia.png' },
-      { titulo: 'Numerología', imagen: '/images/numerologia-main.png' },
+      { titulo: 'Numerología', imagen: '/images/numerologia-oficial.png' },
       { titulo: 'El Origen', imagen: '/images/origen-logo.png' }
     ];
 

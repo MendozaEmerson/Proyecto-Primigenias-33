@@ -11,7 +11,7 @@ export const formacionesList: Formacion[] = [
   {
     id: "numerologia",
     titulo: "ESCUELA DE NUMEROLOGÍA ÓNTICA",
-    imagen: "/images/numerologia-main.png",
+    imagen: "/images/numerologia-oficial.png",
     desc: "Formamos profesionales en decodificación de frecuencias a través de un método innovador y profundo de base óntica. El programa enseña de forma práctica a interpretar símbolos, mapas emocionales y sistemas de creencias utilizando el nombre y la fecha de nacimiento para liberar tu Potencial. La formación se da de manera cronológica por niveles independientes, cada uno con su propia certificación oficial.",
     link: "/numerologia/",
     btnText: "Ver Formación"
@@ -84,7 +84,7 @@ export const especializacionesList: Especializacion[] = [
     titulo: "Números Maestros y Códigos de la Mente",
     desc: "Decodificación profunda de los dígitos dobles (11, 22, 33, 44) y su impacto en la misión de vida.",
     badge: "Nivel Superior",
-    imagen: "/images/numerologia-main.png",
+    imagen: "/images/numerologia-oficial.png",
     detalles: [
       "Arquitectura sagrada de los números dobles.",
       "Misión colectiva y responsabilidad transpersonal.",
