@@ -12,7 +12,7 @@ export const formacionesList: Formacion[] = [
     id: "numerologia",
     titulo: "ESCUELA DE NUMEROLOGÍA ÓNTICA",
     imagen: "/images/numerologia-main.png",
-    desc: "Estudio del potencial numérico personal, lectura transpersonal de tu nombre y fecha de nacimiento.",
+    desc: "Formamos profesionales en decodificación de frecuencias a través de un método innovador y profundo de base óntica. El programa enseña de forma práctica a interpretar símbolos, mapas emocionales y sistemas de creencias utilizando el nombre y la fecha de nacimiento para liberar tu Potencial. La formación se da de manera cronológica por niveles independientes, cada uno con su propia certificación oficial.",
     link: "/numerologia/",
     btnText: "Ver Formación"
   }
