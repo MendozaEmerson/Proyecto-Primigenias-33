@@ -7,66 +7,18 @@ import { getPdfNivel } from '../../services/strapi';
 const pdfProgramaUrl = await getPdfNivel('primer-nivel');
 
 const clasesPrograma = [
-  {
-    numero: "1er Clase",
-    titulo: "Introducción y Fundamentos Ónticos",
-    contenido: "Presentación del curso. ¿Qué son las frecuencias? ¿Qué es óntico? ¿Qué es el observador óntico?"
-  },
-  {
-    numero: "2da Clase",
-    titulo: "Hogar de Nacimiento e Inconsciente",
-    contenido: "Hogar de nacimiento. Frecuencias de hogar. Introducción a lo transpersonal. Sombra - Inconsciente colectivo - Arquetipos."
-  },
-  {
-    numero: "3ra Clase",
-    titulo: "Arquetipos, Madre y Padre",
-    contenido: "Los arquetipos y el hogar. Afectación del yo. Tipo de madre y padre. Desactivación del hogar de nacimiento. Reglas y mandatos."
-  },
-  {
-    numero: "4ta Clase",
-    titulo: "Mandatos y Sendero de la Vida",
-    contenido: "Reconocimiento de mandatos del hogar. Voces que me llevé. Introducción al sendero de la vida."
-  },
-  {
-    numero: "5ta Clase",
-    titulo: "Cálculo del Mapa Personal",
-    contenido: "El Sendero de la Vida y fórmulas de cálculo del mapa numérico personal de nacimiento."
-  },
-  {
-    numero: "6ta Clase",
-    titulo: "Las 9 Frecuencias Vibracionales",
-    contenido: "Estudio detallado de las 9 frecuencias numéricas y decodificación de la sombra individual."
-  },
-  {
-    numero: "7ma Clase",
-    titulo: "Matriz del Nombre y Apellido",
-    contenido: "Lectura del nombre completo, apellidos de herencia y expresión del potencial vibracional."
-  },
-  {
-    numero: "8va Clase",
-    titulo: "Ciclos de Vida y Pináculos",
-    contenido: "Determinación de ciclos de vida, momentos de cambio, pináculos y desafíos temporales."
-  },
-  {
-    numero: "9na Clase",
-    titulo: "Integración Transpersonal",
-    contenido: "Integración de la matriz numérica en la consulta y acompañamiento personal."
-  },
-  {
-    numero: "10ma Clase",
-    titulo: "Herramientas de Transmutación",
-    contenido: "Métodos prácticos para desmantelar creencias limitantes a partir de la frecuencia del número."
-  },
-  {
-    numero: "11ra Clase",
-    titulo: "Práctica Intensiva de Caso",
-    contenido: "Análisis de casos reales y ejercicios prácticos de decodificación en vivo."
-  },
-  {
-    numero: "12da Clase",
-    titulo: "Síntesis y Evaluación Integradora",
-    contenido: "Evaluación práctica integradora y cierre de contenidos del Primer Nivel."
-  }
+  { numero: "1er Clase", titulo: "Presentación del curso", contenido: "Presentación del curso. ¿Qué son las frecuencias? ¿Qué es óntico? ¿Qué es el observador óntico?" },
+  { numero: "2da Clase", titulo: "Hogar de nacimiento", contenido: "Hogar de nacimiento. Frecuencias de hogar. Introducción a lo transpersonal. Sombra- inconsciente colectivo- arquetipo." },
+  { numero: "3ra Clase", titulo: "Los arquetipos y el hogar", contenido: "Los arquetipos y el hogar. Afectación del yo. Tipo de madre y padre. Desactivación del hogar de nacimiento. Reglas y mandatos." },
+  { numero: "4ta Clase", titulo: "Reconocimientos de mandatos", contenido: "Reconocimientos de mandatos del hogar. Voces que me llevé. Introducción al sendero de la vida." },
+  { numero: "5ta Clase", titulo: "Sendero de vida", contenido: "Sendero de vida. Como se hace la lectura. Cómo vinculo el sendero con el hogar." },
+  { numero: "6ta Clase", titulo: "Frecuencias en el nombre", contenido: "Frecuencias en el nombre. El alma. La personalidad. Destino y logro." },
+  { numero: "7ma Clase", titulo: "Ejercicio del nombre", contenido: "Ejercicio del nombre completo." },
+  { numero: "8va Clase", titulo: "La potencia", contenido: "La potencia. La máxima expresión. El tesoro de la vida. El regalo. ¿Cómo abrirlo?" },
+  { numero: "9na Clase", titulo: "Números maestros", contenido: "Números maestros. Números trascendentes. Método de activación positiva." },
+  { numero: "10ma Clase", titulo: "Pináculo de vida", contenido: "Pináculo de vida. Año personal y dígito de edad." },
+  { numero: "11va Clase", titulo: "Armado de una carta", contenido: "Armado de una carta." },
+  { numero: "12va Clase", titulo: "Numerología de calle", contenido: "Numerología de calle." }
 ];
 ---
 
@@ -83,12 +35,12 @@ const clasesPrograma = [
           <!-- Columna Izquierda: Imágenes Docente y Diagrama -->
           <div class="media-column">
             <div class="glass-panel image-box breathing-glow">
-              <img src="/images/omar.png" alt="Omar Ávila impartiendo clase de Numerología" class="media-img" />
+              <img src="/images/primer-nivel-logo.png" alt="Primer Nivel" class="media-img" />
               <span class="img-caption">Omar Ávila - Docente Instructor</span>
             </div>
 
             <div class="glass-panel image-box">
-              <img src="/images/numerologia-nivel1.png" alt="Diagrama Numerología Base Óntica" class="media-img" />
+              <img src="/images/primer-nivel-logo.png" alt="Primer Nivel" class="media-img" />
             </div>
           </div>
 
@@ -98,7 +50,7 @@ const clasesPrograma = [
           <!-- Título y Subtítulo Movidos -->
           <div class="nivel-header-inline" style="margin-bottom: 2rem;">
             <h1 class="text-gradient-flame" style="font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem;">PRIMER NIVEL – NUMEROLOGÍA DE BASE ÓNTICA</h1>
-            <p class="lead" style="font-size: 1.2rem; color: var(--text-muted);">Diseño transpersonal y herramientas para hacer consciente el potencial velado de tu mapa numérico.</p>
+            
           </div>
 
             <!-- Bloque Diferenciado: Detalles -->
@@ -120,12 +72,10 @@ const clasesPrograma = [
             <!-- Bloque de Descripción Temática -->
             <div class="glass-panel topic-desc-box">
               <h3>Descripción del Nivel</h3>
-              <p>
-                Los Números nos acercan a un conocimiento más profundo del mundo invisible que nos mueve. A través del estudio numérico de nuestro nombre y fecha de nacimiento entramos a una dimensión diferente donde la energía la leemos a través del número. Los números son un desplegado de esa energía y nos permiten interpretar lo velado a nuestra razón. Hacemos consciente lo inconsciente. Descubrimos aquellas herramientas que traemos con nosotros para desplegarnos en el mundo.
-              </p>
-              <p>
-                Introducción a la base óntica y transpersonal. Una numerología que te hace visible tu base de creencias, te conecta con tu propósito de vida y hace visible tu máxima expresión.
-              </p>
+              <p><strong>PRIMER NIVEL – NUMEROLOGÍA DE BASE ÓNTICA</strong></p>
+              <p>Curso de 3 meses en 2 modalidades: Offline (en videos y pdf de descarga) y Online (vía zoom) que podrás transitar en nuestro campus virtual, con asistencia de su instructora. Al finalizar, la certificación es: DIPLOMADO EN NUMEROLOGÍA ÓNTICA</p>
+              <p>Los Números nos acercan a un conocimiento más profundo del mundo invisible que nos mueve. A través del estudio numérico de nuestro nombre y fecha de nacimiento entramos a una dimensión diferente donde la energía la leemos a través del número. Los números son un desplegado de esa energía y nos permiten interpretar lo velado a nuestra razón. Hacemos consciente lo inconsciente. Descubrimos aquellas herramientas que traemos con nosotros para desplegarnos en el mundo. Conoceremos talentos, desplegado del camino del Ser en el mundo, mirada del Ser desde su posición estratégica en la vida, elecciones desde la luminosidad del Ser o desde la sombra. Herramientas para trascender en la vida. El observador óntico de cada uno según la vibración numérica. Descubriremos que poseemos un programa que funciona aún sin ser conscientes de ello, y la mejor manera de caminar por el laberinto de nuestra mente es saber que herramientas tengo para activar o desactivar situaciones de la vida.</p>
+              <p>Introducción a la base óntica y transpersonal. Una numerología que te hace visible tu base de creencias, que te conecta con tu propósito de vida y hace visible tu máxima expresión.</p>
 
               <!-- Botones de Acción: Ver más / Contacto y Programa PDF con iconos -->
               <div class="action-buttons">
