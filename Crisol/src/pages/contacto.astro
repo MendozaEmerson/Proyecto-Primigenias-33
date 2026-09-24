@@ -20,11 +20,9 @@ const faqs = [
 ---
 
 <Layout title="Contacto y Soporte | Instituto Primigenias 33" description="Ponte en contacto con el Instituto Primigenias 33 para consultas académicas, soporte técnico de Moodle o inscripciones.">
-  <Header />
-
-  <main>
-    <!-- Header Banner -->
-    <section class="page-header hero-bg-contact">
+  <div class="hero-bg-contact" style="padding-top: 0.1rem; padding-bottom: 2rem;">
+    <Header />
+    <section class="page-header" style="background: none; border: none;">
       <div class="container text-center scroll-reveal">
         <span class="badge badge-info">Atención al Estudiante</span>
         <h1>Contacto y <span class="text-gradient-gold">Soporte Técnico</span></h1>
@@ -33,7 +31,9 @@ const faqs = [
         </p>
       </div>
     </section>
+  </div>
 
+  <main>
     <!-- Sección de Formulario e Info de Contacto -->
     <section class="section">
       <div class="container contact-grid">

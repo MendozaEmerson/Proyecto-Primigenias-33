@@ -11,8 +11,8 @@ export interface Docente {
 
 export const docentesList: Docente[] = [
   {
-    id: "omar-avila",
-    nombre: "Omar Ávila",
+    id: "omar-zambrano",
+    nombre: "Omar Zambrano",
     rol: "Docente Instructor",
     especialidad: "Numerología Óntica & Ciencias Transpersonales",
     bio: "Docente y facilitador especializado en ciencias ónticas, arquetipos y desarrollo transpersonal.",
