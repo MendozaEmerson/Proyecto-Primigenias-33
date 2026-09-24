@@ -269,16 +269,23 @@ a {
 }
 
 /* Fondos Overlay y Parallax */
-.hero-bg-overlay {
+.hero-bg-contact {
+    position: relative;
+    background-image: linear-gradient(180deg, rgba(10, 10, 14, 0.62) 0%, rgba(10, 10, 14, 0.92) 100%), url('/images/backgrounds/bg-extra-2.png');
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .hero-bg-overlay {
   position: relative;
-  background-image: linear-gradient(180deg, rgba(10, 10, 14, 0.62) 0%, rgba(10, 10, 14, 0.92) 100%), url('/images/banner.png');
+  background-image: linear-gradient(180deg, rgba(10, 10, 14, 0.62) 0%, rgba(10, 10, 14, 0.92) 100%), url('/images/backgrounds/bg-global.png');
   background-size: cover;
   background-position: center top;
 }
 
 .section-parallax {
   position: relative;
-  background-image: linear-gradient(180deg, rgba(9, 9, 12, 0.88) 0%, rgba(17, 17, 22, 0.92) 100%), url('/images/bg-parallax.jpg');
+  background-image: linear-gradient(180deg, rgba(9, 9, 12, 0.88) 0%, rgba(17, 17, 22, 0.92) 100%), url('/images/backgrounds/bg-extra-1.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

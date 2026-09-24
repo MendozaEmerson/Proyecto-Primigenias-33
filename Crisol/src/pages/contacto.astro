@@ -5,16 +5,16 @@ import Footer from '../components/Footer.astro';
 
 const faqs = [
   {
-    pregunta: "¿Cómo recibo mis datos de acceso para Moodle?",
-    respuesta: "Una vez completado el proceso de matriculación, el equipo académico te enviará un correo electrónico de bienvenida con tu usuario y contraseña temporal."
+    pregunta: "¿Como recibo mis datos para ingresar al campus virtual?",
+    respuesta: "Una vez finalizado tu registro, recibirás un correo electrónico de bienvenida de nuestro equipo académico con tu usuario y contraseña temporal que deberás actualizar en tu primer acceso"
   },
   {
-    pregunta: "¿Qué hago si olvidé mi contraseña de Moodle?",
-    respuesta: "En la pantalla de acceso a Moodle encontrarás el enlace '¿Olvidó su contraseña?'. Ingresa tu correo institucional y recibirás un enlace de restablecimiento."
+    pregunta: "¿Qué debo hacer si olvidé mi contraseña del Campus Virtual?",
+    respuesta: "En la pantalla de inicio de sesión del Campus Virtual, haz clic en el enlace «¿Olvidó su nombre de usuario o contraseña?». A continuación, introduce tu correo electrónico para recibir un enlace de restablecimiento."
   },
   {
-    pregunta: "¿Los cursos entregan certificación oficial?",
-    respuesta: "Sí, todos los estudiantes que completen el 100% de las actividades y evaluaciones en Moodle reciben el certificado emitido por el Instituto Primigenias 33."
+    pregunta: "¿Se entrega certificación oficial al finalizar los cursos y talleres?",
+    respuesta: "Sí. Al acreditar el 100 % de las actividades en el Campus Virtual, el estudiante recibe el certificado oficial respaldado por la Escuela Primigenias 33."
   }
 ];
 ---
@@ -24,7 +24,7 @@ const faqs = [
 
   <main>
     <!-- Header Banner -->
-    <section class="page-header hero-bg-overlay">
+    <section class="page-header hero-bg-contact">
       <div class="container text-center scroll-reveal">
         <span class="badge badge-info">Atención al Estudiante</span>
         <h1>Contacto y <span class="text-gradient-gold">Soporte Técnico</span></h1>
@@ -43,20 +43,23 @@ const faqs = [
           <h2>Envíanos un Mensaje</h2>
           <p>Completa el formulario y te responderemos a la brevedad.</p>
 
-          <form class="contact-form" onsubmit="event.preventDefault(); alert('Mensaje enviado correctamente. Nos pondremos en contacto a la brevedad.');">
+          <form class="contact-form" action="https://formsubmit.co/Primigenias33@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="Nuevo Mensaje - Instituto Primigenias 33">
+            <input type="hidden" name="_template" value="table">
+            
             <div class="form-group">
               <label for="nombre">Nombre Completo</label>
-              <input type="text" id="nombre" placeholder="Ej: María González" required />
+              <input type="text" id="nombre" name="nombre" placeholder="Ej: María González" required />
             </div>
 
             <div class="form-group">
               <label for="email">Correo Electrónico</label>
-              <input type="email" id="email" placeholder="ejemplo@correo.com" required />
+              <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required />
             </div>
 
             <div class="form-group">
               <label for="asunto">Asunto</label>
-              <select id="asunto">
+              <select id="asunto" name="asunto">
                 <option value="consulta">Consulta sobre Cursos</option>
                 <option value="moodle">Soporte con Moodle</option>
                 <option value="inscripcion">Inscripciones y Pagos</option>
@@ -66,7 +69,7 @@ const faqs = [
 
             <div class="form-group">
               <label for="mensaje">Mensaje</label>
-              <textarea id="mensaje" rows="4" placeholder="Escribe aquí tu consulta..." required></textarea>
+              <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe aquí tu consulta..." required></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary btn-block">Enviar Consulta</button>
