@@ -26,6 +26,13 @@ export const eventosPorAnioList: BloqueEventoPorAnio[] = [
     ]
   },
   {
+    anio: "2025",
+    titulo: "Eventos Institucionales 2025",
+    ubicacion: "Múltiples Sedes",
+    descripcion: "Próximamente compartiremos las imágenes y eventos memorables que construirán nuestra historia en este año.",
+    fotos: []
+  },
+  {
     anio: "2024",
     titulo: "Expo Holística 2024",
     ubicacion: "La Rural / Pabellón Central, CABA",
@@ -47,6 +54,20 @@ export const eventosPorAnioList: BloqueEventoPorAnio[] = [
       { src: "/images/alumna-luciana-masa.jpg", titulo: "Encuentro de Egresadas 2023", tag: "Comunidad Primigenias" },
       { src: "/images/master-especializaciones.jpg", titulo: "Presentación del Máster en Especializaciones", tag: "Lanzamiento 2023" },
       { src: "/images/directora-diana.jpg", titulo: "Reconocimiento a la Trayectoria Institucional", tag: "Dirección" }
+    ]
+  },
+  {
+    anio: "2022",
+    titulo: "2022 Cerro Uritorco - Argentina",
+    ubicacion: "Capilla del Monte, Córdoba",
+    descripcion: "El Cerro Uritorco es la máxima elevación de las Sierras Chicas, con 1979 metros de altura, ubicado en la mística localidad de Capilla del Monte, en el Valle de Punilla, Córdoba, Argentina.",
+    fotos: [
+      { src: "/images/eventos/2022-uritorco-1.png", titulo: "Cerro Uritorco", tag: "Salida de Campo" },
+      { src: "/images/eventos/2022-uritorco-2.png", titulo: "Caminata Cerro Uritorco", tag: "Salida de Campo" },
+      { src: "/images/eventos/2022-uritorco-3.png", titulo: "Sierras Chicas", tag: "Salida de Campo" },
+      { src: "/images/eventos/2022-uritorco-4.png", titulo: "Valle de Punilla", tag: "Salida de Campo" },
+      { src: "/images/eventos/2022-uritorco-5.png", titulo: "Cima Cerro Uritorco", tag: "Salida de Campo" },
+      { src: "/images/eventos/2022-uritorco-6.png", titulo: "Paisaje Cerro Uritorco", tag: "Salida de Campo" }
     ]
   }
 ];
