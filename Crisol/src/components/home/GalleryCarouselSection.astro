@@ -34,9 +34,9 @@ const testimoniosList = await getTestimoniosAlumnos();
       <!-- Columna Derecha: Carrusel de Testimonios -->
       <div class="glass-panel testimonial-slider-box">
         <div class="testimonial-content" id="activeTestimonial">
-          <img id="tFoto" src={testimoniosList[0]?.avatar || '/images/alumna-luciana-masa.jpg'} alt={testimoniosList[0]?.nombre || '{lang === 'en' ? 'Student' : 'Estudiante'}'} class="student-avatar" />
-          <h4 id="tNombre" class="student-name">{testimoniosList[0]?.nombre || '{lang === 'en' ? 'Student' : 'Estudiante'}'}</h4>
-          <span id="tRol" class="student-role">{testimoniosList[0]?.curso || 'Numerología Óntica'}</span>
+          <img id="tFoto" src={testimoniosList[0]?.avatar || '/images/alumna-luciana-masa.jpg'} alt={testimoniosList[0]?.nombre || (lang === 'en' ? 'Student' : 'Estudiante')} class="student-avatar" />
+          <h4 id="tNombre" class="student-name">{testimoniosList[0]?.nombre || (lang === 'en' ? 'Student' : 'Estudiante')}</h4>
+          <span id="tRol" class="student-role">{testimoniosList[0]?.curso || (lang === 'en' ? 'Ontic Numerology' : 'Numerología Óntica')}</span>
         </div>
         <div class="slider-dots" id="sliderDots">
           {testimoniosList.map((_, idx) => (
