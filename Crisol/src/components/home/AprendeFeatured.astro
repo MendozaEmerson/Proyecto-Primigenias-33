@@ -2,14 +2,14 @@
 import { getLangFromUrl } from "../../i18n/utils";
 const lang = Astro.currentLocale || getLangFromUrl(Astro.url);
 
-// Componente de Formación Destacada "Aprende con Nosotros"
+// Componente de Formación Destacada "{lang === "en" ? "Learn with Us" : "Aprende con Nosotros"}"
 ---
 
 <section class="section">
   <div class="container">
     <div class="section-title">
-      <span class="badge badge-gold">Formación Académica</span>
-      <h2>Aprende con Nosotros</h2>
+      <span class="badge badge-gold">{lang === "en" ? "Academic Training" : "Formación Académica"}</span>
+      <h2>{lang === "en" ? "Learn with Us" : "Aprende con Nosotros"}</h2>
       <p></p>
     </div>
 
@@ -19,25 +19,25 @@ const lang = Astro.currentLocale || getLangFromUrl(Astro.url);
       <div class="glass-panel curso-card-featured highlight-gold breathing-glow">
         <div class="curso-image-side">
           <img src="/images/numerologia-oficial.png" alt="Diplomado en Numerología Óntica" class="curso-banner-img" />
-          <div class="badge-type">Curso</div>
+          <div class="badge-type">{lang === "en" ? "Course" : "Curso"}</div>
         </div>
         <div class="curso-info-side">
-          <h3>Numerología</h3>
+          <h3>{lang === "en" ? "Numerology" : "Numerología"}</h3>
           <p>
-            Estudio del potencial numérico personal, cálculo transpersonal y decodificación del propósito de vida.
+            {lang === "en" ? "Study of personal numerical potential, transpersonal calculation and decoding of life purpose." : "Estudio del potencial numérico personal, cálculo transpersonal y decodificación del propósito de vida."}
           </p>
           <ul class="curso-features">
-            <li><span class="feature-bullet">•</span><span>Modalidad 100% Online en Moodle</span></li>
-            <li><span class="feature-bullet">•</span><span>Acompañamiento docente personalizado</span></li>
-            <li><span class="feature-bullet">•</span><span>Formación estructurada por niveles</span></li>
+            <li><span class="feature-bullet">•</span><span>{lang === "en" ? "100% Online Modality in Moodle" : "Modalidad 100% Online en Moodle"}</span></li>
+            <li><span class="feature-bullet">•</span><span>{lang === "en" ? "Personalized teaching accompaniment" : "Acompañamiento docente personalizado"}</span></li>
+            <li><span class="feature-bullet">•</span><span>{lang === "en" ? "Structured training by levels" : "Formación estructurada por niveles"}</span></li>
           </ul>
           <div class="curso-action" style="display: flex; justify-content: space-between; align-items: flex-end; width: 100%; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; margin-top: 0.5rem;">
-            <a href="/numerologia/" class="btn btn-primary" style="flex-shrink: 0;">Ver Curso de Numerología</a>
+            <a href="/numerologia/" class="btn btn-primary" style="flex-shrink: 0;">{lang === "en" ? "View Numerology Course" : "Ver Curso de Numerología"}</a>
             <div style="font-size: 0.65rem; color: var(--accent-gold); text-align: right; line-height: 1.3; max-width: 50%;">
-              <strong>Con el respaldo de Instituto Crisol Ciencias Onticas.</strong><br/>
-              Método Numerología Óntica<br/>
+              <strong>{lang === "en" ? "Supported by Crisol Institute Ontic Sciences" : "Con el respaldo de Instituto Crisol Ciencias Onticas"}.</strong><br/>
+              {lang === "en" ? "Ontic Numerology Method" : "Método Numerología Óntica"}<br/>
               Roberto Roberto Omar Ávila - Diana Andrea Braconi<br/>
-              Derechos Reservados
+              {lang === "en" ? "All Rights Reserved" : "Derechos Reservados"}
             </div>
           </div>
         </div>
@@ -48,15 +48,15 @@ const lang = Astro.currentLocale || getLangFromUrl(Astro.url);
       <div class="glass-panel curso-card-featured highlight-gold breathing-glow">
         <div class="curso-image-side">
           <img src="/images/consultoria.png" alt="Mi Consultorio Personal - Numerología Óntica" class="curso-banner-img" style="object-position: top;" />
-          <div class="badge-type" style="background: var(--accent-gold); color: #000;">Consultoría</div>
+          <div class="badge-type" style="background: var(--accent-gold); color: #000;">{lang === "en" ? "Consulting" : "Consultoría"}</div>
         </div>
         <div class="curso-info-side">
-          <h3>Mi Consultorio Personal</h3>
+          <h3>{lang === "en" ? "My Personal Consulting" : "Mi Consultorio Personal"}</h3>
           <p>
-            Acompañamos en sesiones individuales para responder a preguntas profundas sobre ti mismo(a), tus relaciones y tu entorno, apoyados en tu mapa numerológico.
+            {lang === "en" ? "We accompany you in individual sessions to answer profound questions about yourself, your relationships, and your environment, supported by your numerological map." : "Acompañamos en sesiones individuales para responder a preguntas profundas sobre ti mismo(a), tus relaciones y tu entorno, apoyados en tu mapa numerológico."}
           </p>
           <div class="curso-action">
-            <a href="/consultoria/" class="btn btn-primary">Ver Consultoría</a>
+            <a href="/consultoria/" class="btn btn-primary">{lang === "en" ? "View Consulting" : "Ver Consultoría"}</a>
           </div>
         </div>
       </div>
@@ -65,20 +65,20 @@ const lang = Astro.currentLocale || getLangFromUrl(Astro.url);
       <div class="glass-panel curso-card-featured highlight-gold breathing-glow">
         <div class="curso-image-side">
           <img src="/images/taller-nombres-oficial.png" alt="Taller: Nombre ideal para tu bebé" class="curso-banner-img" style="object-position: top;" />
-          <div class="badge-type" style="background: var(--accent-gold); color: #000;">Taller</div>
+          <div class="badge-type" style="background: var(--accent-gold); color: #000;">{lang === "en" ? "Workshop" : "Taller"}</div>
         </div>
         <div class="curso-info-side">
-          <h3>CO - CREEMOS EL NOMBRE DE TU BEBE</h3>
+          <h3>{lang === "en" ? "CO - CREATE YOUR BABY'S NAME" : "CO - CREEMOS EL NOMBRE DE TU BEBE"}</h3>
           <p>
-            Hablemos del nombre de tu bebé... no desde la moda, sino desde su esencia pura.
+            {lang === "en" ? "Let's talk about your baby's name... not from trends, but from its pure essence." : "Hablemos del nombre de tu bebé... no desde la moda, sino desde su esencia pura."}
           </p>
           <ul class="curso-features">
-            <li><span class="feature-bullet">•</span><span>La Madre como Canal y Co-Creadora</span></li>
-            <li><span class="feature-bullet">•</span><span>El poder y esencia del Nombre</span></li>
-            <li><span class="feature-bullet">•</span><span>Co-creación Consciente desde el Útero</span></li>
+            <li><span class="feature-bullet">•</span><span>{lang === "en" ? "The Mother as a Channel and Co-Creator" : "La Madre como Canal y Co-Creadora"}</span></li>
+            <li><span class="feature-bullet">•</span><span>{lang === "en" ? "The power and essence of the Name" : "El poder y esencia del Nombre"}</span></li>
+            <li><span class="feature-bullet">•</span><span>{lang === "en" ? "Conscious Co-creation from the Womb" : "Co-creación Consciente desde el Útero"}</span></li>
           </ul>
           <div class="curso-action">
-            <a href="/talleres/nombres-bebes/" class="btn btn-primary">Ver Taller</a>
+            <a href="/talleres/nombres-bebes/" class="btn btn-primary">{lang === "en" ? "View Workshop" : "Ver Taller"}</a>
           </div>
         </div>
       </div>
@@ -88,20 +88,20 @@ const lang = Astro.currentLocale || getLangFromUrl(Astro.url);
       <div class="glass-panel curso-card-featured highlight-gold breathing-glow">
         <div class="curso-image-side">
           <img src="/images/frecuencia-emprendedora.png" alt="Taller: Frecuencia Emprendedora 33" class="curso-banner-img" style="object-position: top;" />
-          <div class="badge-type" style="background: var(--accent-gold); color: #000;">Taller</div>
+          <div class="badge-type" style="background: var(--accent-gold); color: #000;">{lang === "en" ? "Workshop" : "Taller"}</div>
         </div>
         <div class="curso-info-side">
-          <h3>FRECUENCIA EMPRENDEDORA 33</h3>
+          <h3>{lang === "en" ? "ENTREPRENEURIAL FREQUENCY 33" : "FRECUENCIA EMPRENDEDORA 33"}</h3>
           <p>
-            Herramientas desde la Numerología Óntica para frecuencia y dar dirección a tu propósito empresarial.
+            {lang === "en" ? "Tools from Ontic Numerology to frequency and give direction to your business purpose." : "Herramientas desde la Numerología Óntica para frecuencia y dar dirección a tu propósito empresarial."}
           </p>
           <ul class="curso-features">
-            <li><span class="feature-bullet"> </span><span>Identidad Vibracional de tu Marca</span></li>
-            <li><span class="feature-bullet"> </span><span>Anclaje Territorial y Ubicación</span></li>
-            <li><span class="feature-bullet"> </span><span>Herramientas de Armonización</span></li>
+            <li><span class="feature-bullet"> </span><span>{lang === "en" ? "Vibrational Identity of your Brand" : "Identidad Vibracional de tu Marca"}</span></li>
+            <li><span class="feature-bullet"> </span><span>{lang === "en" ? "Territorial Anchoring and Location" : "Anclaje Territorial y Ubicación"}</span></li>
+            <li><span class="feature-bullet"> </span><span>{lang === "en" ? "Harmonization Tools" : "Herramientas de Armonización"}</span></li>
           </ul>
           <div class="curso-action">
-            <a href="/talleres/frecuencia-emprendedora/" class="btn btn-primary">Ver Taller</a>
+            <a href="/talleres/frecuencia-emprendedora/" class="btn btn-primary">{lang === "en" ? "View Workshop" : "Ver Taller"}</a>
           </div>
         </div>
       </div>
@@ -110,20 +110,20 @@ const lang = Astro.currentLocale || getLangFromUrl(Astro.url);
       <div class="glass-panel curso-card-featured highlight-gold breathing-glow">
         <div class="curso-image-side">
           <img src="/images/arquetipos-frecuencias.png" alt="Taller: Arquetipos y Frecuencias" class="curso-banner-img" style="object-position: top;" />
-          <div class="badge-type" style="background: var(--accent-gold); color: #000;">Taller</div>
+          <div class="badge-type" style="background: var(--accent-gold); color: #000;">{lang === "en" ? "Workshop" : "Taller"}</div>
         </div>
         <div class="curso-info-side">
-          <h3>ARQUETIPOS Y FRECUENCIAS</h3>
+          <h3>{lang === "en" ? "ARCHETYPES AND FREQUENCIES" : "ARQUETIPOS Y FRECUENCIAS"}</h3>
           <p>
             Integración de la Numerología óntica en la Consulta Terapéutica para optimizar diagnósticos.
           </p>
           <ul class="curso-features">
-            <li><span class="feature-bullet"> </span><span>Hogar de Nacimiento desde los números</span></li>
-            <li><span class="feature-bullet"> </span><span>Identificación del Punto de Tensión</span></li>
-            <li><span class="feature-bullet"> </span><span>Engrama Numérico y Modelados</span></li>
+            <li><span class="feature-bullet"> </span><span>{lang === "en" ? "Birth Home from the numbers" : "Hogar de Nacimiento desde los números"}</span></li>
+            <li><span class="feature-bullet"> </span><span>{lang === "en" ? "Identification of the Tension Point" : "Identificación del Punto de Tensión"}</span></li>
+            <li><span class="feature-bullet"> </span><span>{lang === "en" ? "Numerical Engram and Modeling" : "Engrama Numérico y Modelados"}</span></li>
           </ul>
           <div class="curso-action">
-            <a href="/talleres/arquetipos-frecuencias/" class="btn btn-primary">Ver Taller</a>
+            <a href="/talleres/arquetipos-frecuencias/" class="btn btn-primary">{lang === "en" ? "View Workshop" : "Ver Taller"}</a>
           </div>
         </div>
       </div>
