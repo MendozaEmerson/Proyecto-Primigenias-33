@@ -48,7 +48,7 @@ const testimoniosList = await getTestimoniosAlumnos();
   </div>
 </section>
 
-<script>
+<script define:vars={{ lang }}>
   // 1. Carrusel de Imágenes Automático
   const galleryWrapper = document.getElementById('autoGalleryWrapper');
   if (galleryWrapper) {
@@ -88,9 +88,9 @@ const testimoniosList = await getTestimoniosAlumnos();
 
     if (tFoto) {
       tFoto.src = item.avatar || item.foto || '/images/alumna-luciana-masa.jpg';
-      tFoto.alt = item.nombre || '{lang === 'en' ? 'Student' : 'Estudiante'}';
+      tFoto.alt = item.nombre || (lang === 'en' ? 'Student' : 'Estudiante');
     }
-    if (tNombre) tNombre.textContent = item.nombre || '{lang === 'en' ? 'Student' : 'Estudiante'}';
+    if (tNombre) tNombre.textContent = item.nombre || (lang === 'en' ? 'Student' : 'Estudiante');
     if (tRol) tRol.textContent = item.curso || item.rol || 'Numerología Óntica';
     if (tGranCita) tGranCita.textContent = item.comentario || item.cita || '';
 
