@@ -1,4 +1,8 @@
 ﻿---
+import LanguagePicker from "./LanguagePicker.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 // Componente de Encabezado / Navegación Multi-Página Institucional
 const currentPath = Astro.url.pathname;
 ---
@@ -22,6 +26,7 @@ const currentPath = Astro.url.pathname;
     </nav>
 
     <div class="nav-actions">
+      <LanguagePicker />
       <a href="http://194.163.144.149:8085" target="_blank" rel="noopener noreferrer" class="btn btn-moodle btn-sm">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
         Aula Virtual
@@ -43,6 +48,9 @@ const currentPath = Astro.url.pathname;
 
   <div class="mobile-menu">
     <nav class="mobile-nav-links">
+      <div style="display: flex; justify-content: center; margin-bottom: 1rem;">
+        <LanguagePicker />
+      </div>
       <a href="/" class={currentPath === "/" ? "active" : ""}>Inicio</a>
       <a href="/nosotros/" class={currentPath.startsWith("/nosotros") ? "active" : ""}>La Escuela</a>
       <a href="/formaciones/" class={currentPath.startsWith("/formaciones") ? "active" : ""}>Formaciones</a>

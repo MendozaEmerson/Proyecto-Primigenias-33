@@ -1,4 +1,7 @@
 ﻿---
+import { getLangFromUrl } from "../../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+
 // Componente de Sección Hero para la página principal
 import { getIntegrantesEquipo } from '../../services/strapi';
 
@@ -14,31 +17,31 @@ const omarCard = integrantes.find(i => i.nombre.toLowerCase().includes('omar')) 
   <div class="container hero-grid scroll-reveal">
     <div class="hero-text-column">
       <h1 class="hero-title text-gradient-flame">
-        ¿Quiénes somos?
+        {lang === "en" ? "Who are we?" : "¿Quiénes somos?"}
       </h1>
 
       <div class="about-brief">
         <p>
-          Somos una institución de vanguardia dedicada al estudio, comprensión y desarrollo de la existencia humana. La <strong>Escuela de Ciencias Ónticas Primigenias 33</strong> nace con el propósito de fusionar la sabiduría ancestral con el rigor analítico para guiar a las personas hacia su máximo potencial.
+          {lang === "en" ? "We are an avant-garde institution" : "Somos una institución de vanguardia"} {lang === "en" ? "dedicated to the study, understanding, and development of human existence. The <strong>School of Ontic Sciences Primigenias 33</strong> was born with the purpose of fusing ancestral wisdom with analytical rigor to guide people towards their maximum potential." : "dedicada al estudio, comprensión y desarrollo de la existencia humana. La <strong>Escuela de Ciencias Ónticas Primigenias 33</strong> nace con el propósito de fusionar la sabiduría ancestral con el rigor analítico para guiar a las personas hacia su máximo potencial."}
         </p>
         <p>
-          Nuestra metodología se fundamenta en las <strong>Ciencias Ónticas</strong>, una disciplina enfocada en el estudio del Ser en su estado más puro y esencial. No nos limitamos a la teoría; investigamos las leyes primigenias que rigen la realidad y la conciencia. El <strong>número 33</strong> corona nuestra filosofía como el símbolo de la maestría interior, la evolución espiritual consciente y la manifestación del propósito de vida en el plano terrenal.
+          {lang === "en" ? "Our methodology is based on <strong>Ontic Sciences</strong>, a discipline focused on the study of the Being in its purest and most essential state. We do not limit ourselves to theory; we investigate the primal laws that govern reality and consciousness. The <strong>number 33</strong> crowns our philosophy as the symbol of inner mastery, conscious spiritual evolution, and the manifestation of life purpose on the earthly plane." : "Nuestra metodología se fundamenta en las <strong>Ciencias Ónticas</strong>, una disciplina enfocada en el estudio del Ser en su estado más puro y esencial. No nos limitamos a la teoría; investigamos las leyes primigenias que rigen la realidad y la conciencia. El <strong>número 33</strong> corona nuestra filosofía como el símbolo de la maestría interior, la evolución espiritual consciente y la manifestación del propósito de vida en el plano terrenal."}
         </p>
         <p class="mission-highlight">
-          <strong>Misión:</strong> Facilitar herramientas de conocimiento profundo que permitan a cada individuo decodificar su diseño original y alinearse con su verdadero ser.
+          {lang === "en" ? "<strong>Mission:</strong> To provide tools of profound knowledge that allow each individual to decode their original design and align with their true self." : "<strong>Misión:</strong> Facilitar herramientas de conocimiento profundo que permitan a cada individuo decodificar su diseño original y alinearse con su verdadero ser."}
         </p>
       </div>
 
       <div class="sacred-quote-box">
         <span class="quote-symbol">«</span>
         <p class="quote-content">
-          <strong>Allin kawsay</strong> es el estado de iluminación y salud vibracional que se alcanza al sincronizar los tres centros del Ser —el corazón (Munay), la mente (Yachay) y el cuerpo (Llank'ay)— con el pulso vivo del cosmos (Pacha). Es la vivencia mística de reconocerse como una hebra inseparable del tejido de la existencia, donde el bienestar individual es un reflejo directo de la armonía con la Madre Tierra (Pachamama), los ancestros y el entorno comunitario.
+          {lang === "en" ? "<strong>Allin kawsay</strong> is the state of illumination and vibrational health achieved by synchronizing the three centers of the Being—the heart (Munay), the mind (Yachay), and the body (Llank'ay)—with the living pulse of the cosmos (Pacha). It is the mystical experience of recognizing oneself as an inseparable thread of the fabric of existence, where individual well-being is a direct reflection of harmony with Mother Earth (Pachamama), the ancestors, and the community environment." : "<strong>Allin kawsay</strong> es el estado de iluminación y salud vibracional que se alcanza al sincronizar los tres centros del Ser —el corazón (Munay), la mente (Yachay) y el cuerpo (Llank'ay)— con el pulso vivo del cosmos (Pacha). Es la vivencia mística de reconocerse como una hebra inseparable del tejido de la existencia, donde el bienestar individual es un reflejo directo de la armonía con la Madre Tierra (Pachamama), los ancestros y el entorno comunitario."}
         </p>
       </div>
 
       <div class="hero-actions">
         <a href="/nosotros/" class="btn btn-primary btn-lg">
-          Conócenos
+          {lang === "en" ? "About Us" : "Conócenos"}
         </a>
       </div>
     </div>
@@ -47,10 +50,10 @@ const omarCard = integrantes.find(i => i.nombre.toLowerCase().includes('omar')) 
     <div class="hero-image-column">
       <div class="director-card" style="border: 1px solid var(--accent-gold); border-radius: 12px; overflow: hidden; background: #0c0c12;">
         <div class="director-img-wrapper" style="width: 100%; height: auto;">
-          <img src="/images/origen-emblema-sagrado.jpg" alt="La fotografía que inspiró nuestro logo: El origen de nuestra identidad." class="director-img" style="width: 100%; aspect-ratio: 1/1.1; object-fit: cover; object-position: center 80%; display: block;" />
+          <img src="/images/origen-emblema-sagrado.jpg" alt="{lang === "en" ? "The photograph that inspired our logo: The origin of our identity." : "La fotografía que inspiró nuestro logo: El origen de nuestra identidad."}" class="director-img" style="width: 100%; aspect-ratio: 1/1.1; object-fit: cover; object-position: center 80%; display: block;" />
         </div>
         <div class="director-caption-bar" style="background: #0c0c12; padding: 1rem; text-align: center; border-top: 1px solid rgba(255,165,0,0.3);">
-          <span class="director-title" style="color: var(--accent-gold); font-size: 1.1rem; font-weight: 700;">La fotografía que inspiró nuestro logo: El origen de nuestra identidad.</span>
+          <span class="director-title" style="color: var(--accent-gold); font-size: 1.1rem; font-weight: 700;">{lang === "en" ? "The photograph that inspired our logo: The origin of our identity." : "La fotografía que inspiró nuestro logo: El origen de nuestra identidad."}</span>
         </div>
       </div>
     </div>
