@@ -8,35 +8,35 @@ const lang = Astro.currentLocale || getLangFromUrl(Astro.url);
 <section class="section section-parallax">
   <div class="container">
     <div class="section-title">
-      <span class="badge badge-gold">Eventos Especiales</span>
-      <h2>Jornadas Abiertas & Aula en Campo</h2>
-      <p>Acompañamiento personalizado, clases magistrales y experiencias vivenciales para tu desarrollo óntico.</p>
+      <span class="badge badge-gold">{lang === "en" ? "Special Events" : "Eventos Especiales"}</span>
+      <h2>{lang === "en" ? "Open Days & Field Classroom" : "Jornadas Abiertas & Aula en Campo"}</h2>
+      <p>{lang === "en" ? "Personalized accompaniment, master classes and experiential experiences for your ontic development." : "Acompañamiento personalizado, clases magistrales y experiencias vivenciales para tu desarrollo óntico."}</p>
     </div>
 
     <div class="grid-2col">
       <!-- Tarjeta 1: Jornada Abierta 2027 -->
       <div class="glass-panel p-card card-with-image highlight-cyan">
-        <span class="card-badge badge-cyan">Jornada Gratuita</span>
+        <span class="card-badge badge-cyan">{lang === "en" ? "Free Day" : "Jornada Gratuita"}</span>
         <div class="card-img-wrapper">
           <img src="/images/jornada-abierta-bg.png" alt="Jornada Abierta 2027 - Clases Gratuitas Instituto Primigenias 33" class="card-banner-img" />
         </div>
         <div class="card-body">
-          <h3>Jornada Abierta 2027: Clases Gratuitas</h3>
-          <p>Acceda a la serie de 2 clases abiertas en video sobre ciencias ónticas, neuroeducación y arquetipos del ciclo 2027 sin costo.</p>
-          <button class="btn btn-block btn-upcoming" disabled>Próximamente</button>
+          <h3>{lang === "en" ? "Open Day 2027: Free Classes" : "Jornada Abierta 2027: Clases Gratuitas"}</h3>
+          <p>{lang === "en" ? "Access the series of 2 open video classes on ontic sciences, neuroeducation and archetypes of the 2027 cycle at no cost." : "Acceda a la serie de 2 clases abiertas en video sobre ciencias ónticas, neuroeducación y arquetipos del ciclo 2027 sin costo."}</p>
+          <button class="btn btn-block btn-upcoming" disabled>{lang === "en" ? "Coming Soon" : "Próximamente"}</button>
         </div>
       </div>
 
       <!-- Tarjeta 2: Eventos Presenciales -->
       <div class="glass-panel p-card card-with-image highlight-cyan breathing-glow">
-        <span class="card-badge badge-gold">Presencial</span>
+        <span class="card-badge badge-gold">{lang === "en" ? "In-Person" : "Presencial"}</span>
         <div class="card-img-wrapper">
-          <img src="/images/evento-presencial.png" alt="AULA EN CAMPO | MINTAKA TERRALAB" class="card-banner-img" />
+          <img src="/images/evento-presencial.png" alt="{lang === "en" ? "FIELD CLASSROOM | MINTAKA TERRALAB" : "AULA EN CAMPO | MINTAKA TERRALAB"}" class="card-banner-img" />
         </div>
         <div class="card-body">
-          <h3>AULA EN CAMPO | MINTAKA TERRALAB</h3>
-          <p>Ingeniería Transpersonal, Vórtices y Enlaces: Programa Presencial Anual de Numerología Óntica en Lugares de Poder. Trabajamos en aulas sin paredes.</p>
-          <a href="/eventos-presenciales/" class="btn btn-primary btn-block">Ver Eventos</a>
+          <h3>{lang === "en" ? "FIELD CLASSROOM | MINTAKA TERRALAB" : "AULA EN CAMPO | MINTAKA TERRALAB"}</h3>
+          <p>{lang === "en" ? "Transpersonal Engineering, Vortices and Links: Annual In-Person Program of Ontic Numerology in Places of Power. We work in classrooms without walls." : "Ingeniería Transpersonal, Vórtices y Enlaces: Programa Presencial Anual de Numerología Óntica en Lugares de Poder. Trabajamos en aulas sin paredes."}</p>
+          <a href="/eventos-presenciales/" class="btn btn-primary btn-block">{lang === "en" ? "View Events" : "Ver Eventos"}</a>
         </div>
       </div>
     </div>

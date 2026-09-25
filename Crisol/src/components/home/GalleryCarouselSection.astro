@@ -34,8 +34,8 @@ const testimoniosList = await getTestimoniosAlumnos();
       <!-- Columna Derecha: Carrusel de Testimonios -->
       <div class="glass-panel testimonial-slider-box">
         <div class="testimonial-content" id="activeTestimonial">
-          <img id="tFoto" src={testimoniosList[0]?.avatar || '/images/alumna-luciana-masa.jpg'} alt={testimoniosList[0]?.nombre || 'Estudiante'} class="student-avatar" />
-          <h4 id="tNombre" class="student-name">{testimoniosList[0]?.nombre || 'Estudiante'}</h4>
+          <img id="tFoto" src={testimoniosList[0]?.avatar || '/images/alumna-luciana-masa.jpg'} alt={testimoniosList[0]?.nombre || '{lang === 'en' ? 'Student' : 'Estudiante'}'} class="student-avatar" />
+          <h4 id="tNombre" class="student-name">{testimoniosList[0]?.nombre || '{lang === 'en' ? 'Student' : 'Estudiante'}'}</h4>
           <span id="tRol" class="student-role">{testimoniosList[0]?.curso || 'Numerología Óntica'}</span>
         </div>
         <div class="slider-dots" id="sliderDots">
@@ -88,9 +88,9 @@ const testimoniosList = await getTestimoniosAlumnos();
 
     if (tFoto) {
       tFoto.src = item.avatar || item.foto || '/images/alumna-luciana-masa.jpg';
-      tFoto.alt = item.nombre || 'Estudiante';
+      tFoto.alt = item.nombre || '{lang === 'en' ? 'Student' : 'Estudiante'}';
     }
-    if (tNombre) tNombre.textContent = item.nombre || 'Estudiante';
+    if (tNombre) tNombre.textContent = item.nombre || '{lang === 'en' ? 'Student' : 'Estudiante'}';
     if (tRol) tRol.textContent = item.curso || item.rol || 'Numerología Óntica';
     if (tGranCita) tGranCita.textContent = item.comentario || item.cita || '';
 

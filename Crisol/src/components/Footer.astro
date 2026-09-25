@@ -1,4 +1,6 @@
 ---
+import { getLangFromUrl } from "../i18n/utils";
+const lang = Astro.currentLocale || getLangFromUrl(Astro.url);
 // Componente de Pie de Página institucional del Instituto Primigenias 33
 ---
 
@@ -7,19 +9,19 @@
     
     <!-- Columna 1: FORMACIÓN -->
     <div class="footer-col">
-      <h4>FORMACIÓN</h4>
+      <h4>{lang === "en" ? "TRAINING" : "FORMACIÓN"}</h4>
       <ul class="footer-list">
-        <li><a href="/consultoria/">Consultoría</a></li>
-        <li><a href="/numerologia/">Numerología Óntica</a></li>
-        <li><a href="/formaciones/">Formación</a></li>
+        <li><a href="/consultoria/">{lang === "en" ? "Consulting" : "Consultoría"}</a></li>
+        <li><a href="/numerologia/">{lang === "en" ? "Ontic Numerology" : "Numerología Óntica"}</a></li>
+        <li><a href="/formaciones/">{lang === "en" ? "Training" : "Formación"}</a></li>
       </ul>
     </div>
 
     <!-- Columna 2: CONTACTO (Direcciones de Ejemplo) -->
     <div class="footer-col">
-      <h4>CONTACTO</h4>
+      <h4>{lang === "en" ? "CONTACT" : "CONTACTO"}</h4>
       <address class="contact-info">
-        <p>Urb las viñas casa parque A – 17, Arequipa, Perú.</p>
+        <p>{lang === "en" ? "Urb las viñas casa parque A - 17, Arequipa, Peru." : "Urb las viñas casa parque A – 17, Arequipa, Perú."}</p>
         <p><a href="tel:+51967747483">+51 967747483</a></p>
         <p><a href="mailto:Primigenias33@gmail.com">Primigenias33@gmail.com</a></p>
       </address>
@@ -28,7 +30,7 @@
     <!-- Columna 3: Filosofía -->
     <div class="footer-col" style="flex: 1.5;">
       <p style="font-size: 0.95rem; color: #cbd5e1; line-height: 1.6; font-style: italic;">
-        Allin kawsay es el estado de iluminación y salud vibracional que se alcanza al sincronizar los tres centros del Ser —el corazón (Munay), la mente (Yachay) y el cuerpo (Llank'ay)— con el pulso vivo del cosmos (Pacha). Es la vivencia mística de reconocerse como una hebra inseparable del tejido de la existencia, donde el bienestar individual es un reflejo directo de la armonía con la Madre Tierra (Pachamama), los ancestros y el entorno comunitario.
+        {lang === "en" ? "Allin kawsay is the state of illumination and vibrational health achieved by synchronizing the three centers of the Being—the heart (Munay), the mind (Yachay), and the body (Llank'ay)—with the living pulse of the cosmos (Pacha). It is the mystical experience of recognizing oneself as an inseparable thread of the fabric of existence, where individual well-being is a direct reflection of harmony with Mother Earth (Pachamama), the ancestors, and the community environment." : "Allin kawsay es el estado de iluminación y salud vibracional que se alcanza al sincronizar los tres centros del Ser —el corazón (Munay), la mente (Yachay) y el cuerpo (Llank'ay)— con el pulso vivo del cosmos (Pacha). Es la vivencia mística de reconocerse como una hebra inseparable del tejido de la existencia, donde el bienestar individual es un reflejo directo de la armonía con la Madre Tierra (Pachamama), los ancestros y el entorno comunitario."}
       </p>
     </div>
 
@@ -38,7 +40,7 @@
         <img src="/images/logo-1-clean.png" alt="Escuela Primigenias 33 - Ciencias Ónticas" class="official-logo-img" />
         <div class="logo-title-group">
           <span class="logo-brand-text">PRIMIGENIAS 33</span>
-          <span class="logo-sub-text">ESCUELA DE CIENCIAS ÓNTICAS</span>
+          <span class="logo-sub-text">{lang === "en" ? "SCHOOL OF ONTIC SCIENCES" : "ESCUELA DE CIENCIAS ÓNTICAS"}</span>
         </div>
       </div>
 
@@ -47,7 +49,7 @@
   </div>
 
   <div class="container footer-bottom">
-    <p>&copy; {new Date().getFullYear()} Escuela Primigenias 33. Todos los derechos reservados.</p>
+    <p>&copy; {new Date().getFullYear()} {lang === "en" ? "Primigenias 33 School. " : "Escuela Primigenias 33. "}{lang === "en" ? "All rights reserved." : "Todos los derechos reservados."}</p>
   </div>
 </footer>
 
