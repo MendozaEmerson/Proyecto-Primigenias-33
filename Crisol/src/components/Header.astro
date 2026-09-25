@@ -1,7 +1,7 @@
 ﻿---
 import LanguagePicker from "./LanguagePicker.astro";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
-const lang = getLangFromUrl(Astro.url);
+const lang = Astro.currentLocale || getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 // Componente de Encabezado / Navegación Multi-Página Institucional
 const currentPath = Astro.url.pathname;
@@ -18,11 +18,11 @@ const currentPath = Astro.url.pathname;
     </a>
 
     <nav class="nav-links">
-      <a href="/" class={currentPath === "/" ? "active" : ""}>Inicio</a>
-      <a href="/nosotros/" class={currentPath.startsWith("/nosotros") ? "active" : ""}>La Escuela</a>
-      <a href="/formaciones/" class={currentPath.startsWith("/formaciones") ? "active" : ""}>Formaciones</a>
-      <a href="/eventos/" class={currentPath === "/eventos" || currentPath === "/eventos/" ? "active" : ""}>Eventos</a>
-      <a href="/contacto/" class={currentPath.startsWith("/contacto") ? "active" : ""}>Contacto</a>
+      <a href="/" class={currentPath === "/" ? "active" : ""}>{t("nav.home")}</a>
+      <a href="/nosotros/" class={currentPath.startsWith("/nosotros") ? "active" : ""}>{t("nav.about")}</a>
+      <a href="/formaciones/" class={currentPath.startsWith("/formaciones") ? "active" : ""}>{lang === "en" ? "Trainings" : "Formaciones"}</a>
+      <a href="/eventos/" class={currentPath === "/eventos" || currentPath === "/eventos/" ? "active" : ""}>{t("nav.events")}</a>
+      <a href="/contacto/" class={currentPath.startsWith("/contacto") ? "active" : ""}>{t("nav.contact")}</a>
     </nav>
 
     <div class="nav-actions">
@@ -51,11 +51,11 @@ const currentPath = Astro.url.pathname;
       <div style="display: flex; justify-content: center; margin-bottom: 1rem;">
         <LanguagePicker />
       </div>
-      <a href="/" class={currentPath === "/" ? "active" : ""}>Inicio</a>
-      <a href="/nosotros/" class={currentPath.startsWith("/nosotros") ? "active" : ""}>La Escuela</a>
-      <a href="/formaciones/" class={currentPath.startsWith("/formaciones") ? "active" : ""}>Formaciones</a>
-      <a href="/eventos/" class={currentPath === "/eventos" || currentPath === "/eventos/" ? "active" : ""}>Eventos</a>
-      <a href="/contacto/" class={currentPath.startsWith("/contacto") ? "active" : ""}>Contacto</a>
+      <a href="/" class={currentPath === "/" ? "active" : ""}>{t("nav.home")}</a>
+      <a href="/nosotros/" class={currentPath.startsWith("/nosotros") ? "active" : ""}>{t("nav.about")}</a>
+      <a href="/formaciones/" class={currentPath.startsWith("/formaciones") ? "active" : ""}>{lang === "en" ? "Trainings" : "Formaciones"}</a>
+      <a href="/eventos/" class={currentPath === "/eventos" || currentPath === "/eventos/" ? "active" : ""}>{t("nav.events")}</a>
+      <a href="/contacto/" class={currentPath.startsWith("/contacto") ? "active" : ""}>{t("nav.contact")}</a>
       
       <a href="http://194.163.144.149:8085" target="_blank" rel="noopener noreferrer" class="btn btn-moodle btn-mobile-moodle">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>

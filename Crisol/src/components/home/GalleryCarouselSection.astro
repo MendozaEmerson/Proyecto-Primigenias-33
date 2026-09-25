@@ -1,6 +1,6 @@
 ---
 import { getLangFromUrl } from "../../i18n/utils";
-const lang = getLangFromUrl(Astro.url);
+const lang = Astro.currentLocale || getLangFromUrl(Astro.url);
 
 // Componente de Carrusel de Imágenes Institucionales + Testimonios
 import { getGaleriaInicio, getTestimoniosAlumnos } from '../../services/strapi';

@@ -1,7 +1,7 @@
 ﻿---
 import { getLangFromUrl, ui } from '../i18n/utils';
 
-const lang = getLangFromUrl(Astro.url);
+const lang = Astro.currentLocale || getLangFromUrl(Astro.url);
 const currentPath = Astro.url.pathname;
 
 // Determine target URLs

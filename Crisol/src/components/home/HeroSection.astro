@@ -1,6 +1,6 @@
 ﻿---
 import { getLangFromUrl } from "../../i18n/utils";
-const lang = getLangFromUrl(Astro.url);
+const lang = Astro.currentLocale || getLangFromUrl(Astro.url);
 
 // Componente de Sección Hero para la página principal
 import { getIntegrantesEquipo } from '../../services/strapi';
