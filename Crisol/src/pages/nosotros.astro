@@ -414,8 +414,26 @@ const teamMembers = await getIntegrantesEquipo();
     .nosotros-grid,
     .origen-grid,
     .sobre-mi-grid {
-      grid-template-columns: 1fr;
+      display: flex;
+      flex-direction: column;
       gap: 2rem;
+      padding: 2rem 1.5rem;
+    }
+    
+    .origen-img-col, .sobre-mi-img-col, .nosotros-img-col {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      order: 2;
+    }
+    
+    .origen-info-col, .sobre-mi-info-col, .nosotros-text-col {
+      order: 1;
+    }
+
+    .origen-img-card {
+      margin: 0 auto;
+      max-width: 100%;
     }
   }
 
