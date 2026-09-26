@@ -20,7 +20,7 @@ const currentPath = Astro.url.pathname;
     <nav class="nav-links">
       <a href="/" class={currentPath === "/" ? "active" : ""}>{t("nav.home")}</a>
       <a href="/nosotros/" class={currentPath.startsWith("/nosotros") ? "active" : ""}>{t("nav.about")}</a>
-      <a href="/consultoria/" class={currentPath.startsWith("/consultoria") ? "active" : ""}>{lang === "en" ? "Consulting" : "Consultoría"}</a>
+      <a href="/consultoria/" class={currentPath.startsWith("/consultoria") ? "active" : ""}>{lang === "en" ? "My Consulting" : "Mi Consultoría"}</a>
       <a href="/formaciones/" class={currentPath.startsWith("/formaciones") ? "active" : ""}>{lang === "en" ? "Trainings" : "Formaciones"}</a>
       <a href="/eventos/" class={currentPath === "/eventos" || currentPath === "/eventos/" ? "active" : ""}>{t("nav.events")}</a>
       <a href="/contacto/" class={currentPath.startsWith("/contacto") ? "active" : ""}>{t("nav.contact")}</a>
@@ -54,7 +54,7 @@ const currentPath = Astro.url.pathname;
       </div>
       <a href="/" class={currentPath === "/" ? "active" : ""}>{t("nav.home")}</a>
       <a href="/nosotros/" class={currentPath.startsWith("/nosotros") ? "active" : ""}>{t("nav.about")}</a>
-      <a href="/consultoria/" class={currentPath.startsWith("/consultoria") ? "active" : ""}>{lang === "en" ? "Consulting" : "Consultoría"}</a>
+      <a href="/consultoria/" class={currentPath.startsWith("/consultoria") ? "active" : ""}>{lang === "en" ? "My Consulting" : "Mi Consultoría"}</a>
       <a href="/formaciones/" class={currentPath.startsWith("/formaciones") ? "active" : ""}>{lang === "en" ? "Trainings" : "Formaciones"}</a>
       <a href="/eventos/" class={currentPath === "/eventos" || currentPath === "/eventos/" ? "active" : ""}>{t("nav.events")}</a>
       <a href="/contacto/" class={currentPath.startsWith("/contacto") ? "active" : ""}>{t("nav.contact")}</a>

@@ -100,18 +100,19 @@ export interface FotoGaleria {
 }
 
 export async function getGaleriaInicio(): Promise<FotoGaleria[]> {
-              const fallback: FotoGaleria[] = [
-      { titulo: 'Carrusel 1', imagen: '/images/carrusel-1.png' },
-      { titulo: 'Carrusel 2', imagen: '/images/carrusel-2.png' },
-      { titulo: 'Carrusel 3', imagen: '/images/carrusel-3.png' },
-      { titulo: 'Carrusel 4', imagen: '/images/carrusel-4.png' },
-      { titulo: 'Graduación Estudiantes', imagen: '/images/grupo-estudiantes-graduacion.jpg' },
-      { titulo: 'Expo Holística', imagen: '/images/expo-holistica-2024.jpg' },
+                  const fallback: FotoGaleria[] = [
       { titulo: 'Lago Titicaca', imagen: '/images/lago-titicaca.png' },
       { titulo: 'Aramu Muru', imagen: '/images/aramu-muru.png' },
       { titulo: 'Apu Pitusiray', imagen: '/images/apu-pitusiray.png' },
       { titulo: 'Naupa Iglesia', imagen: '/images/naupa-iglesia.png' },
-      { titulo: 'El Origen', imagen: '/images/origen-logo.png' }
+      { titulo: 'Numerología', imagen: '/images/numerologia-oficial.png' },
+      { titulo: 'El Origen', imagen: '/images/origen-logo.png' },
+      { titulo: 'Isla del Sol 2024', imagen: '/images/eventos/2024-isla-1.png' },
+      { titulo: 'Isla del Sol 2024', imagen: '/images/eventos/2024-isla-2.png' },
+      { titulo: 'Portal Aramu Muru 2024', imagen: '/images/eventos/2024-aramu-1.png' },
+      { titulo: 'Portal Aramu Muru 2024', imagen: '/images/eventos/2024-aramu-3.png' },
+      { titulo: 'Petroglifos La Caldera 2023', imagen: '/images/eventos/2023-petroglifos-1.png' },
+      { titulo: 'Petroglifos La Caldera 2023', imagen: '/images/eventos/2023-petroglifos-3.png' }
     ];
 
   const strapiData = await fetchStrapiData<any[]>('galeria-fotos', []);
