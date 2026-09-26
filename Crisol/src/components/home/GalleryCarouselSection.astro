@@ -49,15 +49,18 @@ const testimoniosList = await getTestimoniosAlumnos();
 </section>
 
 <script define:vars={{ lang }}>
-  // 1. Carrusel de Imágenes Automático
+    // 1. Carrusel de Imágenes Automático
   const galleryWrapper = document.getElementById('autoGalleryWrapper');
   if (galleryWrapper) {
     let scrollAmount = 0;
-    const itemWidth = 720;
     
     setInterval(() => {
       const items = galleryWrapper.querySelectorAll('.gallery-item');
       if (items.length <= 1) return;
+      
+      // Calculate dynamic width + gap (gap is approx 24px)
+      const itemWidth = items[0].clientWidth + 24; 
+      
       if (scrollAmount >= itemWidth * (items.length - 1)) {
         scrollAmount = 0;
         galleryWrapper.scrollTo({ left: 0, behavior: 'smooth' });

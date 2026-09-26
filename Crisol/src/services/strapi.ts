@@ -100,12 +100,17 @@ export interface FotoGaleria {
 }
 
 export async function getGaleriaInicio(): Promise<FotoGaleria[]> {
-          const fallback: FotoGaleria[] = [
+              const fallback: FotoGaleria[] = [
+      { titulo: 'Carrusel 1', imagen: '/images/carrusel-1.png' },
+      { titulo: 'Carrusel 2', imagen: '/images/carrusel-2.png' },
+      { titulo: 'Carrusel 3', imagen: '/images/carrusel-3.png' },
+      { titulo: 'Carrusel 4', imagen: '/images/carrusel-4.png' },
+      { titulo: 'Graduación Estudiantes', imagen: '/images/grupo-estudiantes-graduacion.jpg' },
+      { titulo: 'Expo Holística', imagen: '/images/expo-holistica-2024.jpg' },
       { titulo: 'Lago Titicaca', imagen: '/images/lago-titicaca.png' },
       { titulo: 'Aramu Muru', imagen: '/images/aramu-muru.png' },
       { titulo: 'Apu Pitusiray', imagen: '/images/apu-pitusiray.png' },
       { titulo: 'Naupa Iglesia', imagen: '/images/naupa-iglesia.png' },
-      { titulo: 'Numerología', imagen: '/images/numerologia-oficial.png' },
       { titulo: 'El Origen', imagen: '/images/origen-logo.png' }
     ];
 
