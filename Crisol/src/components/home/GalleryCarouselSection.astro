@@ -12,10 +12,16 @@ const testimoniosList = await getTestimoniosAlumnos();
 <section class="section bg-dim">
   <div class="container">
     <!-- Carrusel de Imágenes Solamente (Cambio Automático) -->
-    <div class="gallery-carousel-wrapper" id="autoGalleryWrapper">
-      <div class="gallery-track" id="autoGalleryTrack">
+    <div class="gallery-carousel-wrapper">
+      <div class="gallery-track-marquee">
         {galleryImages.map((img) => (
-          <div class="gallery-item">
+          <div class="gallery-item-marquee">
+            <img src={img.imagen} alt={img.titulo} />
+          </div>
+        ))}
+        {/* Duplicate for infinite effect */}
+        {galleryImages.map((img) => (
+          <div class="gallery-item-marquee">
             <img src={img.imagen} alt={img.titulo} />
           </div>
         ))}
@@ -49,118 +55,124 @@ const testimoniosList = await getTestimoniosAlumnos();
 </section>
 
 <script define:vars={{ lang }}>
-    // 1. Carrusel de Imágenes Automático
-  const galleryWrapper = document.getElementById('autoGalleryWrapper');
-  if (galleryWrapper) {
-    let scrollAmount = 0;
+  document.addEventListener('astro:page-load', () => {
+    // Carrusel de Testimonios Interactivo
+    const rowBox = document.querySelector('.quote-testimonial-row');
+    if (!rowBox) return; // If we navigate to another page, avoid errors
     
-    setInterval(() => {
-      const items = galleryWrapper.querySelectorAll('.gallery-item');
-      if (items.length <= 1) return;
-      
-      // Calculate dynamic width + gap (gap is approx 24px)
-      const itemWidth = items[0].clientWidth + 24; 
-      
-      if (scrollAmount >= itemWidth * (items.length - 1)) {
-        scrollAmount = 0;
-        galleryWrapper.scrollTo({ left: 0, behavior: 'smooth' });
-      } else {
-        scrollAmount += itemWidth;
-        galleryWrapper.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+    const testimoniosList = rowBox.dataset.testimonios ? JSON.parse(rowBox.dataset.testimonios) : [];
+    if (!testimoniosList || testimoniosList.length === 0) return;
+
+    let currentIndex = 0;
+    let testimonialTimer;
+
+    const tFoto = document.getElementById('tFoto');
+    const tNombre = document.getElementById('tNombre');
+    const tRol = document.getElementById('tRol');
+    const tGranCita = document.getElementById('tGranCita');
+    const dots = document.querySelectorAll('#sliderDots .dot');
+
+    function renderTestimonial(index) {
+      if (index < 0 || index >= testimoniosList.length) return;
+      currentIndex = index;
+      const item = testimoniosList[index];
+
+      if (tFoto) {
+        tFoto.src = item.avatar || item.foto || '/images/alumna-luciana-masa.jpg';
+        tFoto.alt = item.nombre || (lang === 'en' ? 'Student' : 'Estudiante');
       }
-    }, 3500);
-  }
+      if (tNombre) tNombre.textContent = item.nombre || (lang === 'en' ? 'Student' : 'Estudiante');
+      if (tRol) tRol.textContent = item.curso || item.rol || 'Numerología Óntica';
+      if (tGranCita) tGranCita.textContent = item.comentario || item.cita || '';
 
-  // 2. Carrusel de Testimonios Interactivo
-  const rowBox = document.querySelector('.quote-testimonial-row') as HTMLElement;
-  const testimoniosList = rowBox?.dataset.testimonios ? JSON.parse(rowBox.dataset.testimonios) : [];
-
-  let currentIndex = 0;
-  let testimonialTimer: ReturnType<typeof setInterval>;
-
-  const tFoto = document.getElementById('tFoto') as HTMLImageElement;
-  const tNombre = document.getElementById('tNombre');
-  const tRol = document.getElementById('tRol');
-  const tGranCita = document.getElementById('tGranCita');
-  const dots = document.querySelectorAll('#sliderDots .dot');
-
-  function renderTestimonial(index: number) {
-    if (!testimoniosList || index < 0 || index >= testimoniosList.length) return;
-    currentIndex = index;
-    const item = testimoniosList[index];
-
-    if (tFoto) {
-      tFoto.src = item.avatar || item.foto || '/images/alumna-luciana-masa.jpg';
-      tFoto.alt = item.nombre || (lang === 'en' ? 'Student' : 'Estudiante');
+      dots.forEach((dot, idx) => {
+        if (idx === index) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
     }
-    if (tNombre) tNombre.textContent = item.nombre || (lang === 'en' ? 'Student' : 'Estudiante');
-    if (tRol) tRol.textContent = item.curso || item.rol || 'Numerología Óntica';
-    if (tGranCita) tGranCita.textContent = item.comentario || item.cita || '';
+
+    function startAutoSlide() {
+      if (testimoniosList.length <= 1) return;
+      clearInterval(testimonialTimer);
+      testimonialTimer = setInterval(() => {
+        const nextIdx = (currentIndex + 1) % testimoniosList.length;
+        renderTestimonial(nextIdx);
+      }, 5000);
+    }
 
     dots.forEach((dot, idx) => {
-      if (idx === index) {
-        dot.classList.add('active');
-      } else {
-        dot.classList.remove('active');
-      }
+      // Create new clean dots to avoid event listener buildup on re-navigation
+      const newDot = dot.cloneNode(true);
+      dot.parentNode.replaceChild(newDot, dot);
+      
+      newDot.addEventListener('click', () => {
+        clearInterval(testimonialTimer);
+        renderTestimonial(idx);
+        startAutoSlide();
+      });
     });
-  }
 
-  function startAutoSlide() {
-    if (!testimoniosList || testimoniosList.length <= 1) return;
-    testimonialTimer = setInterval(() => {
-      const nextIdx = (currentIndex + 1) % testimoniosList.length;
-      renderTestimonial(nextIdx);
-    }, 4000);
-  }
-
-  dots.forEach((dot, idx) => {
-    dot.addEventListener('click', () => {
-      clearInterval(testimonialTimer);
-      renderTestimonial(idx);
-      startAutoSlide();
-    });
+    startAutoSlide();
   });
-
-  startAutoSlide();
 </script>
 
 <style>
   /* Gallery Carousel (Carrusel de imágenes solamente) */
-  .gallery-carousel-wrapper {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto 3rem auto;
-    overflow-x: auto;
-    border-radius: var(--radius-lg);
-    
-    /* Hide scrollbar */
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-  }
-  
-  /* Hide scrollbar for Chrome, Safari and Opera */
-  .gallery-carousel-wrapper::-webkit-scrollbar {
-    display: none;
+    .gallery-carousel-wrapper {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    overflow: hidden;
+    margin-bottom: 4rem;
+    position: relative;
+    padding: 1rem 0;
   }
 
-  .gallery-track {
+  .gallery-track-marquee {
     display: flex;
+    width: max-content;
+    animation: scroll-marquee 40s linear infinite;
     gap: 1.5rem;
+    padding-left: 1.5rem;
   }
 
-  .gallery-item {
-    flex: 0 0 700px;
+  .gallery-track-marquee:hover {
+    animation-play-state: paused;
+  }
+
+  .gallery-item-marquee {
+    flex: 0 0 600px;
     height: 380px;
     border-radius: var(--radius-lg);
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
   }
 
-  .gallery-item img {
+  .gallery-item-marquee:hover {
+    transform: scale(1.02);
+  }
+
+  .gallery-item-marquee img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  @keyframes scroll-marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 0.75rem)); }
+  }
+
+  @media (max-width: 900px) {
+    .gallery-item-marquee {
+      flex: 0 0 320px;
+      height: 240px;
+    }
   }
 
   /* Quote and Testimonial Side by Side Row */
