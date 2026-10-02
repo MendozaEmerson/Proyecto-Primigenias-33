@@ -1,6 +1,8 @@
 ---
 import { getLangFromUrl } from "../i18n/utils";
 const lang = Astro.currentLocale || getLangFromUrl(Astro.url);
+const basePath = lang === 'en' ? '/en' : '';
+const getUrl = (path) => path === '/' && basePath ? basePath + '/' : basePath + path;
 // Componente de Pie de Página institucional del Instituto Primigenias 33
 ---
 
@@ -11,8 +13,8 @@ const lang = Astro.currentLocale || getLangFromUrl(Astro.url);
     <div class="footer-col">
       <h4>{lang === "en" ? "TRAINING" : "FORMACIÓN"}</h4>
       <ul class="footer-list">
-        <li><a href="/consultoria/">{lang === "en" ? "Consulting" : "Consultoría"}</a></li>
-        <li><a href="/numerologia/">{lang === "en" ? "Ontic Numerology" : "Numerología Óntica"}</a></li>
+        <li><a href={getUrl("/consultoria/")}>{lang === "en" ? "Consulting" : "Consultoría"}</a></li>
+        <li><a href={getUrl("/numerologia/")}>{lang === "en" ? "Ontic Numerology" : "Numerología Óntica"}</a></li>
         <li><a href={getUrl("/formaciones/")}>{lang === "en" ? "Training" : "Formación"}</a></li>
       </ul>
     </div>
