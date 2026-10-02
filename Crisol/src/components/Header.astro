@@ -5,11 +5,13 @@ const lang = Astro.currentLocale || getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 // Componente de Encabezado / Navegación Multi-Página Institucional
 const currentPath = Astro.url.pathname;
+const basePath = lang === 'en' ? '/en' : '';
+const getUrl = (path) => path === '/' && basePath ? basePath + '/' : basePath + path;
 ---
 
 <header class="navbar-wrapper">
   <div class="navbar container">
-    <a href="/" class="logo" aria-label="Inicio Escuela Primigenias 33">
+    <a href={getUrl("/")} class="logo" aria-label="Inicio Escuela Primigenias 33">
       <img src="/images/logo-1-clean.png" alt="Emblema Sagrado Primigenias 33" class="header-logo-img" />
       <div class="logo-text">
         <span class="brand">PRIMIGENIAS<span class="brand-number">33</span></span>
@@ -18,12 +20,12 @@ const currentPath = Astro.url.pathname;
     </a>
 
     <nav class="nav-links">
-      <a href="/" class={currentPath === "/" ? "active" : ""}>{t("nav.home")}</a>
-      <a href="/nosotros/" class={currentPath.startsWith("/nosotros") ? "active" : ""}>{t("nav.about")}</a>
-      <a href="/consultoria/" class={currentPath.startsWith("/consultoria") ? "active" : ""}>{lang === "en" ? "My Consulting" : "Mi Consultoría"}</a>
-      <a href="/formaciones/" class={currentPath.startsWith("/formaciones") ? "active" : ""}>{lang === "en" ? "Trainings" : "Formaciones"}</a>
-      <a href="/eventos/" class={currentPath === "/eventos" || currentPath === "/eventos/" ? "active" : ""}>{t("nav.events")}</a>
-      <a href="/contacto/" class={currentPath.startsWith("/contacto") ? "active" : ""}>{t("nav.contact")}</a>
+      <a href={getUrl("/")} class={currentPath === "/" ? "active" : ""}>{t("nav.home")}</a>
+      <a href={getUrl("/nosotros/")} class={currentPath.startsWith("/nosotros") ? "active" : ""}>{t("nav.about")}</a>
+      <a href={getUrl("/consultoria/")} class={currentPath.startsWith("/consultoria") ? "active" : ""}>{lang === "en" ? "My Consulting" : "Mi Consultoría"}</a>
+      <a href={getUrl("/formaciones/")} class={currentPath.startsWith("/formaciones") ? "active" : ""}>{lang === "en" ? "Trainings" : "Formaciones"}</a>
+      <a href={getUrl("/eventos/")} class={currentPath === "/eventos" || currentPath === "/eventos/" ? "active" : ""}>{t("nav.events")}</a>
+      <a href={getUrl("/contacto/")} class={currentPath.startsWith("/contacto") ? "active" : ""}>{t("nav.contact")}</a>
     </nav>
 
     <div class="nav-actions">
@@ -52,12 +54,12 @@ const currentPath = Astro.url.pathname;
       <div style="display: flex; justify-content: center; margin-bottom: 1rem;">
         <LanguagePicker />
       </div>
-      <a href="/" class={currentPath === "/" ? "active" : ""}>{t("nav.home")}</a>
-      <a href="/nosotros/" class={currentPath.startsWith("/nosotros") ? "active" : ""}>{t("nav.about")}</a>
-      <a href="/consultoria/" class={currentPath.startsWith("/consultoria") ? "active" : ""}>{lang === "en" ? "My Consulting" : "Mi Consultoría"}</a>
-      <a href="/formaciones/" class={currentPath.startsWith("/formaciones") ? "active" : ""}>{lang === "en" ? "Trainings" : "Formaciones"}</a>
-      <a href="/eventos/" class={currentPath === "/eventos" || currentPath === "/eventos/" ? "active" : ""}>{t("nav.events")}</a>
-      <a href="/contacto/" class={currentPath.startsWith("/contacto") ? "active" : ""}>{t("nav.contact")}</a>
+      <a href={getUrl("/")} class={currentPath === "/" ? "active" : ""}>{t("nav.home")}</a>
+      <a href={getUrl("/nosotros/")} class={currentPath.startsWith("/nosotros") ? "active" : ""}>{t("nav.about")}</a>
+      <a href={getUrl("/consultoria/")} class={currentPath.startsWith("/consultoria") ? "active" : ""}>{lang === "en" ? "My Consulting" : "Mi Consultoría"}</a>
+      <a href={getUrl("/formaciones/")} class={currentPath.startsWith("/formaciones") ? "active" : ""}>{lang === "en" ? "Trainings" : "Formaciones"}</a>
+      <a href={getUrl("/eventos/")} class={currentPath === "/eventos" || currentPath === "/eventos/" ? "active" : ""}>{t("nav.events")}</a>
+      <a href={getUrl("/contacto/")} class={currentPath.startsWith("/contacto") ? "active" : ""}>{t("nav.contact")}</a>
       
       <a href="http://194.163.144.149:8085" target="_blank" rel="noopener noreferrer" class="btn btn-moodle btn-mobile-moodle">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>

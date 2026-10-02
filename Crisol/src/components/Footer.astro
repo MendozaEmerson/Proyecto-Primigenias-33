@@ -13,7 +13,7 @@ const lang = Astro.currentLocale || getLangFromUrl(Astro.url);
       <ul class="footer-list">
         <li><a href="/consultoria/">{lang === "en" ? "Consulting" : "Consultoría"}</a></li>
         <li><a href="/numerologia/">{lang === "en" ? "Ontic Numerology" : "Numerología Óntica"}</a></li>
-        <li><a href="/formaciones/">{lang === "en" ? "Training" : "Formación"}</a></li>
+        <li><a href={getUrl("/formaciones/")}>{lang === "en" ? "Training" : "Formación"}</a></li>
       </ul>
     </div>
 
