@@ -1,6 +1,8 @@
 ---
 import { getLangFromUrl } from "../../i18n/utils";
 const lang = Astro.currentLocale || getLangFromUrl(Astro.url);
+const basePath = lang === 'en' ? '/en' : '';
+const getUrl = (path) => path === '/' && basePath ? basePath + '/' : basePath + path;
 
 // Componente de Eventos Destacados (Seminario Anual + Jornada Abierta)
 ---
@@ -36,7 +38,7 @@ const lang = Astro.currentLocale || getLangFromUrl(Astro.url);
         <div class="card-body">
           <h3>{lang === "en" ? "FIELD CLASSROOM | MINTAKA TERRALAB" : "AULA EN CAMPO | MINTAKA TERRALAB"}</h3>
           <p>{lang === "en" ? "Transpersonal Engineering, Vortices and Links: Annual In-Person Program of Ontic Numerology in Places of Power. We work in classrooms without walls." : "Ingeniería Transpersonal, Vórtices y Enlaces: Programa Presencial Anual de Numerología Óntica en Lugares de Poder. Trabajamos en aulas sin paredes."}</p>
-          <a href="/eventos-presenciales/" class="btn btn-primary btn-block">{lang === "en" ? "View Events" : "Ver Eventos"}</a>
+          <a href={getUrl("/eventos-presenciales/")} class="btn btn-primary btn-block">{lang === "en" ? "View Events" : "Ver Eventos"}</a>
         </div>
       </div>
     </div>

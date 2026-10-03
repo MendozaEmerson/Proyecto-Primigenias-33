@@ -1,6 +1,8 @@
 ﻿---
 import { getLangFromUrl } from "../../i18n/utils";
 const lang = Astro.currentLocale || getLangFromUrl(Astro.url);
+const basePath = lang === 'en' ? '/en' : '';
+const getUrl = (path) => path === '/' && basePath ? basePath + '/' : basePath + path;
 
 // Componente de Sección Hero para la página principal
 import { getIntegrantesEquipo } from '../../services/strapi';
@@ -60,7 +62,7 @@ const omarCard = integrantes.find(i => i.nombre.toLowerCase().includes('omar')) 
       </div>
 
       <div class="hero-actions">
-        <a href="/nosotros/" class="btn btn-primary btn-lg">
+        <a href={getUrl("/nosotros/")} class="btn btn-primary btn-lg">
           {lang === "en" ? "About Us" : "Conócenos"}
         </a>
       </div>
