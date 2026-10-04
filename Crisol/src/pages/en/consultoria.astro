@@ -4,10 +4,10 @@ const lang = Astro.currentLocale || getLangFromUrl(Astro.url);
 const basePath = lang === 'en' ? '/en' : '';
 const getUrl = (path) => path === '/' && basePath ? basePath + '/' : basePath + path;
 
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import WhatsAppButton from '../components/WhatsAppButton.astro';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import WhatsAppButton from '../../components/WhatsAppButton.astro';
 ---
 
 <Layout title="Consultoría Personal | Instituto Primigenias 33" description="Online Ontic Numerology Clinic. Accompaniment in individual sessions.">
