@@ -14,11 +14,11 @@ const getUrl = (path) => path === '/' && basePath ? basePath + '/' : basePath + 
       <div class="glass-panel banner-wide-card highlight-cyan breathing-glow">
         <div class="banner-bg-img" style="background-image: url('/images/bg-directorio.png'); filter: brightness(0.4);"></div>
         <div class="banner-overlay-content">
-          <span class="badge badge-cyan">Docentes</span>
-          <h2>DIRECTORIO DE PROFESIONALES</h2>
-          <p>Cuerpo docente del Instituto Primigenias 33</p>
+          <span class="badge badge-cyan">{lang === "en" ? "Teachers" : "Docentes"}</span>
+          <h2>{lang === "en" ? "PROFESSIONAL DIRECTORY" : "DIRECTORIO DE PROFESIONALES"}</h2>
+          <p>{lang === "en" ? "Teaching staff of the Primigenias 33 Institute" : "Cuerpo docente del Instituto Primigenias 33"}</p>
           <a href={getUrl("/directorio/")} class="btn btn-outline-light">
-            VER MÁS
+            {lang === "en" ? "VIEW MORE" : "VER MÁS"}
           </a>
         </div>
       </div>
