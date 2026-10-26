@@ -15,20 +15,20 @@ const clasesJornada = clasesJornadaRaw.map(c => ({
 }));
 ---
 
-<Layout title="Jornada Abierta 2026: Clases Gratuitas | Instituto Primigenias 33" description="Serie de conferencias y clases gratuitas de la Jornada Abierta 2026 del Instituto Primigenias 33 en Ciencias Ónticas y Desarrollo Humano.">
+<Layout title="Open Day 2026: Free Classes | Primigenias 33 Institute" description="Series of free masterclasses and lectures from the 2026 Open Day of Primigenias 33 Institute in Ontic Sciences and Human Development.">
   <Header />
 
   <main class="jornada-main">
     <!-- Hero / Header de la Jornada -->
     <section class="hero-section hero-bg-overlay">
       <div class="container hero-content scroll-reveal">
-        <span class="badge badge-cyan">Acceso Libre & Gratuito 2026</span>
+        <span class="badge badge-cyan">Free & Open Access 2026</span>
         <h1 class="page-title text-gradient-gold">
-          Jornada Abierta 2026: Clases Abiertas
+          Open Day 2026: Free Classes
         </h1>
         <p class="hero-subtitle">
-          Bienvenido a la serie de ponencias y clases gratuitas de la Jornada 2026. 
-          Aprende con nuestros docentes sobre ciencias ónticas, arquetipos y transformación personal.
+          Welcome to the free lecture series and open classes of the 2026 cycle. 
+          Learn with our faculty about ontic sciences, archetypes, and personal transformation.
         </p>
       </div>
     </section>
@@ -37,16 +37,16 @@ const clasesJornada = clasesJornadaRaw.map(c => ({
     <section class="section">
       <div class="container">
         <div class="section-intro text-center">
-          <span class="badge badge-gold">Contenido Exclusivo</span>
-          <h2>Módulos de la Jornada 2026</h2>
-          <p>Disfrute de las 4 clases grabadas en video disponibles en acceso libre sin necesidad de registro previo.</p>
+          <span class="badge badge-gold">Exclusive Content</span>
+          <h2>Modules of the 2026 Open Day</h2>
+          <p>Enjoy the 4 video masterclasses available for free on-demand access without requiring prior registration.</p>
         </div>
 
         <div class="clases-grid">
           {clasesJornada.map((clase) => (
             <article class="glass-panel clase-card breathing-glow">
               <div class="clase-header">
-                <span class="clase-num-badge">Clase {clase.numero}</span>
+                <span class="clase-num-badge">Class {clase.numero}</span>
                 <span class="badge badge-info">{clase.categoria}</span>
               </div>
 
@@ -68,10 +68,10 @@ const clasesJornada = clasesJornadaRaw.map(c => ({
 
                 <div class="clase-meta">
                   <div class="meta-item">
-                    <span>Duración: {clase.duracion}</span>
+                    <span>Duration: {clase.duracion}</span>
                   </div>
                   <div class="meta-item text-green">
-                    <span>Acceso Gratuito</span>
+                    <span>Free Access</span>
                   </div>
                 </div>
               </div>

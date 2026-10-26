@@ -1,4 +1,4 @@
-﻿---
+---
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
@@ -8,17 +8,17 @@ import { getEventosAnuales } from '../../services/strapi';
 const eventosPorAnioList = await getEventosAnuales();
 ---
 
-<Layout title="Eventos y Exposiciones | Instituto Primigenias 33" description="Galería de eventos y exposiciones históricas del Instituto Primigenias 33.">
+<Layout title="Events & Exhibitions | Primigenias 33 Institute" description="Gallery of events and historical exhibitions of the Primigenias 33 Institute.">
   <Header />
 
   <main class="eventos-main">
     <!-- Header Banner -->
     <section class="page-header hero-bg-overlay">
       <div class="container text-center scroll-reveal">
-        <span class="badge badge-gold">Imágenes al Andar</span>
-        <h1 class="page-title text-gradient-flame">NUESTROS EVENTOS & EXPOSICIONES</h1>
+        <span class="badge badge-gold">Images on the Journey</span>
+        <h1 class="page-title text-gradient-flame">OUR EVENTS & EXHIBITIONS</h1>
         <p class="lead">
-          "Nuestra historia se divide en dos grandes etapas. Todo lo vivido hasta el 2026 fue un viaje de preparación, recolección de experiencias y encuentros esenciales que permitieron el nacimiento de nuestra Escuela Primigenias 33. Desde el 2027, este espacio evoluciona junto a nosotros: aquí compartiremos el pulso de nuestra institución a través de las fotos de nuestras salidas a campo, eventos oficiales y esos momentos memorables que construyen nuestra identidad."
+          "Our history is divided into two major chapters. Everything experienced up until 2026 was a journey of foundational preparation, gathering lived experiences, and vital encounters that gave birth to the Primigenias 33 School. From 2027 onward, this space evolves alongside us: here we share the living pulse of our institution through photographs of our field expeditions, official events, and those memorable milestones that forge our identity."
         </p>
       </div>
     </section>
@@ -28,7 +28,7 @@ const eventosPorAnioList = await getEventosAnuales();
       <div class="container">
         <!-- Filtros por Año -->
         <div class="filter-bar">
-          <button class="filter-btn active" data-filter="all">Todos los Años</button>
+          <button class="filter-btn active" data-filter="all">All Years</button>
           <button class="filter-btn" data-filter="2026">2026</button>
           <button class="filter-btn" data-filter="2025">2025</button>
           <button class="filter-btn" data-filter="2024">2024</button>
@@ -62,7 +62,7 @@ const eventosPorAnioList = await getEventosAnuales();
                       <h4 class="photo-title">{foto.titulo}</h4>
                       <span class="zoom-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-                        Ver Ampliado
+                        View Full Size
                       </span>
                     </div>
                   </div>
@@ -79,7 +79,7 @@ const eventosPorAnioList = await getEventosAnuales();
   <div class="lightbox-modal" id="lightboxModal">
     <div class="lightbox-content">
       <button class="lightbox-close" id="lightboxClose">&times;</button>
-      <img id="lightboxImg" src="" alt="Vista Ampliada" />
+      <img id="lightboxImg" src="" alt="Expanded View" />
       <div id="lightboxCaption" class="lightbox-caption"></div>
     </div>
   </div>

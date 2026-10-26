@@ -7,38 +7,38 @@ import WhatsAppButton from '../../components/WhatsAppButton.astro';
 const salidas = [
   {
     id: 'lago-titicaca',
-    mes: 'Abril',
-    lugar: 'Lago Titicaca (Puno) – El Vientre Cósmico',
+    mes: 'April',
+    lugar: 'Lake Titicaca (Puno) – The Cosmic Womb',
     imagen: '/images/lago-titicaca.png',
-    desc: 'El Lago Titicaca representa la Frecuencia Cero, el estado de potencial puro. Caminando sus islas decodificamos el Hogar de Nacimiento.'
+    desc: 'Lake Titicaca represents Zero Frequency, the state of pure potential. Walking its sacred islands we decode the Birth Home.'
   },
   {
     id: 'aramu-muru',
-    mes: 'Junio',
-    lugar: 'Portal de Aramu Muru – El Umbral Interdimensional',
+    mes: 'June',
+    lugar: 'Portal of Aramu Muru – The Interdimensional Threshold',
     imagen: '/images/aramu-muru.png',
-    desc: 'Un modulador de frecuencia y un resonador de geometría sagrada para observar el Punto de Tensión Máximo.'
+    desc: 'A frequency modulator and sacred geometry resonator designed to observe and dissolve the Maximum Tension Point.'
   },
   {
     id: 'naupa-iglesia',
-    mes: 'Agosto',
-    lugar: 'Ñaupa Iglesia (Cusco) – Templo Primigenio',
+    mes: 'August',
+    lugar: 'Ñaupa Iglesia (Cusco) – Primal Temple',
     imagen: '/images/naupa-iglesia.png',
-    desc: 'Al interior de esta caverna se trabaja los Engramas Numéricos y el Árbol Ancestral. Un santuario del inframundo.'
+    desc: 'Inside this sacred cavern we work on Numerical Engrams and the Ancestral Tree. A sanctuary of the underworld of consciousness.'
   },
   {
     id: 'cerro-baul',
-    mes: 'Octubre',
-    lugar: 'Cerro Baúl (Moquegua) – La Fortaleza',
+    mes: 'October',
+    lugar: 'Cerro Baúl (Moquegua) – The Citadel Fortress',
     imagen: '/images/evento-presencial.png',
-    desc: 'Representa la estabilidad geométrica pura. Es el escenario ideal para trabajar el LOGRO PERSONAL.'
+    desc: 'Embodies pure geometric stability and territorial anchoring. The ideal power vortex to build genuine PERSONAL ACHIEVEMENT.'
   },
   {
     id: 'apu-pitusiray',
-    mes: 'Diciembre',
-    lugar: 'Apu Pitusiray – Destino',
+    mes: 'December',
+    lugar: 'Apu Pitusiray – Unified Destiny Vector',
     imagen: '/images/apu-pitusiray.png',
-    desc: 'Módulo de Integración Final. El estudiante unifica su energía masculina y femenina, su esencia, talentos y personalidad.'
+    desc: 'Final Integration Module. The student unifies masculine and feminine polarities, essential talents, and sustained divine power.'
   }
 ];
 
@@ -57,36 +57,36 @@ const carouselImages = [
   <main class="page-main">
     <section class="page-header hero-bg-overlay" style="background-image: linear-gradient(to bottom, rgba(10,10,14,0.7), var(--bg-dark)), url('/images/evento-presencial.png');">
       <div class="container text-center scroll-reveal">
-        <span class="badge badge-cyan">Presencial</span>
-        <h1 class="page-title text-gradient-flame">AULA EN CAMPO | MINTAKA</h1>
-        <p class="lead">TERRALAB - INGENIERÍA TRANSPERSONAL</p>
+        <span class="badge badge-cyan">In-Person</span>
+        <h1 class="page-title text-gradient-flame">FIELD CLASSROOM | MINTAKA</h1>
+        <p class="lead">TERRALAB - TRANSPERSONAL ENGINEERING</p>
       </div>
     </section>
 
     <section class="section pt-0">
       <div class="container text-content-box glass-panel breathing-glow">
         <h2 style="color: var(--accent-cyan);">ANNUAL PROGRAM: VORTICES AND LINKS</h2>
-        <h3>Programa Presencial Anual de Numerología Óntica en Lugares de Poder</h3>
+        <h3>Annual In-Person Program of Ontic Numerology in Places of Power</h3>
         
         <div style="margin-top: 2rem;">
-          <p>We work in classrooms without walls our essence, talents, home of birth, engrams, exit door, life path, personal achievement and our power.</p>
+          <p>We work in classrooms without walls our essence, talents, birth home, engrams, exit door, life path, personal achievement, and sovereign power.</p>
           
           <blockquote class="quote-box" style="margin: 2rem 0; padding: 2rem; background: rgba(0,0,0,0.4); border-left: 4px solid var(--accent-cyan); font-size: 1.3rem; font-style: italic; color: #fff;">
-            "Bring the wisdom of the cosmos to the experience of the Earth"
+            "Bring the wisdom of the cosmos to the direct experience of the Earth"
           </blockquote>
           
-          <p>Transforming abstract theory into experiential and transformative fieldwork.</p>
+          <p>Transforming abstract theory into deeply experiential, revelatory fieldwork.</p>
         </div>
 
         <div class="info-grid">
-          <div class="info-item"><strong>Duration:</strong> 5 scheduled field trips</div>
-          <div class="info-item"><strong>Modalidad:</strong> Presencial</div>
-          <div class="info-item"><strong>Includes:</strong> Complementary reading material</div>
+          <div class="info-item"><strong>Duration:</strong> 5 scheduled field expeditions</div>
+          <div class="info-item"><strong>Modality:</strong> In-Person Fieldwork</div>
+          <div class="info-item"><strong>Includes:</strong> Specialized guides & reading material</div>
           <div class="info-item" style="color: var(--accent-gold);"><strong>Limited Spots</strong></div>
         </div>
 
         <!-- Tarjetas de Salidas -->
-        <h3 style="margin-top: 4rem; color: #fff; font-size: 1.8rem;">Schedule of Trips (Every 2 months)</h3>
+        <h3 style="margin-top: 4rem; color: #fff; font-size: 1.8rem;">Schedule of Expeditions (Every 2 Months)</h3>
         <div class="salidas-grid">
           {salidas.map((s) => (
             <div class="salida-card glass-panel">
@@ -97,7 +97,7 @@ const carouselImages = [
               <div class="salida-body">
                 <h4>{s.lugar}</h4>
                 <p>{s.desc}</p>
-                <a href={`/eventos-presenciales/${s.id}/`} class="btn btn-outline btn-block mt-auto">View Details</a>
+                <a href={`/en/eventos-presenciales/${s.id}/`} class="btn btn-outline btn-block mt-auto">View Details</a>
               </div>
             </div>
           ))}
@@ -105,20 +105,20 @@ const carouselImages = [
 
         <div class="flujo-box">
           <h4 style="color: var(--accent-cyan); font-size: 1.4rem;">Ontic Flow</h4>
-          <p>This cyclical order draws a perfect spiral of itinerant learning:</p>
+          <p>This cyclical journey draws a perfect ascending spiral of itinerant mastery:</p>
           <ol class="flujo-list">
-            <li><strong>You are born</strong> (Lago Titicaca - Abril)</li>
-            <li><strong>You break the blockage</strong> (Aramu Muru - Junio)</li>
-            <li><strong>You heal cellular memory in the void</strong> (Ñaupa Iglesia - Agosto)</li>
-            <li><strong>You build your structure free of inheritances</strong> (Cerro Baúl - Octubre)</li>
-            <li><strong>You sustain your Power to project yourself into the unified world</strong> (Pitusiray - Diciembre)</li>
+            <li><strong>You are born into potential</strong> (Lake Titicaca - April)</li>
+            <li><strong>You break the subconscious blockage</strong> (Aramu Muru - June)</li>
+            <li><strong>You heal cellular memory in the sacred void</strong> (Ñaupa Iglesia - August)</li>
+            <li><strong>You build structural sovereignty free of inheritance</strong> (Cerro Baúl - October)</li>
+            <li><strong>You sustain your Power to project into the unified cosmos</strong> (Pitusiray - December)</li>
           </ol>
         </div>
 
         <div class="text-center" style="margin-top: 4rem;">
-          <p style="font-style: italic; margin-bottom: 1rem;">“No prior knowledge of numerology is required; the methodology will be taught from the basics in a practical way.”</p>
+          <p style="font-style: italic; margin-bottom: 1rem;">“No prior knowledge of numerology is required; the methodology is taught from the ground up in an accessible, practical way.”</p>
           <a href="https://wa.me/51967747483" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
-            Check Dates and Value on WhatsApp
+            Check Dates & Investment on WhatsApp
           </a>
         </div>
       </div>
@@ -129,11 +129,11 @@ const carouselImages = [
       <div class="carousel-container">
         <div class="carousel-track">
           {carouselImages.map(img => (
-            <div class="carousel-slide"><img src={img} alt="Lugar de Poder" /></div>
+            <div class="carousel-slide"><img src={img} alt="Place of Power" /></div>
           ))}
           {/* Duplicar para el efecto infinito */}
           {carouselImages.map(img => (
-            <div class="carousel-slide"><img src={img} alt="Lugar de Poder" /></div>
+            <div class="carousel-slide"><img src={img} alt="Place of Power" /></div>
           ))}
         </div>
       </div>

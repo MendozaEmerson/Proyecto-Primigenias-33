@@ -7,66 +7,66 @@ import WhatsAppButton from '../../components/WhatsAppButton.astro';
 const mastersList = [
   {
     slug: "lineas-temporales",
-    titulo: "MÁSTER ADVANCED DE LAS LÍNEAS TEMPORALES",
+    titulo: "ADVANCED MASTER IN TIMELINES",
     imagen: "/images/master-especializaciones.jpg",
-    subtitulo: "2 clases intensivas de 3 hs cada una donde se enseñará el mundo de las líneas temporales desde la formación de la ley de octavas y la repetición de eventos en la vida.",
-    desc1: "Recorreremos el mapa de coordenadas en el tiempo para posicionarnos en el punto de formación del evento a transitar.",
-    desc2: "Utilizando el sendero de vida como ancla en el mundo y la frecuencia del año personal como línea temporal óntica cruzaremos las coordenadas obteniendo un punto fijo donde nos detendremos a observar eventos pasados para comprender su formación a través de los ecos de frecuencia temporales."
+    subtitulo: "2 intensive 3-hour classes teaching the science of timelines from the Law of Octaves and the repetition of life cycles.",
+    desc1: "We navigate the temporal coordinate map to position ourselves at the precise genesis of the event to be navigated.",
+    desc2: "Using the life path as an earthly anchor and the personal year frequency as the ontic timeline, we cross-reference coordinates to establish a fixed vantage point."
   },
   {
     slug: "4-elementos",
-    titulo: "MÁSTER: LOS 4 ELEMENTOS. LECTURA ÓNTICA",
+    titulo: "MASTER: THE 4 ELEMENTS & ONTIC READING",
     imagen: "/images/numerologia-base-ontica.jpg",
-    subtitulo: "Integración de fuego, agua, aire y tierra en la estructura del mapa numérico.",
-    desc1: "Abordaje profundo de la alquimia de los elementos aplicada a la decodificación personal y grupal.",
-    desc2: "Herramientas de equilibración elemental y aplicación en consulta profesional."
+    subtitulo: "Integration of Fire, Water, Air, and Earth into personal and transpersonal numerical chart architecture.",
+    desc1: "Deep alchemy of the four elements applied to individual, relationship synastry, and corporate team frequency decoding.",
+    desc2: "Elemental balancing methodologies and clinical consultation protocols to restore vibrational harmony."
   },
   {
     slug: "numeros-maestros",
-    titulo: "MÁSTER DE LA FORMACIÓN ÓNTICA DE LOS NÚMEROS MAESTROS",
+    titulo: "MASTER IN THE ONTIC ARCHITECTURE OF MASTER NUMBERS",
     imagen: "/images/master-especializaciones.jpg",
-    subtitulo: "Estudio avanzado de las frecuencias 11, 22, 33 y 44.",
-    desc1: "Comprende la exigencia espiritual y la responsabilidad creadora de los números maestros.",
-    desc2: "Metodología para desmantelar la distorsión del ego en personas con frecuencias maestras."
+    subtitulo: "Advanced study of frequencies 11, 22, 33, and 44 and their direct impact on the soul's spiritual mission.",
+    desc1: "Understand the spiritual rigor and creative responsibility of master frequencies within the natal matrix.",
+    desc2: "Methodology to dismantle ego distortion in individuals vibrating under master frequencies and channel their genuine divine potential."
   },
   {
     slug: "futurologia",
-    titulo: "MÁSTER EN FUTUROLOGÍA ÓNTICA",
+    titulo: "MASTER IN ONTIC FUTUROLOGY",
     imagen: "/images/numerologia-base-ontica.jpg",
-    subtitulo: "Predicción de tendencias de frecuencia y proyección de ciclos en el mapa de vida.",
-    desc1: "Análisis de prospectiva sin determinismos, iluminando los caminos de menor resistencia.",
-    desc2: "Herramientas avanzadas de previsión para la toma de decisiones estratégicas."
+    subtitulo: "Forecasting frequency trends and projecting life cycles without dogma or determinism.",
+    desc1: "Forward-looking analysis illuminating paths of least resistance and key evolutionary turning points.",
+    desc2: "Advanced predictive tools for strategic decision-making in individual and corporate consultation."
   },
   {
     slug: "formacion-numero",
-    titulo: "MÁSTER EN LA FORMACIÓN ÓNTICA DEL NÚMERO",
+    titulo: "MASTER IN THE ONTIC GENESIS OF NUMBERS",
     imagen: "/images/master-especializaciones.jpg",
-    subtitulo: "La raíz primordial y la geometría viva de la matemática sagrada.",
-    desc1: "Exploración ontológica del origen del número antes de manifestarse como concepto.",
-    desc2: "Profundización en los principios fundantes del Instituto Primigenias 33."
+    subtitulo: "The primordial root and living sacred geometry of divine mathematics.",
+    desc1: "Ontological inquiry into the origin of numbers prior to their manifestation as mental symbols or abstract concepts.",
+    desc2: "Deepening the founding tenets of the Primigenias 33 School for certified instructors and faculty."
   },
   {
     slug: "4-puertas",
-    titulo: "SEMINARIO DE LAS 4 PUERTAS DE SALIDA",
+    titulo: "SEMINAR: THE 4 EXIT DOORS",
     imagen: "/images/numerologia-base-ontica.jpg",
-    subtitulo: "Protocolos de resolución de bloqueos y trampas de percepción.",
-    desc1: "Las 4 vías de salida para trascender bucles de repetición y mandatos estancados.",
-    desc2: "Seminario intensivo con ejercicios prácticos y guía metodológica."
+    subtitulo: "Protocols to resolve blockages, dismantle ancestral mandates, and dissolve perception traps.",
+    desc1: "The 4 exit pathways to transcend repetitive karmic loops and unconscious stagnation in the family lineage.",
+    desc2: "Intensive seminar with hands-on decoding exercises and strategic methodological frameworks for clinical practice."
   }
 ];
 ---
 
-<Layout title="Másters de Numerología & Especializaciones | Instituto Primigenias 33" description="Formación avanzada en Másters y Seminarios de Numerología Base Óntica del Instituto Primigenias 33.">
+<Layout title="Numerology Masters & Specializations | Primigenias 33 Institute" description="Advanced training in Ontic Foundation Numerology Masters and Seminars at Primigenias 33 Institute.">
   <Header />
 
   <main class="especializaciones-main">
     <!-- Hero Banner Header -->
     <section class="hero-banner hero-bg-overlay">
       <div class="container text-center scroll-reveal">
-        <span class="badge badge-gold">Formación Superior</span>
-        <h1 class="page-title text-gradient-flame">MÁSTERS DE NUMEROLOGÍA</h1>
+        <span class="badge badge-gold">Higher Education</span>
+        <h1 class="page-title text-gradient-flame">NUMEROLOGY MASTERS</h1>
         <p class="hero-subtitle">
-          Seminarios de especialización intensiva para consultores y practicantes avanzados en desarrollo humano.
+          Intensive specialization seminars for consultants and advanced practitioners in human development.
         </p>
       </div>
     </section>
@@ -77,19 +77,19 @@ const mastersList = [
         <div class="masters-grid">
           {mastersList.map((item) => (
             <article class="glass-panel master-card highlight-gold breathing-glow">
-              <a href={`/especializaciones/${item.slug}/`} class="master-card-img-link">
+              <a href={`/en/especializaciones/${item.slug}/`} class="master-card-img-link">
                 <div class="master-card-img">
                   <img src={item.imagen} alt={item.titulo} class="card-img" />
                 </div>
               </a>
               <div class="master-card-body">
                 <h3>
-                  <a href={`/especializaciones/${item.slug}/`} class="card-title-link">
+                  <a href={`/en/especializaciones/${item.slug}/`} class="card-title-link">
                     {item.titulo}
                   </a>
                 </h3>
-                <a href={`/especializaciones/${item.slug}/`} class="btn btn-secondary btn-sm master-link-btn">
-                  Ver más
+                <a href={`/en/especializaciones/${item.slug}/`} class="btn btn-secondary btn-sm master-link-btn">
+                  View more
                 </a>
               </div>
             </article>

@@ -3,20 +3,56 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import WhatsAppButton from '../../components/WhatsAppButton.astro';
-import { formacionesList, talleresList } from '../../data/formaciones';
+
+const formacionesListEn = [
+  {
+    id: "numerologia",
+    titulo: "SCHOOL OF ONTIC NUMEROLOGY",
+    imagen: "/images/numerologia-oficial.png",
+    desc: "We train professionals in frequency decoding through an innovative, deep ontic-base methodology. The program teaches you practically how to decode archetypal symbols, emotional matrices, and subconscious belief systems using birth names and dates to liberate your true Divine Potential. Training unfolds chronologically through independent levels, each awarding official institutional certification.",
+    link: "/en/numerologia/",
+    btnText: "Explore Training"
+  }
+];
+
+const talleresListEn = [
+  {
+    id: "taller-bebes",
+    titulo: "CO - CREATING YOUR BABY'S NAME",
+    imagen: "/images/taller-nombres-oficial.png",
+    desc: "Let's talk about your baby's name... not from fleeting trends, but from their pure essence.",
+    link: "/en/talleres/nombres-bebes/",
+    btnText: "View Workshop"
+  },
+  {
+    id: "frecuencia-emprendedora",
+    titulo: "Entrepreneurial Frequency 33 Workshop",
+    imagen: "/images/frecuencia-emprendedora.png",
+    desc: "Tools from Ontic Numerology to give direction and high frequency to your business purpose.",
+    link: "/en/talleres/frecuencia-emprendedora/",
+    btnText: "Discover Workshop"
+  },
+  {
+    id: "arquetipos-frecuencias",
+    titulo: "Archetypes and Frequencies",
+    imagen: "/images/arquetipos-frecuencias.png",
+    desc: "Integration of Ontic Numerology into Therapeutic Consultation to optimize clinical diagnostics.",
+    link: "/en/talleres/arquetipos-frecuencias/",
+    btnText: "Discover Workshop"
+  }
+];
 ---
 
-<Layout title="Formaciones y Diplomaturas | Instituto Primigenias 33" description="Explora nuestras formaciones en Coaching Transpersonal, Numerología Óntica y Memorias Cuánticas del Instituto Primigenias 33.">
+<Layout title="Trainings & Diplomas | Primigenias 33 Institute" description="Explore our trainings in Transpersonal Coaching, Ontic Numerology, and Quantum Memories at Primigenias 33 Institute.">
   <Header />
 
   <main class="formaciones-main">
     <!-- Header Banner -->
     <section class="page-header hero-bg-overlay">
       <div class="container text-center scroll-reveal">
-        
-        <h1 class="page-title text-gradient-flame">NUESTROS CURSOS Y FORMACIONES</h1>
+        <h1 class="page-title text-gradient-flame">OUR COURSES & ACADEMIC TRAININGS</h1>
         <p class="lead">
-          Propuestas educativas diseñadas para el autoconocimiento, la transformación personal y la capacitación profesional en Ciencias Ónticas.
+          Educational programs designed for self-discovery, personal transformation, and professional mastery in Ontic Sciences.
         </p>
       </div>
     </section>
@@ -25,11 +61,11 @@ import { formacionesList, talleresList } from '../../data/formaciones';
     <section class="section pt-0">
       <div class="container">
         <div class="section-title text-center" style="margin-bottom: 2rem;">
-          <h2 style="font-size: 2.2rem; color: #fff;">Cursos</h2>
+          <h2 style="font-size: 2.2rem; color: #fff;">Courses</h2>
           <div style="width: 50px; height: 3px; background: var(--accent-gold); margin: 0.5rem auto 0;"></div>
         </div>
         <div class="formaciones-grid">
-          {formacionesList.map((item) => (
+          {formacionesListEn.map((item) => (
             <article class="glass-panel formacion-card highlight-gold breathing-glow">
               <div class="card-img-box">
                 <img src={item.imagen} alt={item.titulo} class="card-img" />
@@ -43,10 +79,10 @@ import { formacionesList, talleresList } from '../../data/formaciones';
                   </a>
                   {item.id === "numerologia" && (
                     <div style="margin-top: 1rem; font-size: 0.65rem; color: var(--accent-gold); text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.5rem; line-height: 1.3;">
-                      <strong>Con el respaldo de Instituto Crisol Ciencias Onticas.</strong><br/>
-                      Método Numerología Óntica<br/>
-                      Roberto Roberto Omar Ávila - Diana Andrea Braconi<br/>
-                      Derechos Reservados
+                      <strong>Supported by Crisol Institute Ontic Sciences.</strong><br/>
+                      Ontic Numerology Method<br/>
+                      Roberto Omar Ávila - Diana Andrea Braconi<br/>
+                      All Rights Reserved
                     </div>
                   )}
                 </div>
@@ -61,11 +97,11 @@ import { formacionesList, talleresList } from '../../data/formaciones';
     <section class="section" style="padding-top: 1rem;">
       <div class="container">
         <div class="section-title text-center" style="margin-bottom: 2rem;">
-          <h2 style="font-size: 2.2rem; color: #fff;">Talleres</h2>
+          <h2 style="font-size: 2.2rem; color: #fff;">Workshops</h2>
           <div style="width: 50px; height: 3px; background: var(--accent-gold); margin: 0.5rem auto 0;"></div>
         </div>
         <div class="formaciones-grid">
-          {talleresList.map((item) => (
+          {talleresListEn.map((item) => (
             <article class="glass-panel formacion-card highlight-gold breathing-glow">
               <div class="card-img-box">
                 <img src={item.imagen} alt={item.titulo} class="card-img" style="object-position: top;" />
@@ -77,14 +113,6 @@ import { formacionesList, talleresList } from '../../data/formaciones';
                   <a href={item.link} class="btn btn-primary btn-block">
                     {item.btnText}
                   </a>
-                  {item.id === "numerologia" && (
-                    <div style="margin-top: 1rem; font-size: 0.65rem; color: var(--accent-gold); text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.5rem; line-height: 1.3;">
-                      <strong>Con el respaldo de Instituto Crisol Ciencias Onticas.</strong><br/>
-                      Método Numerología Óntica<br/>
-                      Roberto Roberto Omar Ávila - Diana Andrea Braconi<br/>
-                      Derechos Reservados
-                    </div>
-                  )}
                 </div>
               </div>
             </article>
@@ -104,7 +132,7 @@ import { formacionesList, talleresList } from '../../data/formaciones';
   }
 
   .page-header {
-    padding: 4.5rem 1rem 3.5rem;
+    padding: 5rem 1rem 3.5rem 1rem;
     text-align: center;
   }
 
@@ -122,52 +150,51 @@ import { formacionesList, talleresList } from '../../data/formaciones';
     line-height: 1.6;
   }
 
-  /* Grid de Tarjetas */
   .formaciones-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: 2.5rem;
-    max-width: 1240px;
+    max-width: 1200px;
     margin: 0 auto;
-    justify-content: center;
   }
 
   .formacion-card {
     display: flex;
     flex-direction: column;
-    overflow: hidden;
     padding: 0;
-    border-radius: var(--radius-lg);
-    max-width: 400px;
-    margin: 0 auto;
-    width: 100%;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
   }
 
   .card-img-box {
-    height: 190px;
     width: 100%;
+    height: 200px;
     overflow: hidden;
-    background: #000;
-    border-bottom: 2px solid var(--accent-orange, #ff6b35);
   }
-  
+
   .card-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .formacion-card:hover .card-img {
+    transform: scale(1.06);
   }
 
   .card-body-content {
-    padding: 1.5rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
     gap: 1rem;
+    flex: 1;
   }
 
   .card-title {
     font-size: 1.35rem;
-    color: #fff;
+    font-weight: 800;
+    color: #ffffff;
     margin: 0;
     line-height: 1.3;
   }
@@ -175,22 +202,19 @@ import { formacionesList, talleresList } from '../../data/formaciones';
   .card-desc {
     color: var(--text-muted);
     font-size: 0.95rem;
-    line-height: 1.5;
+    line-height: 1.6;
     margin: 0;
-    flex-grow: 1;
+    flex: 1;
   }
 
   .card-action-box {
-    margin-top: 1rem;
-  }
-
-  .pt-0 {
-    padding-top: 0 !important;
+    margin-top: auto;
+    padding-top: 1rem;
   }
 
   @media (max-width: 768px) {
-    .page-title {
-      font-size: 2rem;
+    .formaciones-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>
