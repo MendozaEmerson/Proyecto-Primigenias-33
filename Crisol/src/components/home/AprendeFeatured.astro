@@ -1,4 +1,4 @@
-﻿---
+---
 import { getLangFromUrl } from "../../i18n/utils";
 const lang = Astro.currentLocale || getLangFromUrl(Astro.url);
 const basePath = lang === 'en' ? '/en' : '';
@@ -117,7 +117,7 @@ const getUrl = (path) => path === '/' && basePath ? basePath + '/' : basePath + 
         <div class="curso-info-side">
           <h3>{lang === "en" ? "ARCHETYPES AND FREQUENCIES" : "ARQUETIPOS Y FRECUENCIAS"}</h3>
           <p>
-            Integración de la Numerología óntica en la Consulta Terapéutica para optimizar diagnósticos.
+            {lang === "en" ? "Integration of Ontic Numerology in Therapeutic Consultation to optimize diagnoses." : "Integración de la Numerología óntica en la Consulta Terapéutica para optimizar diagnósticos."}
           </p>
           <ul class="curso-features">
             <li><span class="feature-bullet"> </span><span>{lang === "en" ? "Birth Home from the numbers" : "Hogar de Nacimiento desde los números"}</span></li>

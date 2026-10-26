@@ -12,10 +12,11 @@ const {
   title = "Instituto Primigenias 33 | Ciencias Ónticas & Campus Virtual",
   description = "Portal de información institucional, diplomados en Coaching Transpersonal, Numerología Óntica y acceso a Moodle del Instituto Primigenias 33."
 } = Astro.props;
+const currentLang = Astro.url.pathname.startsWith('/en') ? 'en' : 'es';
 ---
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang={currentLang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
